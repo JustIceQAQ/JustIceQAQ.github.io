@@ -59,18 +59,23 @@
 </div>
 </body>
 <script>
-    var msnry = $('.row').masonry({
-        itemSelector: '.card',
-        columnWidth: itemWidth,
-        gutter: 10,
-        resize: true
+    $(function () {
+        //页面加载完成时调用初始化瀑布流方法
+        initWaterFall();
+        $("img").lazyload({
+            effect: "fadeIn",
+            failurelimit: 40,
+            load: initWaterFall, //图片加载完成后初再次调用始化瀑布流
+        });
     });
 
-    $('img.lazy').lazyload({
-        effect: 'fadeIn', load: function () {
-            msnry.masonry();
-        }
-    });
+    function initWaterFall() {
+        $('.row').masonry({
+            gutterWidth: 20,
+            itemSelector: '.card',
+            isAnimated: true,
+        });
+    }
 </script>
 </html>
 
