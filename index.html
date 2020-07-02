@@ -16,6 +16,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
             integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
             crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"></script>
+
     <title>JustIceQAQ Blog</title>
 </head>
 <body>
@@ -30,8 +32,7 @@
                         card's content.</p>
                 </div>
             </div>
-        </div>
-        <div class="col">
+
             <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
                 <div class="card-header">Header</div>
                 <div class="card-body">
@@ -40,8 +41,7 @@
                         card's content.</p>
                 </div>
             </div>
-        </div>
-        <div class="col">
+
             <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
                 <div class="card-header">Header</div>
                 <div class="card-body">
@@ -50,8 +50,7 @@
                         card's content.</p>
                 </div>
             </div>
-        </div>
-        <div class="col">
+
             <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
                 <div class="card-header">Header</div>
                 <div class="card-body">
@@ -64,5 +63,14 @@
     </div>
 </div>
 </body>
+<script>
+    var elem = document.querySelector('.col');
+    var msnry = new Masonry(elem, {
+        // options
+        itemSelector: '.card',
+        columnWidth: 200
+    });
+
+</script>
 </html>
 
