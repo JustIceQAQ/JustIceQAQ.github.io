@@ -16,14 +16,14 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
             integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
             crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"></script>
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
 
     <title>JustIceQAQ Blog</title>
 </head>
 <body>
 <div class="container">
     <div class="row">
-        <div class="col">
+        <div class="col" data-masonry='{ "itemSelector": ".card", "columnWidth": 10 }'>
             <div class="card">
                 <img src="https://www.python.org/static/community_logos/python-logo-inkscape.svg" class="card-img-top"
                      alt="Python">
@@ -59,13 +59,6 @@
 </div>
 </body>
 <script>
-    var elem = document.querySelector('.col');
-    var msnry = new Masonry(elem, {
-        // options
-        itemSelector: '.card',
-        columnWidth: 10
-    });
-
 </script>
 </html>
 
