@@ -43,19 +43,19 @@
 </div>
 </body>
 <script>
-    $(function () {
-        //页面加载完成时调用初始化瀑布流方法
-        initWaterFall();
-        $("img").lazyload({
-            effect: "fadeIn",
-            failurelimit: 40,
-            load: initWaterFall, //图片加载完成后初再次调用始化瀑布流
-        });
-    });
+    // $(function () {
+    //     //页面加载完成时调用初始化瀑布流方法
+    //     initWaterFall();
+    //     $("img").lazyload({
+    //         effect: "fadeIn",
+    //         failurelimit: 40,
+    //         load: initWaterFall, //图片加载完成后初再次调用始化瀑布流
+    //     });
+    // });
 
-    function initWaterFall() {
+    // function initWaterFall() {
         $("#mygallery").justifiedGallery();
-    }
+    // }
 </script>
 </html>
 
