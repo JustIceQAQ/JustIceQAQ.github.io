@@ -8,6 +8,7 @@
     <!--  CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
           integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <link rel="stylesheet" href="justifiedGallery.min/justifiedGallery.min.css">
 
     <!--  Javascript  -->
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
@@ -17,53 +18,27 @@
             integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
             crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <script src="justifiedGallery.min/jquery.justifiedGallery.min.js"></script>
+
 
     <title>JustIceQAQ Blog</title>
 </head>
 <body>
 <div class="container">
     <div class="row">
-        <ul>
-            <li>
-                <div class="card">
-                    <img src="https://www.python.org/static/community_logos/python-logo-inkscape.svg"
-                         class="card-img-top"
-                         alt="Python">
-                    <div class="card-body">
-                        <p class="card-text">Python</p>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="card">
-                    <img src="https://static.djangoproject.com/img/logos/django-logo-negative.svg" class="card-img-top"
-                         alt="Django">
-                    <div class="card-body">
-                        <p class="card-text">Django</p>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="card">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Flask_logo.svg" class="card-img-top"
-                         alt="Flask">
-                    <div class="card-body">
-                        <p class="card-text">Flask</p>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="card">
-                    <img src="https://www.tornadoweb.org/en/stable/_images/tornado.png" class="card-img-top"
-                         alt="Tornado">
-                    <div class="card-body">
-                        <p class="card-text">Tornado</p>
-                    </div>
-                </div>
-            </li>
-
-        </ul>
+        <div class="col-12 ">
+            <div id="mygallery">
+                <img src="https://www.python.org/static/community_logos/python-logo-inkscape.svg"
+                     class="card-img-top"
+                     alt="Python">
+                <img src="https://static.djangoproject.com/img/logos/django-logo-negative.svg" class="card-img-top"
+                     alt="Django">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Flask_logo.svg" class="card-img-top"
+                     alt="Flask">
+                <img src="https://www.tornadoweb.org/en/stable/_images/tornado.png" class="card-img-top"
+                     alt="Tornado">
+            </div>
+        </div>
     </div>
 </div>
 </body>
@@ -79,11 +54,7 @@
     });
 
     function initWaterFall() {
-        $('.row').masonry({
-            gutterWidth: 20,
-            itemSelector: '.card',
-            isAnimated: true,
-        });
+        $("#mygallery").justifiedGallery();
     }
 </script>
 </html>
