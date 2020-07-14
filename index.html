@@ -20,6 +20,8 @@
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="justifiedGallery.min/jquery.justifiedGallery.min.js"></script>
 
+    <script src="html-import.js"></script>
+
 
     <title>JustIceQAQ Blog</title>
 </head>
@@ -43,7 +45,7 @@
             </div>
         </div>
     </div>
-    <div id="skill"></div>
+    <link rel="html-import" href="./skill.html">
     <!--    <div class="row">-->
     <!--        <div class="col-12">-->
     <!--            <div class="card">-->
@@ -193,6 +195,7 @@
 </div>
 </body>
 <script>
+
     $(function () {
         $("#skill").load("skill.html")
     })
