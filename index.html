@@ -38,33 +38,72 @@
 
     <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
     <script src="justifiedGallery.min/jquery.justifiedGallery.min.js"></script>
+    <script src="medium-zoom.min.js"></script>
     <title>JustIceQAQ Blog</title>
 </head>
 <style>
+    :root {
+        --JustIceQAQ_Orange: rgb(233, 84, 82);
+        --JustIceQAQ_Green: rgb(26, 179, 159);
+        --JustIceQAQ_Drak: rgb(64, 64, 64);
+    }
+
     .row {
         margin-bottom: 10px;
     }
+
+    .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+        color: #fff;
+        background-color: var(--JustIceQAQ_Orange);
+    }
+
+    a {
+        color: var(--JustIceQAQ_Green);
+    }
+
+    .btn-myO {
+        color: #fff;
+        background-color: var(--JustIceQAQ_Green);
+        border-color: var(--JustIceQAQ_Green);
+    }
+
+    #ex3-pills-1 > div:nth-child(even) > div > div {
+        border-color: var(--JustIceQAQ_Orange) !important;
+    }
+
+    #ex3-pills-1 > div:nth-child(even) > div > div > div.card-header {
+        border-color: var(--JustIceQAQ_Orange) !important;
+
+    }
+
+    #ex3-pills-1 > div:nth-child(odd) > div > div {
+        border-color: var(--JustIceQAQ_Green) !important;
+    }
+
+    #ex3-pills-1 > div:nth-child(odd) > div > div > div.card-header {
+        border-color: var(--JustIceQAQ_Green) !important;
+
+    }
+
+
 </style>
 <body>
 <div class="container">
-    <div class="row">
-        <div class="col-12">
-            <div class="alert alert-warning" role="alert">
-                <h4 class="alert-heading">Welcome! Welcome! Welcome!</h4>
-                <p>Hi, I&#096;m JustIceQAQ. There is my blog~</p>
-                <hr>
-                <p class="mb-0">
-                    Maybe you would like to ask &#147;What can I do?&#148;<br>
-                    Below is a list of my skilled technologies and projects.
-                </p>
-                <hr>
-                <a target="_blank" href="https://github.com/JustIceQAQ">
+    <header>
+        <!-- Jumbotron -->
+        <div class="p-5 text-center text-white" style="background-color: var(--JustIceQAQ_Green)">
+            <h1 class="mb-3">Welcome! Welcome! Welcome!</h1>
+            <h3 class="mb-3">Hi, I&#096;m JustIceQAQ. There is my blog~</h3>
+            <h4 class="mb-3"> Maybe you would like to ask &#147;What can I do?&#148;<br>
+                Below is a list of my skilled technologies and projects.</h4>
+            <a target="_blank" href="https://github.com/JustIceQAQ" style="color:var(--JustIceQAQ_Drak)">
                     <span class="iconify" data-icon="mdi:github" data-inline="false" data-width="3em"
                           data-height="3em"></span>
-                </a>
-            </div>
+            </a>
         </div>
-    </div>
+        <!-- Jumbotron -->
+    </header>
+    <br>
     <!-- Pills navs -->
     <ul class="nav nav-pills nav-justified mb-3" id="ex1" role="tablist">
         <li class="nav-item" role="presentation">
@@ -255,7 +294,7 @@
                                 TW Ranking由國立臺灣大學圖書資訊學系 黃慕萱教授主持。
                                 始於2018年，與臺灣大學計量理論與應用中心合作發表，期望透過客觀量化分析的方式，針對臺灣之大專院校，設計一套多數學校現階段經努力即可達成的適切指標。
                             </p>
-                            <a target="_blank" href="http://twranking.lis.ntu.edu.tw/about/" class="btn btn-primary">Web
+                            <a target="_blank" href="http://twranking.lis.ntu.edu.tw/about/" class="btn btn-myO">Web
                                 Link</a>
                         </div>
                     </div>
@@ -272,7 +311,7 @@
                                 National Taiwan University, and is also known as NTU Ranking. NTU Ranking provides
                                 overall ranking, rankings by six fields, and rankings by 24 selected subjects.
                             </p>
-                            <a target="_blank" href="http://nturanking.lis.ntu.edu.tw/" class="btn btn-primary">Web
+                            <a target="_blank" href="http://nturanking.lis.ntu.edu.tw/" class="btn btn-myO">Web
                                 Link</a>
                         </div>
                     </div>
@@ -285,11 +324,11 @@
                         <div class="card-body">
                             <h5 class="card-title">NTU Innovation Ranking</h5>
                             <p class="card-text">
-                                NTU Innovation Ranking由國立臺灣大學科研計量研究中心（Center for Science and Technology Informetrics,
-                                CSTI）陳達仁教授主持，透過易讀的指標、資料視覺化，讓閱覽者能快速、全面地了解各國與企業的專利創新表現。
+                                由國立臺灣大學科研計量研究中心(Center for Science and Technology Informetrics,
+                                CSTI)陳達仁教授主持，透過易讀的指標、資料視覺化，讓閱覽者能快速、全面地了解各國與企業的專利創新表現。
                                 本研究蒐集美國專利資料局(USPTO)所提供的公開資料，進行量化的研究分析，透過此研究呈現各國與企業在專利領域的創新表現，以及主導專利表現的國家及企業，提供各界較為客觀的參考依據。
                             </p>
-                            <a target="_blank" href="http://innoranking.ntucsti.tw/" class="btn btn-primary">Web
+                            <a target="_blank" href="http://innoranking.ntucsti.tw/" class="btn btn-myO">Web
                                 Link</a>
                         </div>
                     </div>
@@ -304,7 +343,7 @@
                             <p class="card-text">
                                 國立臺灣大學科研計量研究中心係在教育部與科技部高等教育深耕計畫支援下，由國立臺灣大學機械工程研究所與工業工程研究所陳達仁教授與圖書資訊研究所黃慕萱特聘教授於2018年主持成立。本中心目前也是深耕計畫執行單...
                             </p>
-                            <a target="_blank" href="http://ntucsti.tw/" class="btn btn-primary">Web
+                            <a target="_blank" href="http://ntucsti.tw/" class="btn btn-myO">Web
                                 Link</a>
                         </div>
                     </div>
@@ -342,19 +381,17 @@
     </div>
     <!-- Pills content -->
 
-
+    <footer class="text-center text-white text-lg-left" style="background-color: var(--JustIceQAQ_Orange)">
+        <!-- Copyright -->
+        <div class="text-center p-3">
+            - Web Site Design by JustIceQAQ -
+        </div>
+        <!-- Copyright -->
+    </footer>
 </div>
 </body>
 <script>
-    // $(function () {
-    //     //页面加载完成时调用初始化瀑布流方法
-    //     initWaterFall();
-    //     $("img").lazyload({
-    //         effect: "fadeIn",
-    //         failurelimit: 40,
-    //         load: initWaterFall, //图片加载完成后初再次调用始化瀑布流
-    //     });
-    // });
+
 
     // function initWaterFall() {
     $(".mygallery").justifiedGallery({
@@ -362,6 +399,8 @@
         lastRow: 'nojustify',
         margins: 10
     });
+    mediumZoom('.card-img-top');
+
     // }
 </script>
 </html>
