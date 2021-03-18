@@ -1,0 +1,42 @@
+:root {
+    --JustIceQAQ_Orange: rgb(233, 84, 82);
+    --JustIceQAQ_Green: rgb(26, 179, 159);
+    --JustIceQAQ_Drak: rgb(64, 64, 64);
+}
+
+.row {
+    margin-bottom: 10px;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: var(--JustIceQAQ_Orange);
+}
+
+a {
+    color: var(--JustIceQAQ_Green);
+}
+
+.btn-myO {
+    color: #fff;
+    background-color: var(--JustIceQAQ_Green);
+    border-color: var(--JustIceQAQ_Green);
+}
+
+#ex3-pills-1 > div:nth-child(even) > div > div {
+    border-color: var(--JustIceQAQ_Orange) !important;
+}
+
+#ex3-pills-1 > div:nth-child(even) > div > div > div.card-header {
+    border-color: var(--JustIceQAQ_Orange) !important;
+
+}
+
+#ex3-pills-1 > div:nth-child(odd) > div > div {
+    border-color: var(--JustIceQAQ_Green) !important;
+}
+
+#ex3-pills-1 > div:nth-child(odd) > div > div > div.card-header {
+    border-color: var(--JustIceQAQ_Green) !important;
+
+}

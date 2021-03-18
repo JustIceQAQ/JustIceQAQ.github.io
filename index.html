@@ -25,7 +25,9 @@
     <!--  CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
           integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
-    <link rel="stylesheet" href="justifiedGallery.min/justifiedGallery.min.css">
+    <link rel="stylesheet" href="static/js/justifiedGallery.min/justifiedGallery.min.css">
+
+    <link rel="stylesheet" href="static/css/index.css">
 
     <!--  Javascript  -->
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
@@ -37,56 +39,10 @@
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 
     <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
-    <script src="justifiedGallery.min/jquery.justifiedGallery.min.js"></script>
-    <script src="medium-zoom.min.js"></script>
+    <script src="static/js/justifiedGallery.min/jquery.justifiedGallery.min.js"></script>
+    <script src="static/js/medium-zoom.min.js"></script>
     <title>JustIceQAQ Blog</title>
 </head>
-<style>
-    :root {
-        --JustIceQAQ_Orange: rgb(233, 84, 82);
-        --JustIceQAQ_Green: rgb(26, 179, 159);
-        --JustIceQAQ_Drak: rgb(64, 64, 64);
-    }
-
-    .row {
-        margin-bottom: 10px;
-    }
-
-    .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-        color: #fff;
-        background-color: var(--JustIceQAQ_Orange);
-    }
-
-    a {
-        color: var(--JustIceQAQ_Green);
-    }
-
-    .btn-myO {
-        color: #fff;
-        background-color: var(--JustIceQAQ_Green);
-        border-color: var(--JustIceQAQ_Green);
-    }
-
-    #ex3-pills-1 > div:nth-child(even) > div > div {
-        border-color: var(--JustIceQAQ_Orange) !important;
-    }
-
-    #ex3-pills-1 > div:nth-child(even) > div > div > div.card-header {
-        border-color: var(--JustIceQAQ_Orange) !important;
-
-    }
-
-    #ex3-pills-1 > div:nth-child(odd) > div > div {
-        border-color: var(--JustIceQAQ_Green) !important;
-    }
-
-    #ex3-pills-1 > div:nth-child(odd) > div > div > div.card-header {
-        border-color: var(--JustIceQAQ_Green) !important;
-
-    }
-
-
-</style>
 <body>
 <div class="container">
     <header>
@@ -167,24 +123,48 @@
                                 <a target="_blank" href="https://www.djangoproject.com/">
                                     <img src="https://static.djangoproject.com/img/logos/django-logo-negative.svg"
                                          alt="Django"></a>
-                                <a target="_blank" href="https://www.djangoproject.com/">
-                                    <img src="https://www.django-rest-framework.org/img/logo.png"
-                                         alt="Django Rest Framework"></a>
+
                                 <a target="_blank" href="https://flask.palletsprojects.com/">
                                     <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Flask_logo.svg"
                                          alt="Flask"></a>
+
                                 <a target="_blank" href="https://www.tornadoweb.org">
                                     <img src="https://www.tornadoweb.org/en/stable/_images/tornado.png"
                                          alt="Tornado"></a>
-                                <a target="_blank" href="https://sanicframework.org/">
-                                    <img src="https://raw.githubusercontent.com/huge-success/sanic-assets/master/png/sanic-framework-logo-400x97.png"
-                                         alt="Sanic"></a>
-                                <a target="_blank" href="https://fastapi.tiangolo.com/">
-                                    <img src="https://fastapi.tiangolo.com/img/logo-margin/logo-teal.png"
-                                         alt="FastAPI"></a>
+
                                 <a target="_blank" href="https://dotnet.microsoft.com/apps/aspnet/mvc">
                                     <img src="https://dev-to-uploads.s3.amazonaws.com/i/qt1l5zhbmh6gnyk1qluh.jpg"
                                          alt="ASP.NET;MVC;WebAPI"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <span class="iconify" data-icon="ant-design:api-filled" data-inline="false"></span> API
+                        </div>
+                        <div class="card-body">
+                            <div class="justified-gallery mygallery">
+                                
+                                <a target="_blank" href="https://www.djangoproject.com/">
+                                    <img src="https://www.django-rest-framework.org/img/logo.png"
+                                         alt="Django Rest Framework"></a>
+
+                                <a target="_blank" href="https://sanicframework.org/">
+                                    <img src="https://raw.githubusercontent.com/huge-success/sanic-assets/master/png/sanic-framework-logo-400x97.png"
+                                         alt="Sanic"></a>
+
+                                <a target="_blank" href="https://fastapi.tiangolo.com/">
+                                    <img src="https://fastapi.tiangolo.com/img/logo-margin/logo-teal.png"
+                                         alt="FastAPI"></a>
+
+                                <a target="_blank" href="https://graphql.org/">
+                                <img src="https://d1dwq032kyr03c.cloudfront.net/upload/images/20181016/20111997WWqgh86nkr.png"
+                                     alt="GraphQL"></a>
+
                             </div>
                         </div>
                     </div>
