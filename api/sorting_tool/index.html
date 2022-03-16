@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/sortablejs-make/Sortable.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-sortablejs@latest/jquery-sortable.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+
+    <title>Title</title>
+    <style>
+        .ghost {
+            opacity: 0.4;
+        }
+
+        .list-group {
+            margin: 20px;
+        }
+
+        button {
+            margin: 40px 20px;
+            float: right;
+        }
+
+        [data-area="1"] {
+            background-color: #198754;
+            color: white;
+        }
+
+        [data-area="2"] {
+            background-color: #5AFF5AFF;
+        }
+
+        [data-area="3"] {
+            background-color: #00b1ff;
+            color: white;
+        }
+
+        [data-area="4"] {
+            background-color: #ffd500;
+        }
+    </style>
+</head>
+<body style="background-color: #2a2a2a">
+
+
+<div id="demo" class="row">
+    <div id="items-1" class="list-group col" style="border-width:3px;border-style:dashed;border-color:#FFAC55">
+        <div id="_1" data-name="公告劃定更新地區" data-area="1" class="list-group-item nested-1">公告劃定更新地區</div>
+        <div id="_2" data-name="劃定更新地區公展說明會" data-area="1" class="list-group-item nested-1">劃定更新地區公展說明會</div>
+        <div id="_3" data-name="地區說明會" data-area="1" class="list-group-item nested-1">地區說明會</div>
+        <div id="_4" data-name="基地測量及樹木調查" data-area="1" class="list-group-item nested-1">基地測量及樹木調查</div>
+        <div id="_5" data-name="所有權人意願調查" data-area="1" class="list-group-item nested-1">所有權人意願調查</div>
+        <div id="_6" data-name="招商文件草案閱覽" data-area="1" class="list-group-item nested-1">招商文件草案閱覽</div>
+        <div id="_7" data-name="歷建修復再利用計畫審查" data-area="1" class="list-group-item nested-1">歷建修復再利用計畫審查</div>
+        <div id="_8" data-name="發展構想及產品定位" data-area="1" class="list-group-item nested-1">發展構想及產品定位</div>
+        <div id="_9" data-name="違建戶意願調查" data-area="1" class="list-group-item nested-1">違建戶意願調查</div>
+        <div id="_10" data-name="都市計畫變更作業" data-area="1" class="list-group-item nested-1">都市計畫變更作業</div>
+        <div id="_11" data-name="都市計畫變更審查通過" data-area="1" class="list-group-item nested-1">都市計畫變更審查通過</div>
+        <div id="_12" data-name="公告招商" data-area="2" class="list-group-item nested-1">公告招商</div>
+        <div id="_13" data-name="地區說明會" data-area="2" class="list-group-item nested-1">地區說明會</div>
+        <div id="_14" data-name="招商前法定地區說明會" data-area="2" class="list-group-item nested-1">招商前法定地區說明會</div>
+        <div id="_15" data-name="招商前法定說明會" data-area="2" class="list-group-item nested-1">招商前法定說明會</div>
+        <div id="_16" data-name="招商文件公開閱覽" data-area="2" class="list-group-item nested-1">招商文件公開閱覽</div>
+        <div id="_17" data-name="招商文件草案公開閱覽" data-area="2" class="list-group-item nested-1">招商文件草案公開閱覽</div>
+        <div id="_18" data-name="招商評選及簽約" data-area="2" class="list-group-item nested-1">招商評選及簽約</div>
+        <div id="_19" data-name="自辦公聽會及選配" data-area="2" class="list-group-item nested-1">自辦公聽會及選配</div>
+        <div id="_20" data-name="事權計畫報核" data-area="3" class="list-group-item nested-1">事權計畫報核</div>
+        <div id="_21" data-name="公辦公聽會" data-area="3" class="list-group-item nested-1">公辦公聽會</div>
+        <div id="_22" data-name="審議會" data-area="3" class="list-group-item nested-1">審議會</div>
+        <div id="_23" data-name="專案會議" data-area="3" class="list-group-item nested-1">專案會議</div>
+        <div id="_24" data-name="專案複審" data-area="3" class="list-group-item nested-1">專案複審</div>
+        <div id="_25" data-name="核定公告實施" data-area="3" class="list-group-item nested-1">核定公告實施</div>
+        <div id="_26" data-name="核定發布" data-area="3" class="list-group-item nested-1">核定發布</div>
+        <div id="_27" data-name="樹木保護計畫審議" data-area="3" class="list-group-item nested-1">樹木保護計畫審議</div>
+        <div id="_28" data-name="權利變換計畫及都市更新事業計畫" data-area="3" class="list-group-item nested-1">權利變換計畫及都市更新事業計畫</div>
+        <div id="_29" data-name="歷史建物監測計畫審議" data-area="3" class="list-group-item nested-1">歷史建物監測計畫審議</div>
+        <div id="_30" data-name="申請核定作業" data-area="3" class="list-group-item nested-1">申請核定作業</div>
+        <div id="_31" data-name="聽證" data-area="3" class="list-group-item nested-1">聽證</div>
+        <div id="_32" data-name="聽證會" data-area="3" class="list-group-item nested-1">聽證會</div>
+        <div id="_33" data-name="變更細部計畫審議" data-area="3" class="list-group-item nested-1">變更細部計畫審議</div>
+        <div id="_34" data-name="都市更新事業計畫及權利變換計畫" data-area="3" class="list-group-item nested-1">都市更新事業計畫及權利變換計畫</div>
+        <div id="_35" data-name="都市設計審議" data-area="3" class="list-group-item nested-1">都市設計審議</div>
+        <div id="_36" data-name="都更/都計核定發布" data-area="3" class="list-group-item nested-1">都更/都計核定發布</div>
+        <div id="_37" data-name="都更審議會" data-area="3" class="list-group-item nested-1">都更審議會</div>
+        <div id="_38" data-name="都設及都更聯席專案小組審查" data-area="3" class="list-group-item nested-1">都設及都更聯席專案小組審查</div>
+        <div id="_39" data-name="交屋" data-area="4" class="list-group-item nested-1">交屋</div>
+        <div id="_40" data-name="完工驗收" data-area="4" class="list-group-item nested-1">完工驗收</div>
+        <div id="_41" data-name="施工" data-area="4" class="list-group-item nested-1">施工</div>
+        <div id="_42" data-name="申請建照" data-area="4" class="list-group-item nested-1">申請建照</div>
+    </div>
+
+    <div id="items-2" class="list-group col" style="border-width:3px;border-style:dashed;border-color:#55ebff">
+
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <button onclick="output_format()">Show Data (console)</button>
+        <button onclick="download_to_file()">Download_to_json</button>
+        <label>都更案代號:
+            <input id="buildingCode" type="text">
+        </label>
+
+    </div>
+</div>
+<script>
+    // List 1
+    $('#items-1').sortable({
+        group: 'list',
+        animation: 200,
+        ghostClass: 'ghost'
+    });
+
+    // List 2
+    $('#items-2').sortable({
+        group: 'list',
+        animation: 200,
+        ghostClass: 'ghost',
+    });
+    const output_format = () => {
+        const block = $('#items-2 div')
+        const nameList = $.map(block, function (item, index) {
+            return {name: $(item).data("name"), area: $(item).data("area")}
+        });
+        console.log(JSON.stringify(nameList))
+
+    }
+
+    function download_to_file() {
+        var a = document.createElement("a");
+        const block = $('#items-2 div')
+        const nameList = $.map(block, function (item, index) {
+            return {name: $(item).data("name"), area: $(item).data("area")}
+        });
+        let content = JSON.stringify(nameList)
+        var file = new Blob([content], {type: "application/json"});
+        a.href = URL.createObjectURL(file);
+        let filename = $("#buildingCode").val()
+        a.download = `${filename}.json`;
+        a.click();
+    }
+
+</script>
+
+</body>
+</html>
