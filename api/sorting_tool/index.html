@@ -122,7 +122,7 @@
     const output_format = () => {
         const block = $('#items-2 div')
         const nameList = $.map(block, function (item, index) {
-            return {name: $(item).data("name"), area: $(item).data("area")}
+            return {block_name: $(item).data("name"), area: $(item).data("area")}
         });
         console.log(JSON.stringify(nameList))
 
