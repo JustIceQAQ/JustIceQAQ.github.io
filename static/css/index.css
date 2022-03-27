@@ -23,20 +23,20 @@ a {
     border-color: var(--JustIceQAQ_Green);
 }
 
-#ex3-pills-1 > div:nth-child(even) > div > div {
+#skill-pills > div:nth-child(even) > div > div {
     border-color: var(--JustIceQAQ_Orange) !important;
 }
 
-#ex3-pills-1 > div:nth-child(even) > div > div > div.card-header {
+#skill-pills > div:nth-child(even) > div > div > div.card-header {
     border-color: var(--JustIceQAQ_Orange) !important;
 
 }
 
-#ex3-pills-1 > div:nth-child(odd) > div > div {
+#skill-pills > div:nth-child(odd) > div > div {
     border-color: var(--JustIceQAQ_Green) !important;
 }
 
-#ex3-pills-1 > div:nth-child(odd) > div > div > div.card-header {
+#skill-pills > div:nth-child(odd) > div > div > div.card-header {
     border-color: var(--JustIceQAQ_Green) !important;
 
 }
