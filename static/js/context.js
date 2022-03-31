@@ -16,10 +16,6 @@ class Card {
     }
 }
 
-console.log(new Card())
-
-new Block("", "", "")
-
 const Skill = {
     "Programming_Languages": [
         new Block("Python", "https://www.python.org/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original-wordmark.svg"),
@@ -36,7 +32,7 @@ const Skill = {
         new Block("Sanic", "https://sanicframework.org/", "https://raw.githubusercontent.com/sanic-org/sanic-assets/master/png/sanic-framework-logo-circle-128x128.png"),
 
 
-        new Block("dotnet", "", "https://www.vectorlogo.zone/logos/dotnet/dotnet-ar21.svg"),
+        new Block("dotnet", "https://zh.wikipedia.org/wiki/.NET", "https://www.vectorlogo.zone/logos/dotnet/dotnet-ar21.svg"),
 
     ],
     "Frontend_Development": [
@@ -51,22 +47,21 @@ const Skill = {
         new Block("Nginx", "https://nginx.org/en", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg")
     ],
     "AI_ML": [
-        new Block("NumPy", "", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original-wordmark.svg"),
-
+        new Block("NumPy", "https://numpy.org/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original-wordmark.svg"),
         new Block("Pandas", "https://pandas.pydata.org", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original-wordmark.svg"),
         new Block("Seaborn", "https://seaborn.pydata.org/", "https://seaborn.pydata.org/_images/logo-mark-lightbg.svg"),
         new Block("OpenCV", "https://opencv.org/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original-wordmark.svg"),
         new Block("scikit-learn", "https://scikit-learn.org/", "https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg"),
     ],
     "Database": [
-        new Block("postgresql", "", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original-wordmark.svg"),
-        new Block("MSSQL", "", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain-wordmark.svg"),
-        new Block("MySQL", "", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original-wordmark.svg"),
-        new Block("MariaDB", "", "https://www.vectorlogo.zone/logos/mariadb/mariadb-ar21.svg"),
-        new Block("MongoDB", "", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original-wordmark.svg"),
-        new Block("SQLite", "", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original-wordmark.svg"),
-        new Block("Redis", "", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original-wordmark.svg"),
-        new Block("minio", "", "https://www.vectorlogo.zone/logos/minioio/minioio-ar21.svg")
+        new Block("postgresql", "https://www.postgresql.org/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original-wordmark.svg"),
+        new Block("MSSQL", "https://www.microsoft.com/zh-tw/sql-server", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain-wordmark.svg"),
+        new Block("MySQL", "https://www.mysql.com/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original-wordmark.svg"),
+        new Block("MariaDB", "https://mariadb.org/", "https://www.vectorlogo.zone/logos/mariadb/mariadb-ar21.svg"),
+        new Block("MongoDB", "https://www.mongodb.com/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original-wordmark.svg"),
+        new Block("SQLite", "https://www.sqlite.org/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original-wordmark.svg"),
+        new Block("Redis", "https://redis.io/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original-wordmark.svg"),
+        new Block("MinIO", "https://min.io/", "https://www.vectorlogo.zone/logos/minioio/minioio-ar21.svg")
     ],
     "DataVisualization": [
         new Block("ChartJs", "https://www.chartjs.org", "https://www.chartjs.org/media/logo-title.svg")
@@ -79,24 +74,23 @@ const Skill = {
         new Block("bash", "", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg")
     ],
     "Backend_as_a_Service": [
-        new Block("heroku", "", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/heroku/heroku-original-wordmark.svg")
+        new Block("Heroku", "https://zh.wikipedia.org/zh-tw/Heroku", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/heroku/heroku-original-wordmark.svg")
     ],
     "Testing": [
-        new Block("pytest", "", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytest/pytest-original-wordmark.svg"),
-
-        new Block("Selenium", "", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/selenium/selenium-original.svg")
+        new Block("pytest", "https://docs.pytest.org/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytest/pytest-original-wordmark.svg"),
+        new Block("Selenium", "https://www.selenium.dev/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/selenium/selenium-original.svg")
     ],
     "Software": [
-        new Block("Figma", "", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg"),
-        new Block("Postman", "", "https://www.vectorlogo.zone/logos/getpostman/getpostman-ar21.svg")
+        new Block("Figma", "https://www.figma.com/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg"),
+        new Block("Postman", "https://www.postman.com/", "https://www.vectorlogo.zone/logos/getpostman/getpostman-ar21.svg")
     ],
     "OS": [
-        new Block("windows", "", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/windows8/windows8-original.svg"),
-        new Block("ubuntu", "", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ubuntu/ubuntu-plain-wordmark.svg"),
-        new Block("macos", "", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apple/apple-original.svg"),
+        new Block("Windows", "https://zh.wikipedia.org/zh-tw/Microsoft_Windows", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/windows8/windows8-original.svg"),
+        new Block("Ubuntu", "https://zh.wikipedia.org/zh-tw/Ubuntu", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ubuntu/ubuntu-plain-wordmark.svg"),
+        new Block("macOS", "https://zh.wikipedia.org/zh-tw/MacOS", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apple/apple-original.svg"),
     ],
     "Automation": [
-        new Block("ifttt", "", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ifttt/ifttt-original.svg")
+        new Block("ifttt", "https://ifttt.com/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ifttt/ifttt-original.svg")
 
     ],
     "Web_Crawler": [
@@ -106,24 +100,23 @@ const Skill = {
         new Block("Scrapy", "https://scrapy.org", "https://scrapy.org/img/scrapylogo.png"),
     ],
     "IDE": [
-        new Block("Pycharm", "", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pycharm/pycharm-original-wordmark.svg"),
+        new Block("Pycharm", "https://www.jetbrains.com/pycharm/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pycharm/pycharm-original-wordmark.svg"),
         new Block("Jupyter", "https://jupyter.org", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original-wordmark.svg"),
-        new Block("Webstorm", "", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/webstorm/webstorm-original-wordmark.svg"),
-        new Block("vscode", "", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original-wordmark.svg"),
-        new Block("VisualStudio", "", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visualstudio/visualstudio-plain-wordmark.svg"),
+        new Block("Webstorm", "https://www.jetbrains.com/webstorm/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/webstorm/webstorm-original-wordmark.svg"),
+        new Block("vscode", "https://code.visualstudio.com/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original-wordmark.svg"),
+        new Block("VisualStudio", "https://visualstudio.microsoft.com/zh-hant/downloads/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visualstudio/visualstudio-plain-wordmark.svg"),
 
     ],
     "Other": [
-        new Block("Anaconda", "", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/anaconda/anaconda-original-wordmark.svg"),
-
-        new Block("Markdown", "", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/markdown/markdown-original.svg"),
-        new Block("git", "", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original-wordmark.svg"),
-        new Block("github", "", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original-wordmark.svg"),
-        new Block("putty", "", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/putty/putty-original.svg"),
-        new Block("slack", "", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/slack/slack-original-wordmark.svg"),
-        new Block("sqlalchemy", "", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlalchemy/sqlalchemy-original-wordmark.svg"),
-        new Block("SSH", "", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ssh/ssh-original-wordmark.svg"),
-        new Block("Trello", "", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/trello/trello-plain-wordmark.svg"),
+        new Block("Anaconda", "https://www.anaconda.com/products/individual", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/anaconda/anaconda-original-wordmark.svg"),
+        new Block("Markdown", "https://zh.wikipedia.org/zh-tw/Markdown", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/markdown/markdown-original.svg"),
+        new Block("git", "https://git-scm.com/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original-wordmark.svg"),
+        new Block("github", "https://github.com/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original-wordmark.svg"),
+        new Block("putty", "https://www.putty.org/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/putty/putty-original.svg"),
+        new Block("slack", "https://slack.com/intl/zh-tw/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/slack/slack-original-wordmark.svg"),
+        new Block("sqlalchemy", "https://www.sqlalchemy.org/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlalchemy/sqlalchemy-original-wordmark.svg"),
+        new Block("SSH", "https://zh.wikipedia.org/zh-tw/Secure_Shell", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ssh/ssh-original-wordmark.svg"),
+        new Block("Trello", "https://trello.com/zh-Hant", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/trello/trello-plain-wordmark.svg"),
 
     ]
 
