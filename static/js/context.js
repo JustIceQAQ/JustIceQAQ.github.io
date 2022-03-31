@@ -6,6 +6,18 @@ class Block {
     }
 }
 
+class Card {
+    constructor(name, img, context, href, is_display) {
+        this.name = name;
+        this.img = img;
+        this.context = context;
+        this.href = href;
+        this.is_display = is_display;
+    }
+}
+
+console.log(new Card())
+
 new Block("", "", "")
 
 const Skill = {
@@ -117,6 +129,93 @@ const Skill = {
 
 }
 
+const Project = [
+    new Card(
+        "TW Ranking",
+        "https://i.imgur.com/oMyRioG.png",
+        "TW Ranking由國立臺灣大學圖書資訊學系 黃慕萱教授主持。始於2018年，與臺灣大學計量理論與應用中心合作發表，期望透過客觀量化分析的方式，針對臺灣之大專院校，設計一套多數學校現階段經努力即可達成的適切指標。",
+        "http://twranking.lis.ntu.edu.tw/about/",
+        false
+    ),
+    new Card(
+        "NTU Ranking",
+        "https://i.imgur.com/RukSW3t.png",
+        "The \"Performance Ranking of Scientific Papers for World Universities\" is released by National Taiwan University, and is also known as NTU Ranking. NTU Ranking provides overall ranking, rankings by six fields, and rankings by 24 selected subjects.",
+        "http://nturanking.csti.tw/",
+        true
+    ),
+    new Card(
+        "NTU Innovation Ranking",
+        "https://i.imgur.com/YhYWW6K.png",
+        "由國立臺灣大學科研計量研究中心(Center for Science and Technology Informetrics, CSTI)陳達仁教授主持，透過易讀的指標、資料視覺化，讓閱覽者能快速、全面地了解各國與企業的專利創新表現。本研究蒐集美國專利資料局(USPTO)所提供的公開資料，進行量化的研究分析，透過此研究呈現各國與企業在專利領域的創新表現，以及主導專利表現的國家及企業，提供各界較為客觀的參考依據。",
+        "http://140.112.180.163:8002/",
+        true
+    ),
+    new Card(
+        "科研計量研究中心",
+        "https://i.imgur.com/38ulZ7o.png",
+        `<ul>
+                    <li>協助國立臺灣大學科研計量研究中心，整合中心相關資源與事蹟另如研究計畫、學術活動、研究成果。</li>
+                    <li>使用Python與Django MVC 搭配前端語言進行設計與建置。</li>
+                </ul>`,
+        "http://www.csti.tw/",
+        true
+    ),
+    new Card(
+        "T醫院-精神居家醫療照護系統",
+        "https://i.imgur.com/9HwqqNk.png",
+        `<ul>
+                    <li>協助彙整聯合醫院精神科訪視紙本填寫表單，整合為網頁化、電子化管理。</li>
+                    <li>使用PHP、MySql、與前端網站語言進行功能開發，包含輸入、表格、拖曳式個案資料配對等功能。</li>
+                    <li>礙於商業機密，不提供網站連結，僅提供部分截圖。</li>
+                </ul>`,
+        null,
+        true
+    ),
+    new Card(
+        "K工廠 CPS System",
+        "https://i.imgur.com/Z91ge7B.png",
+        `<ul>
+                    <li>協助該工廠廠區與該企業資訊部整合機台與工單資料，並梳理資料流(包含資料取得、資料儲存與資料統計顯示)，並提供單一整合型資訊看板，供企業決策層與企業使用者進行查看。</li>
+                    <li>使用PHP、MySql、與前端網站語言進行功能開發，整合視覺化套件與表格套件提供互動式查詢。</li>
+                    <li>礙於商業機密，不提供網站連結，僅提供部分截圖。</li>
+                </ul>`,
+        null,
+        true
+    ),
+    new Card(
+        "S傳統產業ERP整合系統",
+        "https://i.imgur.com/VkE4xlP.png",
+        `<ul>
+                    <li>協助該傳統展業建立ERP管理系統，並配合既有的API、資料庫來建置如管理方帳號管理、派單作業、庫存管理、歷史統計等功能；客戶端提供子帳號管理、訂單歷程與銷帳查詢。</li>
+                    <li>使用C# MVC建立網站後端，並搭配前端語言進行實作。</li>
+                    <li>礙於商業機密，不提供網站連結，僅提供部分截圖。</li>
+                </ul>`,
+        null,
+        true
+    )
+]
+
+const cardFormat = (Card) => {
+    let a_format = '';
+    if (Card.href !== null) {
+        a_format = `<a target="_blank" href="${Card.href}" class="btn btn-myO">Web Link</a>`
+    }
+    return `<div class="col">
+                <div class="card">
+                    <img src="${Card.img}"
+                         class="card-img-top"
+                         alt="${Card.name}"/>
+                    <div class="card-body">
+                        <h5 class="card-title">${Card.name}</h5>
+                        <p class="card-text">
+                            ${Card.context}
+                        </p>
+                        ${a_format}
+                    </div>
+                </div>
+            </div>`
+}
 
 const blockFormat = (Block) => `<a target="_blank" href="${Block.href}"> <img src=${Block.img} alt="${Block.name}"/> </a>`
 
@@ -155,4 +254,10 @@ const appendSkill = () => {
         return appendGallery(key)
     })
 
+}
+
+const appendProjects = () => {
+    let app = document.querySelector(`.projects-context`);
+    let rows = Project.map(card => card.is_display ? cardFormat(card) : "")
+    app.innerHTML = rows.join("");
 }
