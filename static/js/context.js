@@ -191,6 +191,28 @@ const Project = [
                 </ul>`,
         null,
         true
+    ),
+    new Card(
+        "H機構 住宅資訊系統",
+        "https://via.placeholder.com/411x334",
+        `<ul>
+                    <li>依照H機構建置需求，以前後分離方式且以微服務提供API，支援前後台端功能實作，包含住宅基本資料、基地現況、未來建物模擬圖、基地現場CCTV、會議文件等管理功能。</li>
+                    <li>使用django rest framework 作為API框架。</li>
+                    <li>礙於商業機密，不提供網站連結，僅提供部分截圖。</li>
+                </ul>`,
+        null,
+        true
+    ),
+    new Card(
+        "H機構 都更資訊系統",
+        "https://via.placeholder.com/411x334",
+        `<ul>
+                    <li>依照H機構建置需求，以前後分離方式且以微服務提供API，支援前後台端功能實作，包含最新進度、進度流程、基礎資料、內容規劃、施工監控、圖片文件等管理功能。</li>
+                    <li>使用django rest framework 作為API框架。</li>
+                    <li>礙於商業機密，不提供網站連結，僅提供部分截圖。</li>
+                </ul>`,
+        null,
+        true
     )
 ]
 
