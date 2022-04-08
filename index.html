@@ -27,6 +27,7 @@
           integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
     <link rel="stylesheet" href="static/js/justifiedGallery.min/justifiedGallery.min.css">
 
+
     <link rel="stylesheet" href="static/css/index.css">
 
     <!--  Javascript  -->
@@ -41,6 +42,7 @@
     <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
     <script src="static/js/justifiedGallery.min/jquery.justifiedGallery.min.js"></script>
     <script src="static/js/medium-zoom.min.js"></script>
+    <script src="static/js/context.js"></script>
     <title>JustIceQAQ Blog</title>
 </head>
 <body>
@@ -63,17 +65,20 @@
     <!-- Pills navs -->
     <ul class="nav nav-pills nav-justified mb-3" id="ex1" role="tablist">
         <li class="nav-item" role="presentation">
-            <a class="nav-link active" id="ex3-tab-1" data-toggle="pill" href="#ex3-pills-1" role="tab"
-               aria-controls="ex3-pills-1" aria-selected="true">
+            <a class="nav-link active" id="skill-tab" data-toggle="pill" href="#skill-pills" role="tab"
+               aria-controls="skill-pills" aria-selected="true">
                 <span class="iconify" data-icon="bx:bx-code-alt" data-inline="false" data-width="1.5em"
                       data-height="1.5em"></span>
-                My Skill</a>
+                Skills
+            </a>
         </li>
         <li class="nav-item" role="presentation">
             <a class="nav-link" id="ex3-tab-2" data-toggle="pill" href="#ex3-pills-2" role="tab"
-               aria-controls="ex3-pills-2" aria-selected="false"><span class="iconify" data-icon="mdi:projector-screen"
-                                                                       data-inline="false" data-width="1.5em"
-                                                                       data-height="1.5em"></span> My Project</a>
+               aria-controls="ex3-pills-2" aria-selected="false">
+                <span class="iconify" data-icon="mdi:projector-screen"
+                      data-inline="false" data-width="1.5em"
+                      data-height="1.5em"></span> My Project
+            </a>
         </li>
         <!--        <li class="nav-item" role="presentation">-->
         <!--            <a class="nav-link" id="ex3-tab-3" data-toggle="pill" href="#ex3-pills-3" role="tab"-->
@@ -85,380 +90,13 @@
     <!-- Pills content -->
     <div class="tab-content" id="ex2-content">
         <!--    My Skill    -->
-        <div class="tab-pane fade show active" id="ex3-pills-1" role="tabpanel" aria-labelledby="ex3-tab-1">
-            <div class="row">
-                <div class="col-12">
-                    <div class="card">
-                        <div class="card-header">
-                            <span class="iconify" data-icon="logos:python" data-inline="false"></span> Programming
-                            Language
-                        </div>
-                        <div class="card-body">
-                            <div class="justified-gallery mygallery">
-                                <a target="_blank" href="https://www.python.org/">
-                                    <img src="https://raw.githubusercontent.com/mingrammer/diagrams/master/resources/programming/language/python.png"
-                                         alt="Python">
-                                </a>
-                                <a target="_blank" href="https://www.php.net/">
-                                    <img src="https://raw.githubusercontent.com/mingrammer/diagrams/master/resources/programming/language/php.png"
-                                         alt="PHP">
-                                </a>
-                                <a target="_blank" href="https://www.php.net/">
-                                    <img src="https://raw.githubusercontent.com/mingrammer/diagrams/master/resources/programming/language/csharp.png"
-                                         alt="C Sharp">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <div class="card">
-                        <div class="card-header">
-                            <span class="iconify" data-icon="mdi:iframe" data-inline="false"></span> Web Framework
-                        </div>
-                        <div class="card-body">
-                            <div class="justified-gallery mygallery">
-                                <a target="_blank" href="https://www.djangoproject.com/">
-                                    <img src="https://raw.githubusercontent.com/mingrammer/diagrams/master/resources/programming/framework/django.png"
-                                         alt="Django"></a>
+        <div class="tab-pane fade show active skill-context" id="skill-pills" role="tabpanel"
+             aria-labelledby="skill-tab">
 
-                                <a target="_blank" href="https://flask.palletsprojects.com/">
-                                    <img src="https://raw.githubusercontent.com/mingrammer/diagrams/master/resources/programming/framework/flask.png"
-                                         alt="Flask"></a>
-
-                                <a target="_blank" href="https://www.tornadoweb.org">
-                                    <img src="https://www.tornadoweb.org/en/stable/_images/tornado.png"
-                                         alt="Tornado"></a>
-
-                                <a target="_blank" href="https://dotnet.microsoft.com/apps/aspnet/mvc">
-                                    <img src="https://dev-to-uploads.s3.amazonaws.com/i/qt1l5zhbmh6gnyk1qluh.jpg"
-                                         alt="ASP.NET;MVC;WebAPI"></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <div class="card">
-                        <div class="card-header">
-                            <span class="iconify" data-icon="ant-design:api-filled" data-inline="false"></span> API
-                            Framework
-                        </div>
-                        <div class="card-body">
-                            <div class="justified-gallery mygallery">
-
-                                <a target="_blank" href="https://www.djangoproject.com/">
-                                    <img src="https://www.django-rest-framework.org/img/logo.png"
-                                         alt="Django Rest Framework"></a>
-
-                                <a target="_blank" href="https://sanicframework.org/">
-                                    <img src="https://raw.githubusercontent.com/huge-success/sanic-assets/master/png/sanic-framework-logo-400x97.png"
-                                         alt="Sanic"></a>
-
-                                <a target="_blank" href="https://fastapi.tiangolo.com/">
-                                    <img src="https://raw.githubusercontent.com/mingrammer/diagrams/master/resources/programming/framework/fastapi.png"
-                                         alt="FastAPI"></a>
-
-                                <a target="_blank" href="https://graphql.org/">
-                                    <img src="https://d1dwq032kyr03c.cloudfront.net/upload/images/20181016/20111997WWqgh86nkr.png"
-                                         alt="GraphQL"></a>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-12">
-                    <div class="card">
-                        <div class="card-header">
-                            <span class="iconify" data-icon="eos-icons:container-outlined" data-inline="false"></span>
-                            Containers
-                        </div>
-                        <div class="card-body">
-                            <div class="justified-gallery mygallery">
-
-                                <a target="_blank" href="https://www.docker.com/">
-                                    <img src="https://raw.githubusercontent.com/mingrammer/diagrams/master/resources/onprem/container/docker.png"
-                                         alt="Docker"></a>
-
-                                <a target="_blank" href="https://kubernetes.io/">
-                                    <img src="https://i.imgur.com/9sZOkLU.png"
-                                         alt="kubernetes"></a>
-
-                                <a target="_blank" href="https://rancher.com/">
-                                    <img src="https://rancher.com/assets/img/brand-guidelines/assets/logos/png/color/rancher-logo-horiz-color.png"
-                                         alt="rancher">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-12">
-                    <div class="card">
-                        <div class="card-header">
-                            <span class="iconify" data-icon="emojione-monotone:spider-web" data-inline="false"></span>
-                            Web Crawler
-                        </div>
-                        <div class="card-body">
-                            <div class="justified-gallery mygallery">
-                                <a target="_blank" href="https://requests.readthedocs.io">
-                                    <img src="https://docs.python-requests.org/en/latest/_static/requests-sidebar.png"
-                                         alt="requests"></a>
-                                <a target="_blank" href="https://docs.aiohttp.org/en/stable/index.html">
-                                    <img src="https://docs.aiohttp.org/en/stable/_static/aiohttp-icon-128x128.png"
-                                         alt="aiohttp"></a>
-                                <a target="_blank" href="https://www.crummy.com/software/BeautifulSoup/">
-                                    <img src="https://funthon.files.wordpress.com/2017/05/bs.png"
-                                         alt="Beautiful Soup"></a>
-                                <a target="_blank" href="https://scrapy.org">
-                                    <img src="https://scrapy.org/img/scrapylogo.png"
-                                         alt="Scrapy"></a>
-                                <a target="_blank" href="https://www.selenium.dev">
-                                    <img src="https://i.imgur.com/ytf9gRL.png"
-                                         alt="Selenium"></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <div class="card">
-                        <div class="card-header">
-                            <span class="iconify" data-icon="carbon:text-link-analysis" data-inline="false"></span> Data
-                            Analysis
-                        </div>
-                        <div class="card-body">
-                            <div class="justified-gallery mygallery">
-                                <a target="_blank" href="https://pandas.pydata.org/">
-                                    <img src="https://miro.medium.com/max/2000/0*U24pRgWn0UssQIKm.png"
-                                         alt="Pandas"></a>
-                                <a target="_blank" href="https://numpy.org/">
-                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/NumPy_logo.svg/1200px-NumPy_logo.svg.png"
-                                         alt="Numpy"></a>
-                                <a target="_blank" href="https://scikit-learn.org/">
-                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Scikit_learn_logo_small.svg/1200px-Scikit_learn_logo_small.svg.png"
-                                         alt="scikit-learn"></a>
-                                <a href="https://jupyter.org">
-                                    <img src="https://jupyter.org/assets/nav_logo.svg" alt="jupyter">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <div class="card">
-                        <div class="card-header">
-                            <span class="iconify" data-icon="fa:database" data-inline="false"></span> Database
-                        </div>
-                        <div class="card-body">
-                            <div class="justified-gallery mygallery">
-                                <a target="_blank" href="https://www.mysql.com/">
-                                    <img src="https://raw.githubusercontent.com/mingrammer/diagrams/master/resources/onprem/database/mysql.png"
-                                         alt="Mysql"></a>
-                                <a target="_blank"
-                                   href="https://www.microsoft.com/zh-tw/sql-server/sql-server-downloads">
-                                    <img src="https://raw.githubusercontent.com/mingrammer/diagrams/master/resources/onprem/database/mssql.png"
-                                         alt="Mssql"></a>
-                                <a target="_blank" href="https://redis.io/">
-                                    <img src="https://raw.githubusercontent.com/mingrammer/diagrams/master/resources/onprem/inmemory/redis.png"
-                                         alt="Redis"></a>
-                                <a target="_blank" href="https://min.io/">
-                                    <img src="https://min.io/resources/img/logo/MINIO_Bird.png" alt="minio">
-                                </a>
-                                <a target="_blank" href="https://www.mongodb.com/">
-                                    <img src="https://raw.githubusercontent.com/mingrammer/diagrams/master/resources/onprem/database/mongodb.png"
-                                         alt="Mongodb"></a>
-                                <a target="_blank" href="https://www.postgresql.org">
-                                    <img src="https://raw.githubusercontent.com/mingrammer/diagrams/master/resources/onprem/database/postgresql.png"
-                                         alt="PostgreSQL"></a>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <div class="card">
-                        <div class="card-header">
-                            <span class="iconify" data-icon="cryptocurrency:html" data-inline="false"></span> Front-End
-                            Framework
-                        </div>
-                        <div class="card-body">
-                            <div class="justified-gallery mygallery">
-                                <a target="_blank" href="https://www.mysql.com/">
-                                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg"
-                                         alt="HTML5"></a>
-                                <a target="_blank"
-                                   href="https://zh.wikipedia.org/wiki/%E5%B1%82%E5%8F%A0%E6%A0%B7%E5%BC%8F%E8%A1%A8">
-                                    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg"
-                                         alt="CSS"></a>
-                                <a target="_blank" href="https://zh.wikipedia.org/wiki/JavaScript">
-                                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/99/Unofficial_JavaScript_logo_2.svg"
-                                         alt="JavaScript"></a>
-
-                                <a href="https://getbootstrap.com/">
-                                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b2/Bootstrap_logo.svg"
-                                         alt="Bootstrap">
-                                </a>
-                                <a href="https://jquery.com/">
-                                    <img src="https://upload.wikimedia.org/wikipedia/en/9/9e/JQuery_logo.svg"
-                                         alt="jQuery">
-                                </a>
-                                <a href="https://jqueryui.com/">
-                                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/JQuery_UI-Logo.svg"
-                                         alt="jQuery ui">
-                                </a>
-                                <a href="https://jquerymobile.com/">
-                                    <img height="90px"
-                                         src="https://upload.wikimedia.org/wikipedia/commons/f/f8/Jquery-mobile-logo2.png"
-                                         alt="jQuery mobile">
-                                </a>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
         <!--    My Project    -->
         <div class="tab-pane fade" id="ex3-pills-2" role="tabpanel" aria-labelledby="ex3-tab-2">
-            <div class="row row-cols-1 row-cols-md-3 g-4">
-                <div class="col">
-                    <div class="card">
-                        <img src="https://i.imgur.com/oMyRioG.png"
-                             class="card-img-top"
-                             alt="twranking"/>
-                        <div class="card-body">
-                            <h5 class="card-title">TW Ranking</h5>
-                            <p class="card-text">
-                                TW Ranking由國立臺灣大學圖書資訊學系 黃慕萱教授主持。
-                                始於2018年，與臺灣大學計量理論與應用中心合作發表，期望透過客觀量化分析的方式，針對臺灣之大專院校，設計一套多數學校現階段經努力即可達成的適切指標。
-                            </p>
-                            <a target="_blank" href="http://twranking.lis.ntu.edu.tw/about/" class="btn btn-myO">Web
-                                Link</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card">
-                        <img src="https://i.imgur.com/RukSW3t.png"
-                             class="card-img-top"
-                             alt="nturanking"/>
-                        <div class="card-body">
-                            <h5 class="card-title">NTU Ranking</h5>
-                            <p class="card-text">
-                                The "Performance Ranking of Scientific Papers for World Universities" is released by
-                                National Taiwan University, and is also known as NTU Ranking. NTU Ranking provides
-                                overall ranking, rankings by six fields, and rankings by 24 selected subjects.
-                            </p>
-                            <a target="_blank" href="http://nturanking.csti.tw/" class="btn btn-myO">Web
-                                Link</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card">
-                        <img src="https://i.imgur.com/YhYWW6K.png"
-                             class="card-img-top"
-                             alt="Innovation Ranking"/>
-                        <div class="card-body">
-                            <h5 class="card-title">NTU Innovation Ranking</h5>
-                            <p class="card-text">
-                                由國立臺灣大學科研計量研究中心(Center for Science and Technology Informetrics,
-                                CSTI)陳達仁教授主持，透過易讀的指標、資料視覺化，讓閱覽者能快速、全面地了解各國與企業的專利創新表現。
-                                本研究蒐集美國專利資料局(USPTO)所提供的公開資料，進行量化的研究分析，透過此研究呈現各國與企業在專利領域的創新表現，以及主導專利表現的國家及企業，提供各界較為客觀的參考依據。
-                            </p>
-                            <a target="_blank" href="http://140.112.180.163:8002/" class="btn btn-myO">Web
-                                Link</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card">
-                        <img src="https://i.imgur.com/38ulZ7o.png"
-                             class="card-img-top"
-                             alt="ntucsti"/>
-                        <div class="card-body">
-                            <h5 class="card-title">科研計量研究中心</h5>
-                            <p class="card-text">
-                            <ul>
-                                <li>協助國立臺灣大學科研計量研究中心，整合中心相關資源與事蹟另如研究計畫、學術活動、研究成果。</li>
-                                <li>使用Python與Django MVC 搭配前端語言進行設計與建置。</li>
-                            </ul>
-                            <a target="_blank" href="http://www.csti.tw/" class="btn btn-myO">Web
-                                Link</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card">
-                        <img src="https://i.imgur.com/9HwqqNk.png" class="card-img-top" alt="..."/>
-                        <div class="card-body">
-                            <h5 class="card-title">聯合醫院-精神居家醫療照護系統</h5>
-                            <div class="card-text">
-                                <ul>
-                                    <li>協助彙整聯合醫院精神科訪視紙本填寫表單，整合為網頁化、電子化管理。</li>
-                                    <li>使用PHP、MySql、與前端網站語言進行功能開發，包含輸入、表格、拖曳式個案資料配對等功能。</li>
-                                    <li>礙於商業機密，不提供網站連結，僅提供部分截圖。</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card">
-                        <img src="https://i.imgur.com/Z91ge7B.png"
-                             class="card-img-top"
-                             alt="innoranking"/>
-                        <div class="card-body">
-                            <h5 class="card-title">KAYAMA CPS System</h5>
-                            <div class="card-text">
-                                <ul>
-                                    <li>
-                                        協助該工廠廠區與該企業資訊部整合機台與工單資料，並梳理資料流(包含資料取得、資料儲存與資料統計顯示)，並提供單一整合型資訊看板，供企業決策層與企業使用者進行查看。
-                                    </li>
-                                    <li>使用PHP、MySql、與前端網站語言進行功能開發，整合視覺化套件與表格套件提供互動式查詢。</li>
-                                    <li>礙於商業機密，不提供網站連結，僅提供部分截圖。</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card">
-                        <img src="https://i.imgur.com/VkE4xlP.png"
-                             class="card-img-top"
-                             alt="someonesystem"/>
-                        <div class="card-body">
-                            <h5 class="card-title">傳統產業ERP整合系統</h5>
-                            <div class="card-text">
-                                <ul>
-                                    <li>
-                                        協助該傳統展業建立ERP管理系統，並配合既有的API、資料庫來建置如管理方帳號管理、派單作業、庫存管理、歷史統計等功能；客戶端提供子帳號管理、訂單歷程與銷帳查詢。
-                                    </li>
-                                    <li>
-                                        使用C# MVC建立網站後端，並搭配前端語言進行實作。
-                                    </li>
-                                    <li>
-                                        礙於商業機密，不提供網站連結，僅提供部分截圖。
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="row row-cols-1 row-cols-md-3 g-4 projects-context">
             </div>
         </div>
     </div>
@@ -475,10 +113,14 @@
 </body>
 <script>
 
+    appendSkill()
+    appendProjects()
+
+
 
     // function initWaterFall() {
     $(".mygallery").justifiedGallery({
-        rowHeight: 100,
+        rowHeight: 130,
         lastRow: 'nojustify',
         margins: 15
     });
