@@ -21,7 +21,8 @@ const Skill = {
         new Block("Python", "https://www.python.org/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original-wordmark.svg"),
         new Block("PHP", "https://www.php.net/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg"),
         new Block("C Sharp", "https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg"),
-        new Block("JavaScript", "https://www.javascript.com/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg")
+        new Block("JavaScript", "https://www.javascript.com/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"),
+        new Block("Golang", "https://go.dev/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg")
     ],
     "Framework": [
         new Block("Django", "https://www.djangoproject.com/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain-wordmark.svg"),
@@ -33,6 +34,9 @@ const Skill = {
 
 
         new Block("dotnet", "https://zh.wikipedia.org/wiki/.NET", "https://www.vectorlogo.zone/logos/dotnet/dotnet-ar21.svg"),
+        new Block("gin-gonic", "https://gin-gonic.com/", "https://raw.githubusercontent.com/gin-gonic/logo/master/color.png"),
+
+
 
     ],
     "Frontend_Development": [
