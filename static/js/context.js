@@ -33,7 +33,7 @@ const Skill = {
         new Block("Sanic", "https://sanicframework.org/", "https://raw.githubusercontent.com/sanic-org/sanic-assets/master/png/sanic-framework-logo-circle-128x128.png"),
 
 
-        new Block("dotnet", "https://zh.wikipedia.org/wiki/.NET", "https://www.vectorlogo.zone/logos/dotnet/dotnet-ar21.svg"),
+        new Block("dotnet", "https://zh.wikipedia.org/wiki/.NET", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original-wordmark.svg"),
         new Block("gin-gonic", "https://gin-gonic.com/", "https://raw.githubusercontent.com/gin-gonic/logo/master/color.png"),
 
 
@@ -88,9 +88,18 @@ const Skill = {
         new Block("Selenium", "https://www.selenium.dev/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/selenium/selenium-original.svg")
     ],
     "Software": [
+        new Block("Slack", "https://slack.com/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/slack/slack-original.svg"),
         new Block("Figma", "https://www.figma.com/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg"),
-        new Block("Postman", "https://www.postman.com/", "https://www.vectorlogo.zone/logos/getpostman/getpostman-ar21.svg")
+        new Block("Postman", "https://www.postman.com/", "https://www.vectorlogo.zone/logos/getpostman/getpostman-ar21.svg"),
+        new Block("Filezilla", "https://filezilla-project.org/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/filezilla/filezilla-plain.svg"),
+        new Block("Trello", "https://trello.com/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/trello/trello-plain-wordmark.svg"),
+
     ],
+
+    "Hardware":[
+        new Block("Raspberry Pi", "https://www.raspberrypi.org/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/raspberrypi/raspberrypi-original.svg")
+    ],
+
     "OS": [
         new Block("Windows", "https://zh.wikipedia.org/zh-tw/Microsoft_Windows", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/windows8/windows8-original.svg"),
         new Block("Ubuntu", "https://zh.wikipedia.org/zh-tw/Ubuntu", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ubuntu/ubuntu-plain-wordmark.svg"),
@@ -122,10 +131,9 @@ const Skill = {
         new Block("git", "https://git-scm.com/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original-wordmark.svg"),
         new Block("github", "https://github.com/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original-wordmark.svg"),
         new Block("putty", "https://www.putty.org/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/putty/putty-original.svg"),
-        new Block("slack", "https://slack.com/intl/zh-tw/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/slack/slack-original-wordmark.svg"),
         new Block("sqlalchemy", "https://www.sqlalchemy.org/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlalchemy/sqlalchemy-original-wordmark.svg"),
         new Block("SSH", "https://zh.wikipedia.org/zh-tw/Secure_Shell", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ssh/ssh-original-wordmark.svg"),
-        new Block("Trello", "https://trello.com/zh-Hant", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/trello/trello-plain-wordmark.svg"),
+
 
     ]
 
