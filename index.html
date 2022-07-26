@@ -67,23 +67,29 @@
         <li class="nav-item" role="presentation">
             <a class="nav-link active" id="skill-tab" data-toggle="pill" href="#skill-pills" role="tab"
                aria-controls="skill-pills" aria-selected="true">
-                <span class="iconify" data-icon="bx:bx-code-alt" data-inline="false" data-width="1.5em"
+                <span class="iconify" data-icon="ci:window-code-block" data-inline="false" data-width="1.5em"
                       data-height="1.5em"></span>
-                Skills
+                My Skills
+            </a>
+        </li>
+
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" id="worked-project-tab" data-toggle="pill" href="#worked-project-pills" role="tab"
+               aria-controls="worked-project-pills" aria-selected="false">
+                <span class="iconify" data-icon="mdi:projector-screen"
+                      data-inline="false" data-width="1.5em"
+                      data-height="1.5em"></span>
+                My Worked Project
             </a>
         </li>
         <li class="nav-item" role="presentation">
-            <a class="nav-link" id="ex3-tab-2" data-toggle="pill" href="#ex3-pills-2" role="tab"
-               aria-controls="ex3-pills-2" aria-selected="false">
-                <span class="iconify" data-icon="mdi:projector-screen"
+            <a class="nav-link" id="site-project-tab" data-toggle="pill" href="#site-project-pills" role="tab"
+               aria-controls="site-project-pills" aria-selected="false">
+                <span class="iconify" data-icon="noto:ferris-wheel"
                       data-inline="false" data-width="1.5em"
-                      data-height="1.5em"></span> My Project
-            </a>
+                      data-height="1.5em"></span>
+                My Side Project</a>
         </li>
-        <!--        <li class="nav-item" role="presentation">-->
-        <!--            <a class="nav-link" id="ex3-tab-3" data-toggle="pill" href="#ex3-pills-3" role="tab"-->
-        <!--               aria-controls="ex3-pills-3" aria-selected="false">-&#45;&#45;</a>-->
-        <!--        </li>-->
     </ul>
     <!-- Pills navs -->
 
@@ -92,11 +98,16 @@
         <!--    My Skill    -->
         <div class="tab-pane fade show active skill-context" id="skill-pills" role="tabpanel"
              aria-labelledby="skill-tab">
-
         </div>
-        <!--    My Project    -->
-        <div class="tab-pane fade" id="ex3-pills-2" role="tabpanel" aria-labelledby="ex3-tab-2">
+        <!--    My Worked Project    -->
+        <div class="tab-pane fade" id="worked-project-pills" role="tabpanel" aria-labelledby="worked-project-tab">
             <div class="row row-cols-1 row-cols-md-3 g-4 projects-context">
+            </div>
+        </div>
+
+        <div class="tab-pane fade show active" id="site-project-pills" role="tabpanel"
+             aria-labelledby="site-project-tab">
+            <div class="row row-cols-1 row-cols-md-3 g-4 site-project-context">
             </div>
         </div>
     </div>
@@ -115,7 +126,7 @@
 
     appendSkill()
     appendProjects()
-
+    appendSideProjects()
 
 
     // function initWaterFall() {

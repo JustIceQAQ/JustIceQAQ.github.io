@@ -37,7 +37,6 @@ const Skill = {
         new Block("gin-gonic", "https://gin-gonic.com/", "https://raw.githubusercontent.com/gin-gonic/logo/master/color.png"),
 
 
-
     ],
     "Frontend_Development": [
         new Block("Bootstrap", "https://getbootstrap.com/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original-wordmark.svg"),
@@ -96,7 +95,7 @@ const Skill = {
 
     ],
 
-    "Hardware":[
+    "Hardware": [
         new Block("Raspberry Pi", "https://www.raspberrypi.org/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/raspberrypi/raspberrypi-original.svg")
     ],
 
@@ -227,6 +226,32 @@ const Project = [
         true
     )
 ]
+
+
+const SIDE_PROJECT = [
+    new Card(
+        "A",
+        "https://fakeimg.pl/411x344",
+        `<ul>
+                    <li>列點1</li>
+                    <li>列點2</li>
+                    <li>列點3</li>
+                </ul>`,
+        null,
+        true
+    ),
+    new Card(
+        "B",
+        "https://fakeimg.pl/411x344",
+        `<ul>
+                    <li>列點1</li>
+                    <li>列點2</li>
+                    <li>列點3</li>
+                </ul>`,
+        null,
+        true
+    ),
+]
 // "https://via.placeholder.com/411x334"
 
 const cardFormat = (Card) => {
@@ -292,5 +317,11 @@ const appendSkill = () => {
 const appendProjects = () => {
     let app = document.querySelector(`.projects-context`);
     let rows = Project.map(card => card.is_display ? cardFormat(card) : "")
+    app.innerHTML = rows.join("");
+}
+
+const appendSideProjects = () => {
+    let app = document.querySelector(`.site-project-context`);
+    let rows = SIDE_PROJECT.map(card => card.is_display ? cardFormat(card) : "")
     app.innerHTML = rows.join("");
 }
