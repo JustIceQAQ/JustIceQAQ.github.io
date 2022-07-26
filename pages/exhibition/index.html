@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.12.1/datatables.min.css"/>
+    <link rel="stylesheet" type="text/css"
+          href="https://cdn.datatables.net/responsive/2.3.0/css/responsive.dataTables.min.css"/>
+    <link rel="stylesheet" type="text/css"
+          href="https://cdn.datatables.net/buttons/2.2.3/css/buttons.dataTables.min.css"/>
+    <style>
+        table.dataTable.dtr-inline.collapsed > tbody > tr > td.dtr-control, table.dataTable.dtr-inline.collapsed > tbody > tr > th.dtr-control {
+            position: relative;
+            padding-left: 50px;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+<body>
+
+<table id="example" class="display responsive nowrap" style="width:100%">
+    <thead>
+    <tr>
+        <th>展覽名稱</th>
+        <th>圖片</th>
+        <th>日期</th>
+        <th>地點</th>
+        <th>分類</th>
+
+    </tr>
+    </thead>
+</table>
+
+
+</body>
+
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.12.1/datatables.min.js"></script>
+<script type="text/javascript"
+        src="https://cdn.datatables.net/responsive/2.3.0/js/dataTables.responsive.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js"></script>
+<script type="text/javascript"
+        src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.html5.min.js"></script>
+
+<script src="my_table.js"></script>
+
+
+<script>
+
+
+    $(document).ready(function () {
+        $('#example').DataTable({
+            dom: 'Bfrtip',
+            processing: true,
+            responsive: true,
+            deferRender: true,
+            ajax: `${URL_SOURCE}huashan1914_exhibition.json`,
+            dataSrc: 'data',
+            columns: [
+                {
+                    data: 'title',
+                    render: function (data, type, row) {
+                        return `<a target="_blank" href="${row.source_url}">${data}</a>`
+                    }
+                },
+                {
+                    data: 'figure',
+                    render: function (data, type, row) {
+                        return '<img src="' + data + '" loading="lazy" onload="javascript:DrawImage(this, 400,400)" />';
+                    }
+                },
+                {data: 'date'},
+                {data: 'address'},
+                {data: 'systematics'},
+            ],
+            columnDefs: [
+                {targets: 0, responsivePriority: 1},
+                {targets: 1, responsivePriority: 10002},
+                {targets: 2, responsivePriority: 1},
+                {targets: 3, responsivePriority: 2},
+                {targets: 4, responsivePriority: 2},
+
+            ],
+            buttons: [
+                'huashan1914_exhibition',
+                'cksmh_exhibition',
+                'mocataipei_exhibition',
+                'npm_exhibition',
+                'ntm_exhibition',
+                'ntsec_exhibition',
+                'songshanculturalpark_exhibition',
+                'tfam_exhibition',
+                'books_exhibition',
+                'udnfunlife_exhibition',
+
+            ]
+        });
+    });
+
+
+    const DrawImage = (ImgObj, maxWidth, maxHeight) => {
+        let image = new Image();
+        image.src = ImgObj.src;
+        let tempWidth;
+        let tempHeight;
+        if (image.width > 0 && image.height > 0) {
+            if (image.width / image.height >= maxWidth / maxHeight) {
+                if (image.width > maxWidth) {
+                    tempWidth = maxWidth;
+
+                    tempHeight = (image.height * maxWidth) / image.width;
+                } else {
+
+                    tempWidth = image.width;
+                    tempHeight = image.height;
+                }
+            } else {
+                if (image.height > maxHeight) {
+                    tempHeight = maxHeight;
+
+                    tempWidth = (image.width * maxHeight) / image.height;
+                } else {
+
+                    tempWidth = image.width;
+                    tempHeight = image.height;
+                }
+            }
+            ImgObj.height = tempHeight;
+            ImgObj.width = tempWidth;
+            ImgObj.alt = image.width + "×" + image.height;
+        }
+    }
+
+
+</script>
+
+</html>
