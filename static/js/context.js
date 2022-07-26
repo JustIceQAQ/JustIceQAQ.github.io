@@ -16,7 +16,7 @@ class Card {
     }
 }
 
-const Skill = {
+const SKILL = {
     "Programming_Languages": [
         new Block("Python", "https://www.python.org/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original-wordmark.svg"),
         new Block("PHP", "https://www.php.net/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg"),
@@ -138,7 +138,7 @@ const Skill = {
 
 }
 
-const Project = [
+const WORKED_PROJECT = [
     new Card(
         "TW Ranking",
         "https://i.imgur.com/oMyRioG.png",
@@ -230,25 +230,25 @@ const Project = [
 
 const SIDE_PROJECT = [
     new Card(
-        "A",
-        "https://fakeimg.pl/411x344",
+        "到處看展覽",
+        "https://i.imgur.com/SVPVwlc.png",
         `<ul>
-                    <li>列點1</li>
-                    <li>列點2</li>
-                    <li>列點3</li>
+                    <li>使用Python 爬蟲針對數個 文創園區/博物館/售票網 網站來爬取相關展覽</li>
+                    <li>資料更新透過 github action 定時排程更新</li>
+                    <li>Table 使用 <a href="https://datatables.net/" target="_blank">DataTable</a>進行渲染</li>
                 </ul>`,
-        null,
+        "https://justiceqaq.github.io/pages/exhibition/",
         true
     ),
     new Card(
-        "B",
-        "https://fakeimg.pl/411x344",
+        "let me have a look this company <br> (讓我看看！ 這家公司！)",
+        "https://i.imgur.com/kuy7get.png",
         `<ul>
-                    <li>列點1</li>
-                    <li>列點2</li>
-                    <li>列點3</li>
+                    <li>使用Python FastAPI 作為API，針對輸入的公司名稱進行爬蟲</li>
+                    <li>爬蟲標的包含商工登記公示資料查詢服務、Qollie、goodjob.life、台灣薪資情報網等，另針對 PTT、博弈關鍵字等 進行 Google Hacking Database GHDB 調查</li>
+                    <li>服務部署於PaaS Heroku 中</li>
                 </ul>`,
-        null,
+        "https://letmehavealookthiscompan.herokuapp.com/",
         true
     ),
 ]
@@ -279,7 +279,7 @@ const blockFormat = (Block) => `<a target="_blank" href="${Block.href}"> <img sr
 
 const appendGallery = (ele) => {
     let app = document.querySelector(`.${ele}`);
-    let blocks = Skill[ele].map(Block => blockFormat(Block))
+    let blocks = SKILL[ele].map(Block => blockFormat(Block))
     app.innerHTML = blocks.join("");
 }
 
@@ -303,12 +303,12 @@ const appendSkillRow = (topic) => {
 
 const appendSkill = () => {
     let app = document.querySelector(`.skill-context`);
-    let rows = Object.entries(Skill).map(([key, value]) => {
+    let rows = Object.entries(SKILL).map(([key, value]) => {
         return appendSkillRow(key)
     })
     app.innerHTML = rows.join("");
 
-    Object.entries(Skill).map(([key, value]) => {
+    Object.entries(SKILL).map(([key, value]) => {
         return appendGallery(key)
     })
 
@@ -316,7 +316,7 @@ const appendSkill = () => {
 
 const appendProjects = () => {
     let app = document.querySelector(`.projects-context`);
-    let rows = Project.map(card => card.is_display ? cardFormat(card) : "")
+    let rows = WORKED_PROJECT.map(card => card.is_display ? cardFormat(card) : "")
     app.innerHTML = rows.join("");
 }
 
