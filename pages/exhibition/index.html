@@ -19,7 +19,8 @@
 </head>
 <body>
 
-<table id="example" class="display responsive nowrap" style="width:100%">
+<table id="exhibition" class="display responsive nowrap" style="width:100%">
+    <caption></caption>
     <thead>
     <tr>
         <th>展覽名稱</th>
@@ -50,7 +51,7 @@
 
 
     $(document).ready(function () {
-        $('#example').DataTable({
+        $('#exhibition').DataTable({
             dom: 'Bfrtip',
             processing: true,
             responsive: true,
@@ -94,9 +95,21 @@
                 'books_exhibition',
                 'udnfunlife_exhibition',
 
-            ]
+            ],
+            "drawCallback": function (settings) {
+                // let lastUpdate = settings.json['last_update']
+                if (settings.json !== undefined) {
+                    let last_update = settings.json["last_update"];
+                    $('#exhibition > caption').text("最後更新時間: " + formatDate(last_update))
+
+                }
+            }
         });
     });
+
+    const formatDate = (dateString) => {
+        return new Date(dateString).toLocaleString()
+    }
 
 
     const DrawImage = (ImgObj, maxWidth, maxHeight) => {
