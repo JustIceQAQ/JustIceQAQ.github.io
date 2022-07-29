@@ -332,24 +332,24 @@ const appendSkill = () => {
 
 const appendProjects = () => {
     let app = document.querySelector(`.projects-context`);
-    // let rows = WORKED_PROJECT.map(card => card.is_display ? cardFormat(card) : "")
-    let rows = []
-    for (let card of WORKED_PROJECT) {
-        if (card.is_display) {
-            rows.push(cardFormat(card));
-        }
-    }
+    let rows = WORKED_PROJECT.map(card => card.is_display ? cardFormat(card) : "")
+    // let rows = []
+    // for (let card of WORKED_PROJECT) {
+    //     if (card.is_display) {
+    //         rows.push(cardFormat(card));
+    //     }
+    // }
     app.innerHTML = rows.join("");
 }
 
 const appendSideProjects = () => {
     let app = document.querySelector(`.site-project-context`);
-    // let rows = SIDE_PROJECT.map(card => card.is_display ? cardFormat(card) : "")
-    let rows = []
-    for (let card of SIDE_PROJECT) {
-        if (card.is_display) {
-            rows.push(cardFormat(card));
-        }
-    }
+    let rows = SIDE_PROJECT.map(card => card.is_display ? cardFormat(card) : "")
+    // let rows = []
+    // for (let card of SIDE_PROJECT) {
+    //     if (card.is_display) {
+    //         rows.push(cardFormat(card));
+    //     }
+    // }
     app.innerHTML = rows.join("");
 }
