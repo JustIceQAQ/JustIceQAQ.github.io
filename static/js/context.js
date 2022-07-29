@@ -30,10 +30,10 @@ const SKILL = {
     ],
     "Framework": [
         new Block("Django", "https://www.djangoproject.com/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain-wordmark.svg"),
-        new Block("Django Rest Framework", "https://www.django-rest-framework.org", "https://www.django-rest-framework.org/img/logo.png"),
+        new Block("Django Rest Framework", "https://www.django-rest-framework.org", imagesFromGoogleDrive("1NUZB4bUhcGMWbCyWIdqJM7UuSsDSnUWE")),
         new Block("Flask", "https://flask.palletsprojects.com/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg"),
         new Block("FastAPI", "https://fastapi.tiangolo.com/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg"),
-        new Block("Tornado", "https://www.tornadoweb.org", "https://i.imgur.com/0CGA4Cn.png"),
+        new Block("Tornado", "https://www.tornadoweb.org", imagesFromGoogleDrive("1-OU-ourDguRNj5jSOgoHXe2K26uVkImU")),
         new Block("Sanic", "https://sanicframework.org/", "https://raw.githubusercontent.com/sanic-org/sanic-assets/master/png/sanic-framework-logo-circle-128x128.png"),
 
 
@@ -47,7 +47,7 @@ const SKILL = {
         new Block("html5", "https://whatwg.org/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original-wordmark.svg"),
         new Block("css3", "https://www.w3.org/Style/CSS/Overview.en.html", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original-wordmark.svg"),
         new Block("jQuery", "https://jquery.com/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-original-wordmark.svg"),
-        new Block("jQueryui", "https://jqueryui.com/", "https://i.imgur.com/rdfXgNE.png"),
+        new Block("jQueryui", "https://jqueryui.com/", imagesFromGoogleDrive("1AJTMx1g2RVMjC4qamlwvb4Jl7My3kUNW")),
         new Block("jquerymobile", "https://jquerymobile.com/", imagesFromGoogleDrive("1hcSBBuBv6cqrB24cXGSlzYWsGgMFlQOG")),
 
     ],
@@ -96,7 +96,8 @@ const SKILL = {
         new Block("Postman", "https://www.postman.com/", "https://www.vectorlogo.zone/logos/getpostman/getpostman-ar21.svg"),
         new Block("Filezilla", "https://filezilla-project.org/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/filezilla/filezilla-plain.svg"),
         new Block("Trello", "https://trello.com/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/trello/trello-plain-wordmark.svg"),
-
+        new Block("Sourcetree", "https://www.sourcetreeapp.com/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sourcetree/sourcetree-original-wordmark.svg"),
+        new Block("Sentry", "https://sentry.io/welcome/", imagesFromGoogleDrive("1UMVcKqtjVE8ZGK9KqUyQVWVnUJEnVcRJ"))
     ],
 
     "Hardware": [
@@ -115,8 +116,9 @@ const SKILL = {
     "Web_Crawler": [
         new Block("requests", "https://requests.readthedocs.io", "https://docs.python-requests.org/en/latest/_static/requests-sidebar.png"),
         new Block("aiohttp", "https://docs.aiohttp.org/en/stable/index.html", "https://docs.aiohttp.org/en/stable/_static/aiohttp-plain.svg"),
-        new Block("BeautifulSoup", "https://www.crummy.com/software/BeautifulSoup/", "https://funthon.files.wordpress.com/2017/05/bs.png"),
-        new Block("Scrapy", "https://scrapy.org", "https://i.imgur.com/31r4nOw.png"),
+        new Block("BeautifulSoup", "https://www.crummy.com/software/BeautifulSoup/", imagesFromGoogleDrive("18L0diSP6a_prRoGjQaGjJAwkDk7LVQl0")),
+        new Block("Scrapy", "https://scrapy.org", imagesFromGoogleDrive("1_jNHjx4T6Z2ZLUEqynWR-FsuUKwYTa_B")),
+
     ],
     "IDE": [
         new Block("Pycharm", "https://www.jetbrains.com/pycharm/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pycharm/pycharm-original.svg"),
