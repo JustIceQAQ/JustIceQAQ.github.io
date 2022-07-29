@@ -50,3 +50,10 @@ a {
     border-color: var(--JustIceQAQ_Green) !important;
 
 }
+
+.nav-justified .nav-item, .nav-justified>.nav-link {
+    flex-basis: 0;
+    flex-grow: 1;
+    text-align: center;
+    align-self: center;
+}

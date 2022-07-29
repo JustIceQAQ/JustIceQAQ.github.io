@@ -247,7 +247,7 @@ const SIDE_PROJECT = [
         true
     ),
     new Card(
-        "let me have a look this company <br> (讓我看看！ 這家公司！)",
+        "let me have a look this company (讓我看看！ 這家公司！)",
         imagesFromGoogleDrive("1bridom_whO-etjjTx98wX72wv8-ptGTQ"),
         `<ul>
                     <li>使用Python FastAPI 作為API，針對輸入的公司名稱進行爬蟲</li>
@@ -261,27 +261,37 @@ const SIDE_PROJECT = [
 // "https://via.placeholder.com/411x334"
 
 const cardFormat = (Card) => {
-    let a_format = '';
+    let a_tag = '';
     if (Card.href !== null) {
-        a_format = `<a target="_blank" href="${Card.href}" class="btn btn-myO">Web Link</a>`
+        a_tag = `<a target="_blank" href="${Card.href}" class="btn btn-myO">Web Link</a>`
     }
+    let img = imgTag(Card.img, Card.name, "card-img-top")
     return `<div class="col">
                 <div class="card">
-                    <img src="${Card.img}" loading="lazy"
-                         class="card-img-top"
-                         alt="${Card.name}"/>
+                    ${img}
                     <div class="card-body">
                         <h5 class="card-title">${Card.name}</h5>
                         <p class="card-text">
                             ${Card.context}
                         </p>
-                        ${a_format}
+                        ${a_tag}
                     </div>
                 </div>
             </div>`
 }
 
-const blockFormat = (Block) => `<a target="_blank" href="${Block.href}"> <img loading="lazy" src=${Block.img} alt="${Block.name}"/> </a>`
+const imgTag = (src, alt, _class = null, loading = "lazy") => {
+    if (_class !== null) {
+        return `<img class=${_class} src=${src} alt=${alt} loading=${loading} />`
+    }
+    return `<img src=${src} alt=${alt} loading=${loading} />`
+
+}
+
+const blockFormat = (Block) => {
+    let img = imgTag(Block.img, Block.name)
+    return `<a target="_blank" href="${Block.href}">${img}</a>`
+}
 
 const appendGallery = (ele) => {
     let app = document.querySelector(`.${ele}`);
