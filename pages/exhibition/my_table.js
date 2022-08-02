@@ -52,6 +52,12 @@ $.fn.dataTable.ext.buttons.tfam_exhibition = {
         dt.ajax.url(`${URL_SOURCE}tfam_exhibition.json`).load()
     }
 };
+$.fn.dataTable.ext.buttons.tmc_exhibition = {
+    text: '台北流行音樂中心',
+    action: function (e, dt, node, config) {
+        dt.ajax.url(`${URL_SOURCE}tmc_exhibition.json`).load()
+    }
+};
 
 
 $.fn.dataTable.ext.buttons.books_exhibition = {
