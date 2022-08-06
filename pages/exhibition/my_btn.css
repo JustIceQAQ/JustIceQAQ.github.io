@@ -79,4 +79,6 @@ img {
     border-color: #F39800;
 }
 
-
+td{
+    word-wrap:break-word;
+}
