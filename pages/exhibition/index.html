@@ -64,7 +64,7 @@
     <div class="row">
         <div class="col">
             <table id="exhibition" class="display responsive nowrap caption-top" style="width:100%">
-                <caption class="lead text-decoration-underline" style="color: black"></caption>
+                <caption class="lead text-decoration-underline" style="color: black;text-align: center"></caption>
                 <thead>
                 <tr>
                     <th>展覽名稱</th>
@@ -108,12 +108,16 @@
 <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js"></script>
 <script type="text/javascript"
         src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.html5.min.js"></script>
+<!--<script src="https://momentjs.com/downloads/moment.min.js"></script>-->
+<script src="https://momentjs.com/downloads/moment-with-locales.min.js"></script>
 
 <script src="my_table.js"></script>
 
 
 <script>
+    moment.locale('zh-tw');
     $(document).ready(function () {
+
         $('#exhibition').DataTable({
             dom: 'Bfrtip',
             processing: true,
@@ -171,7 +175,8 @@
     });
 
     const formatDate = (dateString) => {
-        return new Date(dateString).toLocaleString()
+        let date = moment(dateString);
+        return `${date.fromNow()} (${new Date(dateString).toLocaleString()})`
     }
 
 
