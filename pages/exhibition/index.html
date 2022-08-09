@@ -149,8 +149,10 @@
         const isEnabled = DarkReader.isEnabled();
         if (isEnabled) {
             DarkReader.auto(false);
+            $("link[href='dark_mode_fix.css']").remove();
         } else {
             DarkReader.auto(true);
+            $('head').append('<link rel="stylesheet" type="text/css" href="dark_mode_fix.css">');
         }
     }
 
@@ -158,9 +160,12 @@
     $(document).ready(function () {
         const isEnabled = DarkReader.isEnabled();
         if (isEnabled) {
+            $('head').append('<link rel="stylesheet" type="text/css" href="dark_mode_fix.css">');
             $("#flexSwitchCheckChecked").prop('checked', true);
         } else {
+            $("link[href='dark_mode_fix.css']").remove();
             $("#flexSwitchCheckChecked").prop('checked', false);
+
         }
 
 
