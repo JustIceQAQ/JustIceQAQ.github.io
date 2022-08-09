@@ -59,8 +59,9 @@
             margin: 10px;
         }
     </style>
-    <script src="https://cdn.jsdelivr.net/npm/darkreader@4.9.52/darkreader.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/darkreader@latest/darkreader.min.js"></script>
     <script>
+        DarkReader.setFetchMethod(window.fetch)
         DarkReader.auto({
             brightness: 100,
             contrast: 90,
