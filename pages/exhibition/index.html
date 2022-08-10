@@ -40,6 +40,7 @@
     <link rel="stylesheet" type="text/css" crossorigin="anonymous"
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
           href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <link rel="stylesheet" type="text/css" href="my_btn.css">
     <style>
         table.dataTable.dtr-inline.collapsed > tbody > tr > td.dtr-control,
@@ -190,7 +191,12 @@
                     }
                 },
                 {data: 'date'},
-                {data: 'address'},
+                {
+                    data: 'address',
+                    render: function (data, type, row) {
+                        return `<div style="width:18rem;white-space:normal;word-break:break-all;">${data}</div>`
+                    }
+                },
                 {data: 'systematics'},
             ],
             columnDefs: [
@@ -211,6 +217,7 @@
                 {extend: 'songshanculturalpark_exhibition', className: 'btn btn-songshanculturalpark'},
                 {extend: 'tfam_exhibition', className: 'btn btn-tfam'},
                 {extend: 'tmc_exhibition', className: "btn btn-tmc"},
+                {extend: 'nmh_exhibition', className: "btn btn-nmh"},
                 {extend: 'books_exhibition', className: "btn btn-books"},
                 {extend: 'udnfunlife_exhibition', className: "btn btn-udnfunlife"},
 
@@ -219,7 +226,14 @@
                 if (settings.json !== undefined) {
                     let last_update = settings.json["last_update"];
                     let informationFullName = settings.json["information"]["fullname"]
-                    $('#exhibition > caption').text(`<${informationFullName}> 最後更新時間: ${formatDate(last_update)}`)
+                    let externalLink = settings.json["information"]["external_link"]
+                    let externaLinkEle = ""
+                    if (externalLink !== undefined) {
+                        externaLinkEle = `<a href="${externalLink}" target="_blank"><i class="bi bi-box-arrow-up-right" style="font-size: 2rem"></i></a>`;
+                    }
+                    $('#exhibition > caption').html(
+                        `<${informationFullName}> 最後更新時間: ${formatDate(last_update)} ${externaLinkEle}`
+                    )
                 }
             }
         });

@@ -59,6 +59,13 @@ $.fn.dataTable.ext.buttons.tmc_exhibition = {
     }
 };
 
+$.fn.dataTable.ext.buttons.nmh_exhibition = {
+    text: '國立歷史博物館',
+    action: function (e, dt, node, config) {
+        dt.ajax.url(`${URL_SOURCE}nmh_exhibition.json`).load()
+    }
+};
+
 
 $.fn.dataTable.ext.buttons.books_exhibition = {
     text: '博客來售票網',

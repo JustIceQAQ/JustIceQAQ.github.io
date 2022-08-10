@@ -79,6 +79,12 @@ img {
     border-color: #F39800;
 }
 
-td{
-    word-wrap:break-word;
+.btn-nmh {
+    color: #fff;
+    background-color: #8b3a47;
+    border-color: #8b3a47;
+}
+
+td {
+    word-wrap: break-word;
 }
