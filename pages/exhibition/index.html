@@ -86,7 +86,7 @@
     </div>
     <div class="row">
         <div class="col">
-            <table id="exhibition" class="display responsive nowrap caption-top" style="width:100%">
+            <table id="exhibition" class="table align-middle display responsive nowrap caption-top" style="width:100%">
                 <caption class="lead text-decoration-underline" style="color: black;text-align: center"></caption>
                 <thead>
                 <tr>
@@ -146,14 +146,19 @@
 
 
 <script>
+    const changeThemeMode = (modeA, modelB) => {
+        $(`link[href='${modeA}]']`).remove();
+        $('head').append(`<link rel="stylesheet" type="text/css" href="${modelB}">`);
+    }
+
     const modeSwitch = () => {
         const isEnabled = DarkReader.isEnabled();
         if (isEnabled) {
             DarkReader.auto(false);
-            $("link[href='dark_mode_fix.css']").remove();
+            changeThemeMode('dark_mode_fix.css', "light_mode_fix.css")
         } else {
             DarkReader.auto(true);
-            $('head').append('<link rel="stylesheet" type="text/css" href="dark_mode_fix.css">');
+            changeThemeMode("light_mode_fix.css", 'dark_mode_fix.css')
         }
     }
 
@@ -161,10 +166,10 @@
     $(document).ready(function () {
         const isEnabled = DarkReader.isEnabled();
         if (isEnabled) {
-            $('head').append('<link rel="stylesheet" type="text/css" href="dark_mode_fix.css">');
+            changeThemeMode("light_mode_fix.css", 'dark_mode_fix.css')
             $("#flexSwitchCheckChecked").prop('checked', true);
         } else {
-            $("link[href='dark_mode_fix.css']").remove();
+            changeThemeMode('dark_mode_fix.css', "light_mode_fix.css")
             $("#flexSwitchCheckChecked").prop('checked', false);
 
         }
@@ -200,7 +205,7 @@
                 {data: 'systematics'},
             ],
             columnDefs: [
-                {targets: 0, responsivePriority: 1},
+                {targets: 0, responsivePriority: 1, className: 'table-bordered'},
                 {targets: 1, responsivePriority: 10002},
                 {targets: 2, responsivePriority: 1},
                 {targets: 3, responsivePriority: 2},
