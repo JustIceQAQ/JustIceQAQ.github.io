@@ -66,6 +66,13 @@ $.fn.dataTable.ext.buttons.nmh_exhibition = {
     }
 };
 
+$.fn.dataTable.ext.buttons.twtc_exhibition = {
+    text: '台北世貿中心',
+    action: function (e, dt, node, config) {
+        dt.ajax.url(`${URL_SOURCE}twtc_exhibition.json`).load()
+    }
+};
+
 
 $.fn.dataTable.ext.buttons.books_exhibition = {
     text: '博客來售票網',

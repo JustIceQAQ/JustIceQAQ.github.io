@@ -85,6 +85,12 @@ img {
     border-color: #8b3a47;
 }
 
+.btn-twtc {
+    color: #fff;
+    background-color: #ef5923;
+    border-color: #ef5923;
+}
+
 td {
     word-wrap: break-word;
 }
