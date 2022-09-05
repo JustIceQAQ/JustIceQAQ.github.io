@@ -44,6 +44,7 @@ const SKILL = {
     ],
     "Frontend_Development": [
         new Block("Bootstrap", "https://getbootstrap.com/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original-wordmark.svg"),
+        new Block("Materializecss", "https://materializecss.com/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/materialui/materialui-original.svg"),
         new Block("html5", "https://whatwg.org/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original-wordmark.svg"),
         new Block("css3", "https://www.w3.org/Style/CSS/Overview.en.html", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original-wordmark.svg"),
         new Block("jQuery", "https://jquery.com/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-original-wordmark.svg"),
@@ -74,7 +75,7 @@ const SKILL = {
         new Block("MinIO", "https://min.io/", "https://www.vectorlogo.zone/logos/minioio/minioio-ar21.svg")
     ],
     "DataVisualization": [
-        new Block("ChartJs", "https://www.chartjs.org", "https://www.chartjs.org/media/logo-title.svg")
+        new Block("ChartJs", "https://www.chartjs.org", "https://www.chartjs.org/media/logo-title.svg"),
     ],
     "Devops": [
         new Block("Docker", "https://www.docker.com/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original-wordmark.svg"),
@@ -114,11 +115,12 @@ const SKILL = {
 
     ],
     "Web_Crawler": [
-        new Block("requests", "https://requests.readthedocs.io", "https://docs.python-requests.org/en/latest/_static/requests-sidebar.png"),
+        new Block("requests", "https://requests.readthedocs.io", "https://requests.readthedocs.io/en/latest/_static/requests-sidebar.png"),
+        new Block("httpx", "https://www.python-httpx.org/", "https://raw.githubusercontent.com/encode/httpx/master/docs/img/logo.jpg"),
         new Block("aiohttp", "https://docs.aiohttp.org/en/stable/index.html", "https://docs.aiohttp.org/en/stable/_static/aiohttp-plain.svg"),
         new Block("BeautifulSoup", "https://www.crummy.com/software/BeautifulSoup/", imagesFromGoogleDrive("18L0diSP6a_prRoGjQaGjJAwkDk7LVQl0")),
         new Block("Scrapy", "https://scrapy.org", imagesFromGoogleDrive("1_jNHjx4T6Z2ZLUEqynWR-FsuUKwYTa_B")),
-
+        new Block("pyppeteer", "https://pyppeteer.github.io/pyppeteer/", "https://static.zhangkunzhi.com/images/puppeteer.png"),
     ],
     "IDE": [
         new Block("Pycharm", "https://www.jetbrains.com/pycharm/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pycharm/pycharm-original.svg"),
