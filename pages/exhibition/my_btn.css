@@ -91,6 +91,13 @@ img {
     border-color: #ef5923;
 }
 
+
+.btn-mwr {
+    color: #fff;
+    background-color: #b01f23;
+    border-color: #b01f23;
+}
+
 td {
     word-wrap: break-word;
 }

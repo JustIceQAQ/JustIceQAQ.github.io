@@ -87,4 +87,10 @@ $.fn.dataTable.ext.buttons.udnfunlife_exhibition = {
     }
 };
 
+$.fn.dataTable.ext.buttons.mwr_exhibition = {
+    text: '世界宗教博物館',
+    action: function (e, dt, node, config) {
+        dt.ajax.url(`${URL_SOURCE}mwr_exhibition.json`).load()
+    }
+};
 
