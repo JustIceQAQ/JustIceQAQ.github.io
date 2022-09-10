@@ -263,16 +263,29 @@ const SIDE_PROJECT = [
                     <li>另針對如 PTT、博弈關鍵字等 進行 Google Hacking Database GHDB 搜尋</li>
                     <li>服務部署於PaaS Railway 中</li>
                 </ul>`,
-        "https://let-me-have-a-look-this-company.up.railway.app/",
+        [
+            {key: "Railway", value: "https://let-me-have-a-look-this-company.up.railway.app/"},
+            {key: "Render", value: "https://let-me-have-a-look-this-company.onrender.com/"},
+        ],
         true
     ),
 ]
 // "https://via.placeholder.com/411x334"
 
 const cardFormat = (Card) => {
-    let a_tag = '';
+    let a_tags = '';
     if (Card.href !== null) {
-        a_tag = `<a target="_blank" href="${Card.href}" class="btn btn-myO">Web Link</a>`
+        if (Object.prototype.toString.call(Card.href) === "[object Array]") {
+            a_tags = Card.href.map((href, index) => {
+                if (typeof href === "string") {
+                    return `<a target="_blank" href="${href}" class="btn btn-myO">Web Link ${index}</a>`
+                } else if (typeof href === "object") {
+                    return `<a target="_blank" href="${href.value}" class="btn btn-myO">deployed on ${href.key}</a>`
+                }
+            }).join('')
+        } else if (typeof Card.href === "string") {
+            a_tags = `<a target="_blank" href="${Card.href}" class="btn btn-myO">Web Link</a>`
+        }
     }
     let img = imgTag(Card.img, Card.name, "card-img-top")
     return `<div class="col">
@@ -283,7 +296,9 @@ const cardFormat = (Card) => {
                         <p class="card-text">
                             ${Card.context}
                         </p>
-                        ${a_tag}
+                        <div>
+                        ${a_tags}
+                        </div>
                     </div>
                 </div>
             </div>`

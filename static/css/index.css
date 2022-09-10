@@ -27,10 +27,21 @@ a {
     color: var(--JustIceQAQ_Green);
 }
 
-.btn-myO {
+
+.btn-myO:nth-child(odd) {
+    margin-right: 5px;
+    margin-top: 5px;
     color: #fff;
     background-color: var(--JustIceQAQ_Green);
     border-color: var(--JustIceQAQ_Green);
+}
+
+.btn-myO:nth-child(even) {
+    margin-right: 5px;
+    margin-top: 5px;
+    color: #fff;
+    background-color: var(--JustIceQAQ_Orange);
+    border-color: var(--JustIceQAQ_Orange);
 }
 
 #skill-pills > div:nth-child(even) > div > div {
@@ -51,7 +62,7 @@ a {
 
 }
 
-.nav-justified .nav-item, .nav-justified>.nav-link {
+.nav-justified .nav-item, .nav-justified > .nav-link {
     flex-basis: 0;
     flex-grow: 1;
     text-align: center;
