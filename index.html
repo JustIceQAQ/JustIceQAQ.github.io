@@ -147,6 +147,16 @@
     </div>
     <!-- Pills content -->
 
+    <button
+            type="button"
+            class="btn btn-floating btn-lg"
+            id="btn-back-to-top">
+        <span class="iconify" data-icon="ant-design:arrow-up-outlined"
+              data-inline="false" data-width="1.5em"
+              data-height="1.5em"></span>
+    </button>
+
+
     <footer class="text-center text-white text-lg-left" style="background-color: var(--JustIceQAQ_Orange)">
         <!-- Copyright -->
         <div class="text-center p-3">
@@ -190,12 +200,32 @@
         "   JJ:::::::::JJ     uu::::::::uu:::u s:::::::::::ss          tt:::::::::::tti::::::i  cc:::::::::::::::c  ee:::::::::::::e     QQ:::::::::::Q   A:::::A                 A:::::A QQ:::::::::::Q\n" +
         "     JJJJJJJJJ         uuuuuuuu  uuuu  sssssssssss              ttttttttttt  iiiiiiii    cccccccccccccccc    eeeeeeeeeeeeee       QQQQQQQQ::::QQAAAAAAA                   AAAAAAA  QQQQQQQQ::::QQ\n" +
         "        ")
-    Mousetrap.bind('h u r c s h', function () {
-        window.open('https://sh.hurc.org.tw/', '_blank').focus();
-    });
-    Mousetrap.bind('h u r c u r', function () {
-        window.open('https://ur.hurc.org.tw/', '_blank').focus();
-    });
+
+    let mybutton = document.getElementById("btn-back-to-top");
+
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function () {
+        scrollFunction();
+    };
+
+    function scrollFunction() {
+        if (
+            document.body.scrollTop > 200 ||
+            document.documentElement.scrollTop > 200
+        ) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+    }
+    // When the user clicks on the button, scroll to the top of the document
+    mybutton.addEventListener("click", backToTop);
+
+    function backToTop() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+
 
 </script>
 </html>
