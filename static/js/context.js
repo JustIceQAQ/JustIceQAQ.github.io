@@ -29,12 +29,12 @@ const SKILL = {
         new Block("Golang", "https://go.dev/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg")
     ],
     "Framework": [
-        new Block("Django", "https://www.djangoproject.com/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain-wordmark.svg"),
+        new Block("Django", "https://www.djangoproject.com/", "https://i.imgur.com/9cfCjtr.webp"),
         new Block("Django Rest Framework", "https://www.django-rest-framework.org", imagesFromGoogleDrive("1NUZB4bUhcGMWbCyWIdqJM7UuSsDSnUWE")),
-        new Block("Flask", "https://flask.palletsprojects.com/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg"),
+        new Block("Flask", "https://flask.palletsprojects.com/", "https://i.imgur.com/GxX0E3Z.webp"),
         new Block("FastAPI", "https://fastapi.tiangolo.com/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg"),
         new Block("Tornado", "https://www.tornadoweb.org", imagesFromGoogleDrive("1-OU-ourDguRNj5jSOgoHXe2K26uVkImU")),
-        new Block("Sanic", "https://sanicframework.org/", "https://raw.githubusercontent.com/sanic-org/sanic-assets/master/png/sanic-framework-logo-circle-128x128.png"),
+        new Block("Sanic", "https://sanicframework.org/", "https://i.imgur.com/mp5jLhD.webp"),
 
 
         new Block("dotnet", "https://zh.wikipedia.org/wiki/.NET", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original-wordmark.svg"),
@@ -115,7 +115,7 @@ const SKILL = {
 
     ],
     "Web_Crawler": [
-        new Block("requests", "https://requests.readthedocs.io", "https://requests.readthedocs.io/en/latest/_static/requests-sidebar.png"),
+        new Block("requests", "https://requests.readthedocs.io", "https://i.imgur.com/KASUQRV.webp"),
         new Block("httpx", "https://www.python-httpx.org/", "https://raw.githubusercontent.com/encode/httpx/master/docs/img/logo.jpg"),
         new Block("aiohttp", "https://docs.aiohttp.org/en/stable/index.html", "https://docs.aiohttp.org/en/stable/_static/aiohttp-plain.svg"),
         new Block("BeautifulSoup", "https://www.crummy.com/software/BeautifulSoup/", imagesFromGoogleDrive("18L0diSP6a_prRoGjQaGjJAwkDk7LVQl0")),
