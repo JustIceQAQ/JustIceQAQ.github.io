@@ -1,96 +1,95 @@
 const URL_SOURCE = "https://raw.githubusercontent.com/JustIceQAQ/been_playing/develop/data/"
-$.fn.dataTable.ext.buttons.huashan1914_exhibition = {
-    text: '華山1914文化創意產業園區',
-    action: function (e, dt, node, config) {
-        dt.ajax.url(`${URL_SOURCE}huashan1914_exhibition.json`).load()
-    }
-};
 
-$.fn.dataTable.ext.buttons.cksmh_exhibition = {
-    text: '中正紀念堂',
-    action: function (e, dt, node, config) {
-        dt.ajax.url(`${URL_SOURCE}cksmh_exhibition.json`).load()
+class Exhibition {
+    constructor(topic, name, buttonStyle) {
+        this.topic = topic;
+        this.name = name;
+        this.buttonStyle = buttonStyle
     }
-};
+}
 
-$.fn.dataTable.ext.buttons.mocataipei_exhibition = {
-    text: '台北當代藝術館',
-    action: function (e, dt, node, config) {
-        dt.ajax.url(`${URL_SOURCE}mocataipei_exhibition.json`).load()
+class ButtonStyle {
+    constructor(color, backgroundColor, borderColor) {
+        this.color = color;
+        this.backgroundColor = backgroundColor;
+        this.borderColor = borderColor;
     }
-};
+}
 
-$.fn.dataTable.ext.buttons.npm_exhibition = {
-    text: '國立故宮博物院',
-    action: function (e, dt, node, config) {
-        dt.ajax.url(`${URL_SOURCE}npm_exhibition.json`).load()
-    }
-};
-
-$.fn.dataTable.ext.buttons.ntm_exhibition = {
-    text: '國立臺灣博物館',
-    action: function (e, dt, node, config) {
-        dt.ajax.url(`${URL_SOURCE}ntm_exhibition.json`).load()
-    }
-};
-
-$.fn.dataTable.ext.buttons.ntsec_exhibition = {
-    text: '國立臺灣科學教育館',
-    action: function (e, dt, node, config) {
-        dt.ajax.url(`${URL_SOURCE}ntsec_exhibition.json`).load()
-    }
-};
-$.fn.dataTable.ext.buttons.songshanculturalpark_exhibition = {
-    text: '松山文創園區',
-    action: function (e, dt, node, config) {
-        dt.ajax.url(`${URL_SOURCE}songshanculturalpark_exhibition.json`).load()
-    }
-};
-$.fn.dataTable.ext.buttons.tfam_exhibition = {
-    text: '臺北市立美術館',
-    action: function (e, dt, node, config) {
-        dt.ajax.url(`${URL_SOURCE}tfam_exhibition.json`).load()
-    }
-};
-$.fn.dataTable.ext.buttons.tmc_exhibition = {
-    text: '台北流行音樂中心',
-    action: function (e, dt, node, config) {
-        dt.ajax.url(`${URL_SOURCE}tmc_exhibition.json`).load()
-    }
-};
-
-$.fn.dataTable.ext.buttons.nmh_exhibition = {
-    text: '國立歷史博物館',
-    action: function (e, dt, node, config) {
-        dt.ajax.url(`${URL_SOURCE}nmh_exhibition.json`).load()
-    }
-};
-
-$.fn.dataTable.ext.buttons.twtc_exhibition = {
-    text: '台北世貿中心',
-    action: function (e, dt, node, config) {
-        dt.ajax.url(`${URL_SOURCE}twtc_exhibition.json`).load()
-    }
-};
+const exhibitionTopicClass = [
+    new Exhibition("huashan1914_exhibition", "華山1914文化創意產業園區",
+        new ButtonStyle("#fff", "#437321", "#437321")
+    ),
+    new Exhibition("mocataipei_exhibition", "台北當代藝術館",
+        new ButtonStyle("#fff", "#E83434", "#E83434")
+    ),
+    new Exhibition("cksmh_exhibition", "中正紀念堂",
+        new ButtonStyle("#fff", "#04a1ae", "#04a1ae")
+    ),
+    new Exhibition("mocataipei_exhibition", "台北當代藝術館",
+        new ButtonStyle("#fff", "#E83434", "#E83434")
+    ),
+    new Exhibition("npm_exhibition", "國立故宮博物院",
+        new ButtonStyle("#fff", "#7D0000", "#7D0000")
+    ),
+    new Exhibition("ntm_exhibition", "國立臺灣博物館",
+        new ButtonStyle("#fff", "#313131", "#313131")
+    ),
+    new Exhibition("ntsec_exhibition", "國立臺灣科學教育館",
+        new ButtonStyle("#fff", "#FAA61A", "#33C0C4")
+    ),
+    new Exhibition("songshanculturalpark_exhibition", "松山文創園區",
+        new ButtonStyle("#fff", "#595758", "#F9DD00")
+    ),
+    new Exhibition("tfam_exhibition", "臺北市立美術館",
+        new ButtonStyle("#fff", "#2B2B2B", "#2B2B2B")
+    ),
+    new Exhibition("tmc_exhibition", "台北流行音樂中心",
+        new ButtonStyle("#fff", "#FF5000", "#00BBD3")
+    ),
+    new Exhibition("nmh_exhibition", "國立歷史博物館",
+        new ButtonStyle("#fff", "#8b3a47", "#8b3a47")
+    ),
+    new Exhibition("twtc_exhibition", "台北世貿中心",
+        new ButtonStyle("#fff", "#ef5923", "#ef5923")
+    ),
+    new Exhibition("books_exhibition", "博客來售票網",
+        new ButtonStyle("#fff", "#61C0B4", "#61C0B4")
+    ),
+    new Exhibition("udnfunlife_exhibition", "udn售票網",
+        new ButtonStyle("#fff", "#F39800", "#F39800")
+    ),
+    new Exhibition("mwr_exhibition", "世界宗教博物館",
+        new ButtonStyle("#fff;", "#b01f23", "#b01f23")
+    ),
+    new Exhibition("museum_post_exhibition", "郵政博物館",
+        new ButtonStyle("#fff", "#e6121c", "#12429c")
+    )
+]
 
 
-$.fn.dataTable.ext.buttons.books_exhibition = {
-    text: '博客來售票網',
-    action: function (e, dt, node, config) {
-        dt.ajax.url(`${URL_SOURCE}books_exhibition.json`).load()
-    }
-};
-$.fn.dataTable.ext.buttons.udnfunlife_exhibition = {
-    text: 'udn售票網',
-    action: function (e, dt, node, config) {
-        dt.ajax.url(`${URL_SOURCE}udnfunlife_exhibition.json`).load()
-    }
-};
+const customizeButtons = exhibitionTopicClass.map((exhibition) => {
+    return {extend: exhibition.topic, className: `btn btn-${exhibition.topic}`}
+})
 
-$.fn.dataTable.ext.buttons.mwr_exhibition = {
-    text: '世界宗教博物館',
-    action: function (e, dt, node, config) {
-        dt.ajax.url(`${URL_SOURCE}mwr_exhibition.json`).load()
+
+exhibitionTopicClass.map((exhibition) => {
+    $.fn.dataTable.ext.buttons[exhibition.topic] = {
+        text: exhibition.name,
+        action: function (e, dt, node, config) {
+            dt.ajax.url(`${URL_SOURCE}${exhibition.topic}.json`).load()
+        }
     }
-};
+})
+
+const style = document.createElement('style');
+style.type = 'text/css';
+
+style.innerHTML = exhibitionTopicClass.map((exhibition) => {
+    return `.btn-${exhibition.topic} {color:${exhibition.buttonStyle.color};background-color:${exhibition.buttonStyle.backgroundColor};border-color:${exhibition.buttonStyle.borderColor}}`
+}).join(" ")
+document.getElementsByTagName('head')[0].appendChild(style);
+
+
+
 
