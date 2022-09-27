@@ -31,16 +31,29 @@
 
     <title>Been Play</title>
 
-    <link rel="stylesheet" type="text/css"
-          href="https://cdn.datatables.net/v/dt/dt-1.12.1/datatables.min.css"/>
-    <link rel="stylesheet" type="text/css"
-          href="https://cdn.datatables.net/responsive/2.3.0/css/responsive.bootstrap5.min.css"/>
-    <link rel="stylesheet" type="text/css"
-          href="https://cdn.datatables.net/buttons/2.2.3/css/buttons.bootstrap5.min.css"/>
-    <link rel="stylesheet" type="text/css" crossorigin="anonymous"
-          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/css/jquery.dataTables.min.css"
+          integrity="sha512-1k7mWiTNoyx2XtmI96o+hdjP8nn0f3Z2N4oF/9ZZRgijyV4omsKOXEnqL1gKQNPy2MTSP9rIEWGcH/CInulptA=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/datatables.net-responsive-bs5/2.3.0/responsive.bootstrap5.min.css"
+          integrity="sha512-F4qNDxOqSXOoJ5LuO78wdzZGb4BcUqF6+o+FYjgp4hFElfceMljk5a6RnVluCJS7SrEkIZyThWJjC60DMXmzJw=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/datatables.net-buttons-bs5/2.2.3/buttons.bootstrap5.min.css"
+          integrity="sha512-VX0h3jcn1Oc0lFy0aRxuq6U/tTk/6Ryurar5O3Az2DHLA1mpURv2Zgzl5MJJ5weChE7rdlsiB/ka5rUstkTN8g=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.1/css/bootstrap.min.css"
+          integrity="sha512-siwe/oXMhSjGCwLn+scraPOWrJxHlUgMBMZXdPe2Tnk3I0x3ESCoLz7WZ5NTH6SZrywMY+PB1cjyqJ5jAluCOg=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.9.1/font/bootstrap-icons.min.css"
+          integrity="sha512-5PV92qsds/16vyYIJo3T/As4m2d8b6oWYfoqV+vtizRB6KhF1F9kYzWzQmsO6T3z3QG2Xdhrx7FQ+5R1LiQdUA=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <style>
         table.dataTable.dtr-inline.collapsed > tbody > tr > td.dtr-control,
         table.dataTable.dtr-inline.collapsed > tbody > tr > th.dtr-control {
@@ -56,7 +69,7 @@
         }
 
         .dt-buttons > button {
-            margin: 10px;
+            margin: 8px;
         }
 
         img {
@@ -137,7 +150,10 @@
 
 
 </body>
-<script src="https://cdn.jsdelivr.net/npm/darkreader@latest/darkreader.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/darkreader/4.9.58/darkreader.min.js"
+        integrity="sha512-VU2WQDwarmassdMJUeWnlq0cSCmM0zkhLNa7UM22YOm06Y3vCEHW8jAywgleU0qnqXY1nQB0dFVH6HZkucyEKA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 <script>
     DarkReader.setFetchMethod(window.fetch)
     DarkReader.auto({
@@ -147,18 +163,27 @@
     });
 </script>
 
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+        integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ajax-localstorage-cache/2.0.1/jalc.min.js"
         integrity="sha512-rhkfBTfRYBjxSBE4XxMUyDQ2kBXDrI/lIXHnyF2VB26pUiq3H4qZzsi+HQGtaxuJweoOuNyp031LUepkRy5tZA=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.12.1/datatables.min.js"></script>
+
 <script type="text/javascript"
         src="https://cdn.datatables.net/responsive/2.3.0/js/dataTables.responsive.min.js"></script>
+
 <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js"></script>
 <script type="text/javascript"
         src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.html5.min.js"></script>
-<script src="https://momentjs.com/downloads/moment-with-locales.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/idb@7/build/umd.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment-with-locales.min.js"
+        integrity="sha512-42PE0rd+wZ2hNXftlM78BSehIGzezNeQuzihiBCvUEB3CVxHvsShF86wBWwQORNxNINlBPuq7rG4WWhNiTVHFg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 <script src="my_table.js"></script>
 
 

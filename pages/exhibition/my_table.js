@@ -26,9 +26,6 @@ const exhibitionTopicClass = [
     new Exhibition("cksmh_exhibition", "中正紀念堂",
         new ButtonStyle("#fff", "#04a1ae", "#04a1ae")
     ),
-    new Exhibition("mocataipei_exhibition", "台北當代藝術館",
-        new ButtonStyle("#fff", "#E83434", "#E83434")
-    ),
     new Exhibition("npm_exhibition", "國立故宮博物院",
         new ButtonStyle("#fff", "#7D0000", "#7D0000")
     ),
