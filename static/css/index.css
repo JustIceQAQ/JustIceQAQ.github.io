@@ -78,3 +78,9 @@ a {
     border-color: var(--JustIceQAQ_Green);
     color: white;
 }
+
+.card-img-top{
+    width: 414px;
+    height: 336px;
+    background: url("../img/loading.png") no-repeat scroll 0 0;
+}
