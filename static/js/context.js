@@ -235,11 +235,10 @@ const WORKED_PROJECT = [
     )
 ]
 
-
 const SIDE_PROJECT = [
     new Card(
         "到處看展覽",
-        imagesFromGoogleDrive("1P-lJazZbtXR64NETYpprAYA2j0PhWB2U"),
+        imagesFromGoogleDrive("1B0TI4wVRXUNuVkvMR4_EKDvOSH053JSF"),
         `<ul>
                     <li>使用Python 爬蟲針對數個 文創園區/博物館/售票網 網站來爬取相關展覽</li>
                     <li>資料更新透過 github action 定時排程更新</li>
@@ -250,7 +249,7 @@ const SIDE_PROJECT = [
     ),
     new Card(
         "Let Me Have a Look This Company (讓我看看！ 這家公司！)",
-        imagesFromGoogleDrive("1bridom_whO-etjjTx98wX72wv8-ptGTQ"),
+        imagesFromGoogleDrive("1fk6nWQzDg09MNmewkSnJ69_e4fXSZjb2"),
         `<ul>
                     <li>使用Python FastAPI，針對輸入的公司名稱進行爬蟲</li>
                     <li>爬蟲標的包含
