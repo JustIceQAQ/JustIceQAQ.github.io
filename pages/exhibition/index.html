@@ -184,6 +184,10 @@
         integrity="sha512-42PE0rd+wZ2hNXftlM78BSehIGzezNeQuzihiBCvUEB3CVxHvsShF86wBWwQORNxNINlBPuq7rG4WWhNiTVHFg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.37/moment-timezone-with-data-2012-2022.min.js"
+        integrity="sha512-8Qkh6To/T2f66DV4VGbRwjLNdsiYnx02iwsyobMVGC5IeyLBlny8hHEGypFdkB3n7YpAnx5rsescbHyDNIV9Sw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 <script src="my_table.js"></script>
 
 
@@ -275,10 +279,10 @@
             }
         });
     });
-
+    const LOCALTZ = moment.tz.guess()
     const formatDate = (dateString) => {
-        let date = moment(dateString);
-        return `${date.fromNow()} (${new Date(dateString).toLocaleString()})`
+        let date = moment(dateString).tz(LOCALTZ);
+        return `${date.fromNow()} (${date.format("LLLL")})`
     }
 
 
