@@ -50,18 +50,18 @@ const exhibitionTopicClass = [
     new Exhibition("twtc_exhibition", "台北世貿中心",
         new ButtonStyle("#fff", "#ef5923", "#ef5923")
     ),
+    new Exhibition("mwr_exhibition", "世界宗教博物館",
+        new ButtonStyle("#fff", "#b01f23", "#b01f23")
+    ),
+    new Exhibition("museum_post_exhibition", "郵政博物館",
+        new ButtonStyle("#fff", "#e6121c", "#12429c")
+    ),
     new Exhibition("books_exhibition", "博客來售票網",
         new ButtonStyle("#fff", "#61C0B4", "#61C0B4")
     ),
     new Exhibition("udnfunlife_exhibition", "udn售票網",
         new ButtonStyle("#fff", "#F39800", "#F39800")
     ),
-    new Exhibition("mwr_exhibition", "世界宗教博物館",
-        new ButtonStyle("#fff;", "#b01f23", "#b01f23")
-    ),
-    new Exhibition("museum_post_exhibition", "郵政博物館",
-        new ButtonStyle("#fff", "#e6121c", "#12429c")
-    )
 ]
 
 

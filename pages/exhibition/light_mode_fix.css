@@ -48,3 +48,7 @@
 #exhibition > tbody > tr > td {
     border-color: #2B2B2B !important;
 }
+
+.card{
+    color: black;
+}

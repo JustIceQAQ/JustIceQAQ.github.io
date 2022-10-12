@@ -114,7 +114,13 @@
     <div class="row">
         <div class="col">
             <table id="exhibition" class="table align-middle display responsive nowrap caption-top" style="width:100%">
-                <caption class="lead text-decoration-underline" style="color: black;text-align: center"></caption>
+                <caption>
+                    <div class="card bg-warning">
+                        <h5 class="card-header caption-card-header"></h5>
+                        <div class="card-body caption-card-body"></div>
+                        <div class="card-footer caption-card-footer"></div>
+                    </div>
+                </caption>
                 <thead>
                 <tr>
                     <th>展覽名稱</th>
@@ -270,11 +276,20 @@
                     let externalLink = settings.json["information"]["external_link"]
                     let externaLinkEle = ""
                     if (externalLink !== undefined) {
-                        externaLinkEle = `<a href="${externalLink}" target="_blank"><i class="bi bi-box-arrow-up-right" style="font-size: 2rem"></i></a>`;
+                        externaLinkEle = `<a class="btn btn-secondary" href="${externalLink}" target="_blank"><strong><i class="bi bi-box-arrow-up-right"></i></strong></a>`;
                     }
-                    $('#exhibition > caption').html(
-                        `《${informationFullName}》<br> 最後更新時間: ${formatDate(last_update)} ${externaLinkEle}`
-                    )
+                    let opening = ""
+                    if (settings.json["visit"] !== undefined) {
+                        opening = settings.json["visit"]["opening"]
+                    }
+
+                    $(".caption-card-header").html(`《${informationFullName}》${externaLinkEle}`)
+                    if (opening !== undefined && opening !== "") {
+                        $(".caption-card-body").html(`${opening}`)
+                    }else{
+                        $(".caption-card-body").empty()
+                    }
+                    $(".caption-card-footer").html(`資料更新時間: ${formatDate(last_update)}`)
                 }
             }
         });
