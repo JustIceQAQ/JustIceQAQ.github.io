@@ -265,7 +265,7 @@ const SIDE_PROJECT = [
         [
             {key: "Railway", value: "https://let-me-have-a-look-this-company.up.railway.app/"},
             {key: "Render", value: "https://let-me-have-a-look-this-company.onrender.com/"},
-            {kay: "Deta", value: "https://5p4dqz.deta.dev/"},
+            {key: "Deta", value: "https://5p4dqz.deta.dev/"}
         ],
         true
     ),
@@ -280,6 +280,7 @@ const cardFormat = (Card) => {
                 if (typeof href === "string") {
                     return `<a target="_blank" href="${href}" class="btn btn-myO">Web Link ${index}</a>`
                 } else if (typeof href === "object") {
+                    console.log(href.key)
                     return `<a target="_blank" href="${href.value}" class="btn btn-myO">deployed on ${href.key}</a>`
                 }
             }).join('')
