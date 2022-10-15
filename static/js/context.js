@@ -260,11 +260,12 @@ const SIDE_PROJECT = [
                             <li><a href="https://twjobs.net" target="_blank">台灣薪資情報網</a></li>
                         </ul>
                     <li>另針對如 PTT、博弈關鍵字等 進行 Google Hacking Database GHDB 搜尋</li>
-                    <li>服務部署於PaaS Railway 中</li>
+                    <li>服務部署於Railway, Render 與 Deta 中</li>
                 </ul>`,
         [
             {key: "Railway", value: "https://let-me-have-a-look-this-company.up.railway.app/"},
             {key: "Render", value: "https://let-me-have-a-look-this-company.onrender.com/"},
+            {kay: "Deta", value: "https://5p4dqz.deta.dev/"},
         ],
         true
     ),
