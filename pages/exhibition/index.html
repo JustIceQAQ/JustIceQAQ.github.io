@@ -285,7 +285,7 @@
 
                     $(".caption-card-header").html(`《${informationFullName}》${externaLinkEle}`)
                     if (opening !== undefined && opening !== "") {
-                        $(".caption-card-body").html(`${opening}`)
+                        $(".caption-card-body").html(`${opening.replaceAll('\n', '<br>')}`)
                     }else{
                         $(".caption-card-body").empty()
                     }
