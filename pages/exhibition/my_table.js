@@ -59,6 +59,9 @@ const exhibitionTopicClass = [
     new Exhibition("jam_exhibition", "忠泰美術館",
         new ButtonStyle("#3c3d30", "#00d186", "#00d186")
     ),
+    new Exhibition("ncpi_exhibition", "國家攝影文化中心",
+        new ButtonStyle("#fff", "#000001", "#000001")
+    ),
 
     new Exhibition("books_exhibition", "博客來售票網",
         new ButtonStyle("#fff", "#61C0B4", "#61C0B4")
