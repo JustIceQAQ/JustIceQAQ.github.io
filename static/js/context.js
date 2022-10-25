@@ -254,6 +254,7 @@ const SIDE_PROJECT = [
                     <li>使用Python FastAPI，針對輸入的公司名稱進行爬蟲</li>
                     <li>爬蟲標的包含
                         <ul>
+                            <li><a href="https://announcement.mol.gov.tw/" target="_blank">違反勞動法令事業單位（雇主）查詢</a></li>
                             <li><a href="https://findbiz.nat.gov.tw/fts/query/QueryBar/queryInit.do" target="_blank">商工登記公示資料查詢服務</a></li>
                             <li><a href="https://www.qollie.com" target="_blank">Qollie</a></li>
                             <li><a href="https://www.goodjob.life" target="_blank">GoodJob</a></li>
