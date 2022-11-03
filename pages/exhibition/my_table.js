@@ -69,6 +69,9 @@ const exhibitionTopicClass = [
     new Exhibition("udnfunlife_exhibition", "udn售票網",
         new ButtonStyle("#fff", "#F39800", "#F39800")
     ),
+    new Exhibition("opentix_exhibition", "OPENTIX兩廳院生活文化",
+        new ButtonStyle("#fff", "#e75234", "#e75234")
+    ),
 ]
 
 
