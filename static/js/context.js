@@ -256,7 +256,7 @@ const SIDE_PROJECT = [
                         <ul>
                             <li><a href="https://announcement.mol.gov.tw/" target="_blank">違反勞動法令事業單位（雇主）查詢</a></li>
                             <li><a href="https://findbiz.nat.gov.tw/fts/query/QueryBar/queryInit.do" target="_blank">商工登記公示資料查詢服務</a></li>
-                            <li><a href="https://www.etax.nat.gov.tw/etwmain/etw113w1/ban/query" target="_blank">財政部稅籍登記資料 (部分部屬環境提供)</a></li>
+                            <li><a href="https://www.etax.nat.gov.tw/etwmain/etw113w1/ban/query" target="_blank">財政部稅籍登記資料 (部分部署環境提供)</a></li>
                             <li><a href="https://www.qollie.com" target="_blank">Qollie</a></li>
                             <li><a href="https://www.goodjob.life" target="_blank">GoodJob</a></li>
                             <li><a href="https://twjobs.net" target="_blank">台灣薪資情報網</a></li>
