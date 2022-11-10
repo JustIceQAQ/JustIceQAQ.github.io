@@ -242,12 +242,19 @@
                 {
                     data: 'title',
                     render: function (data, type, row) {
+                        console.log(row)
+                        if (row.systematics === "BUG") {
+                            return "有些意料之外得事情發生了...😔，等我修好前請先直接去官網查看吧~"
+                        }
                         return `<a target="_blank" href="${row.source_url}"><div style="width:18rem;white-space:normal;word-break:break-all;">${data}</div></a>`
                     }
                 },
                 {
                     data: 'figure',
                     render: function (data, type, row) {
+                        if (row.systematics === "BUG") {
+                            return "😔"
+                        }
                         return '<img src="' + data + '" loading="lazy" />';
                     }
                 },
@@ -255,6 +262,9 @@
                 {
                     data: 'address',
                     render: function (data, type, row) {
+                        if (row.systematics === "BUG") {
+                            return "😔"
+                        }
                         return `<div style="width:18rem;white-space:normal;word-break:break-all;">${data}</div>`
                     }
                 },
@@ -291,6 +301,18 @@
                     }
                     $(".caption-card-footer").html(`資料更新時間: ${formatDate(last_update)}`)
                 }
+            },
+            createdRow: function (row, data, dataIndex) {
+                if (data.systematics === "BUG") {
+                    $('td:eq(0)', row).attr('colspan', 5);
+                    $('td:eq(1)', row).css('display', 'none');
+                    $('td:eq(3)', row).css('display', 'none');
+                    $('td:eq(2)', row).css('display', 'none');
+                    $('td:eq(4)', row).css('display', 'none');
+                    $('td:eq(0)', row).css({"text-align": "center", "font-size": "1.5rem"})
+                    $('td:eq(0)', row).addClass("table-danger")
+                }
+
             }
         });
     });
