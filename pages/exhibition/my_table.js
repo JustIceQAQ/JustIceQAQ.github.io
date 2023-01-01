@@ -74,6 +74,16 @@ const exhibitionTopicClass = [
     new Exhibition("opentix_exhibition", "OPENTIX兩廳院生活文化",
         new ButtonStyle("#fff", "#e75234", "#e75234")
     ),
+    new Exhibition("kktix_exhibition", "KKTIX",
+        new ButtonStyle("#fff", "#64be26", "#64be26")
+    ),
+    new Exhibition("ibon_exhibition", "ibon",
+        new ButtonStyle("#8fc120", "#3f3a3a", "#3f3a3a")
+    ),
+
+
+
+
 ]
 
 
