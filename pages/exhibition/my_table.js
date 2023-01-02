@@ -80,8 +80,9 @@ const exhibitionTopicClass = [
     new Exhibition("ibon_exhibition", "ibon",
         new ButtonStyle("#8fc120", "#3f3a3a", "#3f3a3a")
     ),
-
-
+    new Exhibition("kkday_exhibition", "KKDay",
+        new ButtonStyle("#fff", "#26bcc8", "#26bcc8")
+    ),
 
 
 ]
