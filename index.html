@@ -54,9 +54,9 @@
 
     <!--  CSS  -->
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.1/css/bootstrap.min.css"
-          integrity="sha512-siwe/oXMhSjGCwLn+scraPOWrJxHlUgMBMZXdPe2Tnk3I0x3ESCoLz7WZ5NTH6SZrywMY+PB1cjyqJ5jAluCOg=="
-          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0-alpha2/css/bootstrap.min.css" 
+    integrity="sha512-AJqlPMFVh36uw2D9RLPBfAVy0S7OFl7zCOnnZTs0WAtaRzv1lK7tMoGz7k586FulS00KTNsWNr/5IVhIzBlEow==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/justifiedGallery/3.8.1/css/justifiedGallery.min.css"
           integrity="sha512-CRFv/YVJyElHXTiMgnhWKd2f04Hd/BUJkwcyqYmlpL1ugSYW23nNRazLk960mlz7dugTrETCGGjcsnspPOS6qA=="
@@ -106,7 +106,7 @@
 
 
 </head>
-<body>
+<body data-bs-theme="auto">
 <!-- Google Tag Manager (noscript) -->
 <noscript>
     <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W2B9C87"
@@ -114,6 +114,15 @@
 </noscript>
 <!-- End Google Tag Manager (noscript) -->
 <div class="container">
+
+    <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand"></a>
+            <button class="btn shadow" id="btnSwitch">
+                <span class="iconify" id="themeIcon" data-icon="ph:sun-bold" data-inline="false"></span>
+            </button>
+        </div>
+      </nav>
     <!--    <button type="button" class="btn btn-primary" id="theme-switch">-->
     <!--        <span class="iconify" data-icon="bi:sun-fill"-->
     <!--              data-inline="false" data-width="1.5em"-->
@@ -279,7 +288,16 @@
         document.body.scrollTop = 0;
         document.documentElement.scrollTop = 0;
     }
-
+    document.getElementById('btnSwitch').addEventListener('click',()=>{
+    if (document.documentElement.getAttribute('data-bs-theme') == 'dark') {
+        document.documentElement.setAttribute('data-bs-theme','light')
+        document.getElementById('themeIcon').setAttribute("data-icon", "ph:sun-bold"); 
+    }
+    else {
+        document.documentElement.setAttribute('data-bs-theme','dark')
+        document.getElementById('themeIcon').setAttribute("data-icon", "ph:moon-stars-bold"); 
+    }
+})
 
 </script>
 </html>

@@ -29,10 +29,10 @@ const SKILL = {
         new Block("Golang", "https://go.dev/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg")
     ],
     "Framework": [
-        new Block("Django", "https://www.djangoproject.com/", "https://i.imgur.com/9cfCjtr.webp"),
+        new Block("Django", "https://www.djangoproject.com/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain-wordmark.svg"),
         new Block("Django Rest Framework", "https://www.django-rest-framework.org", imagesFromGoogleDrive("1NUZB4bUhcGMWbCyWIdqJM7UuSsDSnUWE")),
-        new Block("Flask", "https://flask.palletsprojects.com/", "https://i.imgur.com/GxX0E3Z.webp"),
-        new Block("FastAPI", "https://fastapi.tiangolo.com/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg"),
+        new Block("Flask", "https://flask.palletsprojects.com/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original-wordmark.svg"),
+        new Block("FastAPI", "https://fastapi.tiangolo.com/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-plain-wordmark.svg"),
         new Block("Tornado", "https://www.tornadoweb.org", imagesFromGoogleDrive("1-OU-ourDguRNj5jSOgoHXe2K26uVkImU")),
         new Block("Sanic", "https://sanicframework.org/", "https://i.imgur.com/mp5jLhD.webp"),
 
@@ -79,6 +79,7 @@ const SKILL = {
     ],
     "Devops": [
         new Block("Docker", "https://www.docker.com/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original-wordmark.svg"),
+        new Block("Podman", "", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/podman/podman-original.svg"),
         new Block("Kubernetes", "https://kubernetes.io/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain-wordmark.svg"),
         new Block("Rancher", "https://rancher.com/", "https://www.vectorlogo.zone/logos/rancher/rancher-ar21.svg"),
         new Block("GCP", "", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg"),
