@@ -309,9 +309,9 @@ const cardFormat = (Card) => {
 
 const imgTag = (src, alt, _class = null, loading = "lazy") => {
     if (_class !== null) {
-        return `<img class=${_class} src=${src} alt=${alt} loading=${loading} />`
+        return `<img class=${_class} src=${src} alt=${alt} loading=${loading} onerror="this.onerror=null;this.src='https://fakeimg.pl/1075x629/?retina=1&font_size=70&font=noto&text=we%20lost%20${alt}%20:%20('" />`
     }
-    return `<img src=${src} alt=${alt} loading=${loading} />`
+    return `<img src=${src} alt=${alt} loading=${loading} onerror="this.onerror=null;this.src='https://fakeimg.pl/350x200/?font=noto&text=we%20lost%20${alt}%20:%20('" />`
 
 }
 
