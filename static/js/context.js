@@ -121,7 +121,7 @@ const SKILL = {
         new Block("aiohttp", "https://docs.aiohttp.org/en/stable/index.html", "https://docs.aiohttp.org/en/stable/_static/aiohttp-plain.svg"),
         new Block("BeautifulSoup", "https://www.crummy.com/software/BeautifulSoup/", imagesFromGoogleDrive("18L0diSP6a_prRoGjQaGjJAwkDk7LVQl0")),
         new Block("Scrapy", "https://scrapy.org", imagesFromGoogleDrive("1_jNHjx4T6Z2ZLUEqynWR-FsuUKwYTa_B")),
-        new Block("pyppeteer", "https://pyppeteer.github.io/pyppeteer/", "https://static.zhangkunzhi.com/images/puppeteer.png"),
+        new Block("playwright-python", "https://github.com/microsoft/playwright-python", "https://playwright.dev/python/img/playwright-logo.svg"),
     ],
     "IDE": [
         new Block("Pycharm", "https://www.jetbrains.com/pycharm/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pycharm/pycharm-original.svg"),
