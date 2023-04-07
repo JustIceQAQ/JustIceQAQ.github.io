@@ -45,10 +45,15 @@
     background: linear-gradient(to bottom, rgba(230, 230, 230, 0.1) 0%, rgba(0, 0, 0, 0.1) 100%);
 }
 
-#exhibition > tbody > tr > td {
-    border-color: #2B2B2B !important;
+table.dataTable.display tbody tr.odd td {
+    background-color: #f9f9f9;
 }
 
-.card{
-    color: black;
+table.dataTable.display tbody tr.even td {
+    background-color: #ffffff;
+}
+
+
+table.dataTable.display tbody tr > .sorting_1, table.dataTable.order-column.stripe tbody tr > .sorting_1 {
+    background-color: #f1f1f1 !important;
 }

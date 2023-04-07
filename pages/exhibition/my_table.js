@@ -33,7 +33,7 @@ const exhibitionTopicClass = [
         new ButtonStyle("#fff", "#313131", "#313131")
     ),
     new Exhibition("ntsec_exhibition", "國立臺灣科學教育館",
-        new ButtonStyle("#fff", "#FAA61A", "#33C0C4")
+        new ButtonStyle("#3c3d30", "#FAA61A", "#33C0C4")
     ),
     new Exhibition("songshanculturalpark_exhibition", "松山文創園區",
         new ButtonStyle("#fff", "#595758", "#F9DD00")
@@ -106,7 +106,13 @@ const style = document.createElement('style');
 style.type = 'text/css';
 
 style.innerHTML = exhibitionTopicClass.map((exhibition) => {
-    return `.btn-${exhibition.topic} {color:${exhibition.buttonStyle.color};background-color:${exhibition.buttonStyle.backgroundColor};border-color:${exhibition.buttonStyle.borderColor}}`
+    return `.btn-${exhibition.topic} {
+    color:${exhibition.buttonStyle.color};
+    background-color:${exhibition.buttonStyle.backgroundColor};
+    border-color:${exhibition.buttonStyle.borderColor};
+    --bs-btn-hover-color: ${exhibition.buttonStyle.color};
+    --bs-btn-hover-bg: ${exhibition.buttonStyle.backgroundColor};
+    }`
 }).join(" ")
 document.getElementsByTagName('head')[0].appendChild(style);
 
