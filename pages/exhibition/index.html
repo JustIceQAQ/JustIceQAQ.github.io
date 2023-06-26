@@ -73,7 +73,6 @@
         }
 
 
-
         .dt-buttons > button {
             margin: 8px;
         }
@@ -205,36 +204,29 @@
 
 
 <script>
-    document.getElementById('btnSwitch').addEventListener('click', () => {
-        if (document.documentElement.getAttribute('data-bs-theme') == 'dark') {
-            changeThemeMode('dark_mode_fix.css', "light_mode_fix.css")
-            document.documentElement.setAttribute('data-bs-theme', 'light')
-            document.getElementById('themeIcon').setAttribute("data-icon", "ph:sun-bold");
-        } else {
-            changeThemeMode("light_mode_fix.css", 'dark_mode_fix.css')
-            document.documentElement.setAttribute('data-bs-theme', 'dark')
-
-            document.getElementById('themeIcon').setAttribute("data-icon", "ph:moon-stars-bold");
-        }
-    })
+    const setLight = () => {
+        changeThemeMode('dark_mode_fix.css', "light_mode_fix.css")
+        document.documentElement.setAttribute('data-bs-theme', 'light')
+        document.getElementById('themeIcon').setAttribute("data-icon", "ph:sun-bold");
+    }
+    const setDark = () => {
+        changeThemeMode("light_mode_fix.css", 'dark_mode_fix.css')
+        document.documentElement.setAttribute('data-bs-theme', 'dark')
+        document.getElementById('themeIcon').setAttribute("data-icon", "ph:moon-stars-bold");
+    }
     const changeThemeMode = (modeA, modelB) => {
         $(`link[href='${modeA}]']`).remove();
         $('head').append(`<link rel="stylesheet" type="text/css" href="${modelB}">`);
     }
-
+    document.getElementById('btnSwitch').addEventListener('click', () => {
+        let runThemeSet = (document.documentElement.getAttribute('data-bs-theme') == 'dark') ? setLight : setDark
+        runThemeSet()
+    })
     moment.locale('zh-tw');
     $(document).ready(function () {
-        // const isEnabled = DarkReader.isEnabled();
-        // if (isEnabled) {
-        //     changeThemeMode("light_mode_fix.css", 'dark_mode_fix.css')
-        //     $("#flexSwitchCheckChecked").prop('checked', true);
-        // } else {
-        //     changeThemeMode('dark_mode_fix.css', "light_mode_fix.css")
-        //     $("#flexSwitchCheckChecked").prop('checked', false);
-        //
-        // }
-
-
+        const isDark = window.matchMedia("(prefers-color-scheme:dark)").matches
+        const runThemeSet = isDark ? setDark : setLight
+        runThemeSet()
         $('#exhibition').DataTable({
             dom: 'Brtip',
             processing: true,
