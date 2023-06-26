@@ -45,6 +45,10 @@ table.dataTable.display tbody tr.even td {
     background-color: rgb(43, 48, 53);
 }
 
+table.dataTable tbody tr{
+    background-color: rgb(43, 48, 53);
+}
+
 
 table.dataTable.display tbody tr > .sorting_1, table.dataTable.order-column.stripe tbody tr > .sorting_1 {
     background-color: rgb(43, 48, 53) !important;
