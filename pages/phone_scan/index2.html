@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>網路爬蟲範例程式碼</title>
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css"/>
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+</head>
+<body>
+
+<py-config>
+    packages = [
+    "./wheels/requests-2.28.2-py3-none-any.whl",
+    "./wheels/beautifulsoup4-4.12.2-py3-none-any.whl",
+    "./wheels/html5lib-1.1-py2.py3-none-any.whl"
+    ]
+</py-config>
+
+
+<h1>網路爬蟲範例程式碼</h1>
+<p>書籍 ISBN 編號：9789862017883</p>
+<div id="result"></div>
+
+<py-script>
+    import requests
+
+    isbn = '9789862017883'
+    url = f"https://findbook.com.tw/{isbn}";
+
+    response = requests.get(url)
+    print(response.status_code)
+    print(response.text)
+
+
+
+</py-script>
+
+<py-repl>
+    ice_data
+</py-repl>
+
+
+<script>
+    const isbn = '9789862017883';
+    const url = `https://findbook.com.tw/${isbn}`;
+
+
+    // fetch(url)
+    //     .then(response => response.text())
+    //     .then(data => {
+    //         const parser = new DOMParser();
+    //         const htmlDocument = parser.parseFromString(data, 'text/html');
+    //         console.log(htmlDocument)
+    //
+    //       //   const bookTitle = htmlDocument.querySelector('.book-name').textContent.trim();
+    //       //   const author = htmlDocument.querySelector('.author a').textContent.trim();
+    //       //   const publisher = htmlDocument.querySelector('.publisher a').textContent.trim();
+    //       //   const publicationDate = htmlDocument.querySelector('.publish-date').textContent.trim();
+    //       //   const price = htmlDocument.querySelector('.price span').textContent.trim();
+    //       //
+    //       //   const result = `
+    //       //   <p>書名：${bookTitle}</p>
+    //       //   <p>作者：${author}</p>
+    //       //   <p>出版社：${publisher}</p>
+    //       //   <p>出版日期：${publicationDate}</p>
+    //       //   <p>價格：${price}</p>
+    //       // `;
+    //       //
+    //       //   document.querySelector('#result').innerHTML = result;
+    //     })
+    //     .catch(error => console.error(error));
+</script>
+</body>
+</html>
