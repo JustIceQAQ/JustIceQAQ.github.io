@@ -245,7 +245,10 @@ const SIDE_PROJECT = [
                     <li>資料更新透過 github action 定時排程更新</li>
                     <li>Table 使用 <a href="https://datatables.net/" target="_blank">DataTable</a>進行渲染</li>
                 </ul>`,
-        "https://justiceqaq.github.io/pages/exhibition/",
+        [
+            {key: "v1 Web Link", value: "https://justiceqaq.github.io/pages/exhibition/"},
+            {key: "v2 Web Link", value: "https://justiceqaq.github.io/pages/exhibition/v2/"},
+        ],
         true
     ),
     new Card(
@@ -266,9 +269,9 @@ const SIDE_PROJECT = [
                     <li>服務部署於Railway, Render 與 Deta 中</li>
                 </ul>`,
         [
-            {key: "Railway", value: "https://let-me-have-a-look-this-company.up.railway.app/"},
-            {key: "Render", value: "https://let-me-have-a-look-this-company.onrender.com/"},
-            {key: "Deta", value: "https://let-me-have-a-look-this-company.deta.dev/"}
+            {key: "deployed on ⛑ Railway", value: "https://let-me-have-a-look-this-company.up.railway.app/"},
+            {key: "deployed on Render", value: "https://let-me-have-a-look-this-company.onrender.com/"},
+            {key: "deployed on ⛑ Deta", value: "https://let-me-have-a-look-this-company.deta.dev/"}
         ],
         true
     ),
@@ -283,7 +286,7 @@ const cardFormat = (Card) => {
                 if (typeof href === "string") {
                     return `<a target="_blank" href="${href}" class="btn btn-myO">Web Link ${index}</a>`
                 } else if (typeof href === "object") {
-                    return `<a target="_blank" href="${href.value}" class="btn btn-myO">deployed on ${href.key}</a>`
+                    return `<a target="_blank" href="${href.value}" class="btn btn-myO">${href.key}</a>`
                 }
             }).join('')
         } else if (typeof Card.href === "string") {
