@@ -15,12 +15,27 @@
 <button class="g-recaptcha"
         data-sitekey="6LfvXZInAAAAAFNKL-4HsZSmIUo9uD24ocgPgUe5"
         data-callback='onSubmit'
-        data-action='submit'>Submit</button>
+        data-action='submit'>Submit
+</button>
 
 </body>
 <script>
-    function onSubmit(token) {
-        document.getElementById("demo-form").submit();
+    async function onSubmit(token) {
+        await getRecaptcha(token)
+        console.log(token)
+        // document.getElementById("demo-form").submit();
+    }
+
+    async function getRecaptcha(token) {
+        console.log(token)
+        const url = "https://www.google.com/recaptcha/api/siteverify"
+        let payload = {
+            secret: "-",
+            response: token
+        }
+        let response = await fetch(url, {method: "POST", d: JSON.stringify(payload)});
+        let data = await response.json();
+        console.log(data);
     }
 </script>
 </html>
