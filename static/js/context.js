@@ -53,6 +53,7 @@ const SKILL = {
 
     ],
     "Backend_Development": [
+        new Block("Anaconda", "https://www.anaconda.com/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/anaconda/anaconda-original-wordmark.svg"),
         new Block("GraphQL", "https://graphql.org/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain-wordmark.svg"),
         new Block("RabbitMQ", "https://www.rabbitmq.com/", "https://www.vectorlogo.zone/logos/rabbitmq/rabbitmq-icon.svg"),
         new Block("Nginx", "https://nginx.org/en", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg")
@@ -65,6 +66,7 @@ const SKILL = {
         new Block("scikit-learn", "https://scikit-learn.org/", "https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg"),
     ],
     "Database": [
+        new Block("Sqlalchemy", "https://www.sqlalchemy.org/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlalchemy/sqlalchemy-original-wordmark.svg"),
         new Block("postgresql", "https://www.postgresql.org/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original-wordmark.svg"),
         new Block("MSSQL", "https://www.microsoft.com/zh-tw/sql-server", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain-wordmark.svg"),
         // new Block("MySQL", "https://www.mysql.com/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original-wordmark.svg"),
@@ -83,9 +85,11 @@ const SKILL = {
         new Block("Kubernetes", "https://kubernetes.io/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain-wordmark.svg"),
         new Block("Rancher", "https://rancher.com/", "https://www.vectorlogo.zone/logos/rancher/rancher-ar21.svg"),
         new Block("GCP", "", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg"),
-        new Block("bash", "", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg")
+        new Block("bash", "", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg"),
+        new Block("Jenkins", "https://www.jenkins.io/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg")
     ],
     "Backend_as_a_Service": [
+        new Block("Jupyter", "https://jupyter.org/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original-wordmark.svg"),
         new Block("Heroku", "https://zh.wikipedia.org/zh-tw/Heroku", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/heroku/heroku-original-wordmark.svg")
     ],
     "Testing": [
@@ -233,6 +237,17 @@ const WORKED_PROJECT = [
                 </ul>`,
         null,
         true
+    ),
+    new Card(
+        "A投顧公司-投資理財機器人2.0 API 服務",
+        "https://fakeimg.pl/1075x629/?retina=1&font_size=70&font=noto&text=A投顧公司-投資理財機器人2.0 API",
+        `<ul>
+                <li>基於原有投資理財機器人 1.0 API 需求，進行重構/再設計。</li>
+                <li>使用fastapi 作為API框架。</li>
+                <li>礙於商業機密，不提供網站連結，亦不提供部分截圖。</li>
+                </ul>`,
+        null,
+        true
     )
 ]
 
@@ -274,7 +289,7 @@ const SIDE_PROJECT = [
             {key: "deployed on ⛑ Deta", value: "https://let-me-have-a-look-this-company.deta.dev/"}
         ],
         true
-    ),
+    )
 ]
 // "https://via.placeholder.com/411x334"
 
@@ -362,6 +377,7 @@ const appendSkill = () => {
 
 const appendProjects = () => {
     let app = document.querySelector(`.projects-context`);
+    WORKED_PROJECT.reverse();
     let rows = WORKED_PROJECT.map(card => card.is_display ? cardFormat(card) : "")
     // let rows = []
     // for (let card of WORKED_PROJECT) {
