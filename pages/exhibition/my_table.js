@@ -62,6 +62,9 @@ const exhibitionTopicClass = [
     new Exhibition("ncpi_exhibition", "國家攝影文化中心",
         new ButtonStyle("#fff", "#000001", "#000001")
     ),
+    new Exhibition("ntc_art_museum_exhibition", "新北市美術館",
+        new ButtonStyle("#fff", "#000001", "#000001")
+    ),
     new Exhibition("klook_exhibition", "KLOOK 客路",
         new ButtonStyle("#fff", "#fd5a01", "#e75234")
     ),
