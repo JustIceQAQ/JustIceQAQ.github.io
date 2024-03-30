@@ -227,6 +227,9 @@
             if (nowDate > oneDate) {
                 return finishedBadges(tag)
             }
+            if (nowDate < oneDate) {
+                return notStartedBadges(tag)
+            }
 
             return unableBadges(tag)
         } else if (splitDateString.length === 2) {
