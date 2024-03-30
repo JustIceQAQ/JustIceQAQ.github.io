@@ -133,7 +133,7 @@
                     <th>圖片</th>
                     <th>日期</th>
                     <th>地點</th>
-                    <th>分類</th>
+                    <th>狀態</th>
                 </tr>
                 </thead>
             </table>
@@ -204,6 +204,50 @@
 
 
 <script>
+
+    const notStartedBadges = (tag = "h2") => `<${tag}><span class="badge bg-warning" style="color: #3c3d30;">尚未開始</span></${tag}>`
+    const inProgressBadges = (tag = "h2") => `<${tag}><span class="badge bg-success">進行中</span></${tag}>`
+    const finishedBadges = (tag = "h2") => `<${tag}><span class="badge bg-danger" style="color: #3c3d30;">已經結束</span></${tag}>`
+    const unableBadges = (tag = "h2") => `<${tag}><span class="badge bg-secondary">無法判斷</span></${tag}>`
+
+    const exhibitionStats = (dateString, tag = "h2") => {
+        let nowDate = new Date()
+        let splitDateString = dateString.split("~")
+        console.log(dateString)
+        if (splitDateString.length === 1 && (splitDateString[0] === '-' || splitDateString[0] === '')) {
+            return inProgressBadges(tag)
+        }
+
+
+        if (splitDateString.length === 1) {
+            let oneDate = new Date(splitDateString[0].trim())
+            if (isNaN(oneDate)) {
+                return unableBadges(tag)
+            }
+            if (nowDate > oneDate) {
+                return finishedBadges(tag)
+            }
+
+            return unableBadges(tag)
+        } else if (splitDateString.length === 2) {
+
+            let startDate = new Date(splitDateString[0].trim())
+            let endDate = new Date(splitDateString[1].trim())
+            if (nowDate < startDate) {
+                return notStartedBadges(tag)
+            }
+
+            if (nowDate > endDate) {
+                return finishedBadges(tag)
+            }
+            return inProgressBadges(tag)
+
+        }
+        return unableBadges(tag)
+
+    }
+
+
     const setLight = () => {
         changeThemeMode('dark_mode_fix.css', "light_mode_fix.css")
         document.documentElement.setAttribute('data-bs-theme', 'light')
@@ -245,7 +289,7 @@
                         if (row.systematics === "BUG") {
                             return "有些意料之外得事情發生了...😔，等我修好前請先直接去官網查看吧~"
                         }
-                        return `<a target="_blank" href="${row.source_url}"><div style="width:18rem;white-space:normal;word-break:break-all;">${data}</div></a>`
+                        return `<a target="_blank" href="${row.source_url}"><div style="width:18rem;white-space:normal;word-break:break-all;">${data}${exhibitionStats(row.date, tag = "h6")}</div></a>`
                     }
                 },
                 {
@@ -269,7 +313,13 @@
                         return `<div style="width:18rem;white-space:normal;word-break:break-all;">${data}</div>`
                     }
                 },
-                {data: 'systematics'},
+                {
+                    data: 'date',
+                    render: function (data, type, row) {
+                        return exhibitionStats(data)
+                    }
+
+                },
             ],
             columnDefs: [
                 {targets: 0, responsivePriority: 1, className: 'table-bordered'},
