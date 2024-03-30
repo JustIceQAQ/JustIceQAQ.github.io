@@ -136,6 +136,16 @@
                     <th>狀態</th>
                 </tr>
                 </thead>
+
+                <tfoot>
+                <tr>
+                    <th>展覽名稱</th>
+                    <th>圖片</th>
+                    <th>日期</th>
+                    <th>地點</th>
+                    <th>狀態</th>
+                </tr>
+                </tfoot>
             </table>
         </div>
     </div>
@@ -213,7 +223,6 @@
     const exhibitionStats = (dateString, tag = "h2") => {
         let nowDate = new Date()
         let splitDateString = dateString.split("~")
-        console.log(dateString)
         if (splitDateString.length === 1 && (splitDateString[0] === '-' || splitDateString[0] === '')) {
             return inProgressBadges(tag)
         }
@@ -367,7 +376,40 @@
                     $('td:eq(0)', row).addClass("table-danger")
                 }
 
+            },
+            initComplete: function () {
+                this.api()
+                    .columns([4])
+                    .every(function () {
+                        let column = this;
+
+                        // Create select element
+                        let select = document.createElement('select');
+                        select.add(new Option('全部顯示', value = ''));
+
+                        column.footer().replaceChildren(select);
+
+
+                        // Apply listener for user change in value
+                        select.addEventListener('change', function () {
+                            column
+                                .search(select.value, {exact: true})
+                                .draw();
+                        });
+
+                        // Add list of options
+                        select.className = "form-select";
+
+
+                        select.add(new Option("尚未開始"))
+                        select.add(new Option("進行中"))
+                        select.add(new Option("已經結束"))
+                        select.add(new Option("無法判斷"))
+
+
+                    });
             }
+
         });
     });
     const LOCALTZ = moment.tz.guess()
