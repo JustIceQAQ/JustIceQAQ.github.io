@@ -229,7 +229,7 @@
 
 
         if (splitDateString.length === 1) {
-            let oneDate = new Date(splitDateString[0].trim())
+            let oneDate = moment(splitDateString[0].trim()).toDate()
             if (isNaN(oneDate)) {
                 return unableBadges(tag)
             }
@@ -243,8 +243,8 @@
             return unableBadges(tag)
         } else if (splitDateString.length === 2) {
 
-            let startDate = new Date(splitDateString[0].trim())
-            let endDate = new Date(splitDateString[1].trim())
+            let startDate = moment(splitDateString[0].trim()).toDate()
+            let endDate = moment(splitDateString[1].trim()).toDate()
             if (nowDate < startDate) {
                 return notStartedBadges(tag)
             }
