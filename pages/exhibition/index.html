@@ -221,7 +221,7 @@
     const unableBadges = (tag = "h2") => `<${tag}><span class="badge bg-secondary">無法判斷</span></${tag}>`
 
     const exhibitionStats = (dateString, tag = "h2") => {
-        let nowDate = new Date()
+        let nowDate = moment().toDate()
         let splitDateString = dateString.split("~")
         if (splitDateString.length === 1 && (splitDateString[0] === '-' || splitDateString[0] === '')) {
             return inProgressBadges(tag)
