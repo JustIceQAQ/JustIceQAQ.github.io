@@ -224,8 +224,9 @@ const SIDE_PROJECT = [
                     <li>Table 使用 <a href="https://datatables.net/" target="_blank">DataTable</a>進行渲染</li>
                 </ul>`,
         [
-            {key: "v1 Web Link", value: "https://justiceqaq.github.io/pages/exhibition/"},
-            {key: "v2 Web Link", value: "https://justiceqaq.github.io/pages/exhibition/v2/"},
+            {key: "v1 Web Link (Using Lasagna code)", value: "https://justiceqaq.github.io/pages/exhibition/"},
+            {key: "v2 Web Link (Using Vue with ChatGPT)", value: "https://justiceqaq.github.io/pages/exhibition/v2/"},
+            {key: "v3 Web Link (Using Svelte with Self)", value: "https://justiceqaq.github.io/pages/exhibition/v3/"},
         ],
         true
     ),
