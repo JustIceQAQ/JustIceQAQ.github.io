@@ -86,6 +86,9 @@ const exhibitionTopicClass = [
     new Exhibition("kkday_exhibition", "KKDay",
         new ButtonStyle("#fff", "#26bcc8", "#26bcc8")
     ),
+    new Exhibition("fubonartmuseum_exhibition", "KKDay",
+        new ButtonStyle("#fff", "#643164", "#643164")
+    ),
 
 
 ]
