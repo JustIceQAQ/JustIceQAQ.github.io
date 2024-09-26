@@ -220,8 +220,25 @@
     const finishedBadges = (tag = "h2") => `<${tag}><span class="badge bg-danger" style="color: #3c3d30;">已經結束</span></${tag}>`
     const unableBadges = (tag = "h2") => `<${tag}><span class="badge bg-secondary">無法判斷</span></${tag}>`
 
+    const finishedAfter5Day = (dateString) => {
+        let nowDate = moment(new Date().toLocaleDateString('tw-zh'))
+        let splitDateString = dateString.split("~")
+        if (splitDateString.length === 1) {
+            let oneDate = moment(splitDateString[0].trim())
+            if (nowDate.isAfter(oneDate.add(5, 'days'))) {
+                return true
+            }
+        } else if (splitDateString.length === 2) {
+            let endDate = moment(splitDateString[1].trim())
+            if (nowDate.isAfter(endDate.add(5, 'days'))) {
+                return true
+            }
+        }
+        return false
+    }
+
     const exhibitionStats = (dateString, tag = "h2") => {
-        let nowDate = moment().toDate()
+        let nowDate = moment(new Date().toLocaleDateString('tw-zh'))
         let splitDateString = dateString.split("~")
 
 
@@ -231,14 +248,14 @@
 
 
         if (splitDateString.length === 1) {
-            let oneDate = moment(splitDateString[0].trim()).toDate()
+            let oneDate = moment(splitDateString[0].trim())
             if (isNaN(oneDate)) {
                 return unableBadges(tag)
             }
-            if (nowDate > oneDate) {
+            if (nowDate.isAfter(oneDate)) {
                 return finishedBadges(tag)
             }
-            if (nowDate < oneDate) {
+            if (oneDate.isAfter(nowDate)) {
                 return notStartedBadges(tag)
             }
 
@@ -248,13 +265,12 @@
             if (splitDateString[1] === '') {
                 return inProgressBadges(tag)
             } else {
-                let startDate = moment(splitDateString[0].trim()).toDate()
-                let endDate = moment(splitDateString[1].trim()).toDate()
-                if (nowDate < startDate) {
+                let startDate = moment(splitDateString[0].trim())
+                let endDate = moment(splitDateString[1].trim())
+                if (startDate.isAfter(nowDate)) {
                     return notStartedBadges(tag)
                 }
-
-                if (nowDate > endDate) {
+                if (nowDate.isAfter(endDate)) {
                     return finishedBadges(tag)
                 }
                 return inProgressBadges(tag)
