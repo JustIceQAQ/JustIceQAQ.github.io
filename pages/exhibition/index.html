@@ -223,6 +223,8 @@
     const exhibitionStats = (dateString, tag = "h2") => {
         let nowDate = moment().toDate()
         let splitDateString = dateString.split("~")
+
+
         if (splitDateString.length === 1 && (splitDateString[0] === '-' || splitDateString[0] === '')) {
             return inProgressBadges(tag)
         }
@@ -243,17 +245,20 @@
             return unableBadges(tag)
         } else if (splitDateString.length === 2) {
 
-            let startDate = moment(splitDateString[0].trim()).toDate()
-            let endDate = moment(splitDateString[1].trim()).toDate()
-            if (nowDate < startDate) {
-                return notStartedBadges(tag)
-            }
+            if (splitDateString[1] === '') {
+                return inProgressBadges(tag)
+            } else {
+                let startDate = moment(splitDateString[0].trim()).toDate()
+                let endDate = moment(splitDateString[1].trim()).toDate()
+                if (nowDate < startDate) {
+                    return notStartedBadges(tag)
+                }
 
-            if (nowDate > endDate) {
-                return finishedBadges(tag)
+                if (nowDate > endDate) {
+                    return finishedBadges(tag)
+                }
+                return inProgressBadges(tag)
             }
-            return inProgressBadges(tag)
-
         }
         return unableBadges(tag)
 
