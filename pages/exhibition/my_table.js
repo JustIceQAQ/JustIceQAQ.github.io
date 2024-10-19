@@ -89,8 +89,9 @@ const exhibitionTopicClass = [
     new Exhibition("fubonartmuseum_exhibition", "FuBonArtMuseum",
         new ButtonStyle("#fff", "#643164", "#643164")
     ),
-
-
+    new Exhibition("clab_exhibition", "FuBonArtMuseum",
+        new ButtonStyle("#fff", "#f87065", "#f2f2f0")
+    ),
 ]
 
 
