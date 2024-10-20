@@ -92,6 +92,9 @@ const exhibitionTopicClass = [
     new Exhibition("clab_exhibition", "台灣當代文化實驗場C-Lab",
         new ButtonStyle("#fff", "#f87065", "#f2f2f0")
     ),
+    new Exhibition("kingcarart_exhibition", "金車文藝中心",
+        new ButtonStyle("#fff", "#000001", "#000001")
+    ),
 ]
 
 
