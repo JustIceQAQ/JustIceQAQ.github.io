@@ -1,4 +1,4 @@
-const URL_SOURCE = "https://raw.githubusercontent.com/JustIceQAQ/been_playing/deploy/data/"
+const URL_SOURCE = "https://raw.githubusercontent.com/JustIceQAQ/been_playing/deploy/data/v2/"
 
 class Exhibition {
     constructor(topic, name, buttonStyle) {
@@ -17,82 +17,82 @@ class ButtonStyle {
 }
 
 const exhibitionTopicClass = [
-    new Exhibition("huashan1914_exhibition", "華山1914文化創意產業園區",
+    new Exhibition("HuaShan1914", "華山1914文化創意產業園區",
         new ButtonStyle("#fff", "#437321", "#437321")
     ),
-    new Exhibition("mocataipei_exhibition", "台北當代藝術館",
+    new Exhibition("MoCaTaipei", "台北當代藝術館",
         new ButtonStyle("#fff", "#E83434", "#E83434")
     ),
-    new Exhibition("cksmh_exhibition", "中正紀念堂",
+    new Exhibition("CKSMH", "中正紀念堂",
         new ButtonStyle("#fff", "#04a1ae", "#04a1ae")
     ),
-    new Exhibition("npm_exhibition", "國立故宮博物院",
+    new Exhibition("Npm", "國立故宮博物院",
         new ButtonStyle("#fff", "#7D0000", "#7D0000")
     ),
-    new Exhibition("ntm_exhibition", "國立臺灣博物館",
+    new Exhibition("Ntm", "國立臺灣博物館",
         new ButtonStyle("#fff", "#313131", "#313131")
     ),
-    new Exhibition("ntsec_exhibition", "國立臺灣科學教育館",
+    new Exhibition("NtSec", "國立臺灣科學教育館",
         new ButtonStyle("#3c3d30", "#FAA61A", "#33C0C4")
     ),
-    new Exhibition("songshanculturalpark_exhibition", "松山文創園區",
+    new Exhibition("SongShanCulturalPark", "松山文創園區",
         new ButtonStyle("#fff", "#595758", "#F9DD00")
     ),
-    new Exhibition("tfam_exhibition", "臺北市立美術館",
+    new Exhibition("TFam", "臺北市立美術館",
         new ButtonStyle("#fff", "#2B2B2B", "#2B2B2B")
     ),
-    new Exhibition("tmc_exhibition", "台北流行音樂中心",
+    new Exhibition("Tmc", "台北流行音樂中心",
         new ButtonStyle("#fff", "#FF5000", "#00BBD3")
     ),
-    new Exhibition("nmh_exhibition", "國立歷史博物館",
+    new Exhibition("Nmh", "國立歷史博物館",
         new ButtonStyle("#fff", "#8b3a47", "#8b3a47")
     ),
-    new Exhibition("twtc_exhibition", "台北世貿中心",
+    new Exhibition("TwTc", "台北世貿中心",
         new ButtonStyle("#fff", "#ef5923", "#ef5923")
     ),
-    new Exhibition("mwr_exhibition", "世界宗教博物館",
+    new Exhibition("Mwr", "世界宗教博物館",
         new ButtonStyle("#fff", "#b01f23", "#b01f23")
     ),
-    new Exhibition("museum_post_exhibition", "郵政博物館",
+    new Exhibition("MuseumPost", "郵政博物館",
         new ButtonStyle("#fff", "#e6121c", "#12429c")
     ),
-    new Exhibition("jam_exhibition", "忠泰美術館",
+    new Exhibition("Jam", "忠泰美術館",
         new ButtonStyle("#3c3d30", "#00d186", "#00d186")
     ),
-    new Exhibition("ncpi_exhibition", "國家攝影文化中心",
+    new Exhibition("NCPI", "國家攝影文化中心",
         new ButtonStyle("#fff", "#000001", "#000001")
     ),
-    new Exhibition("ntc_art_museum_exhibition", "新北市美術館",
+    new Exhibition("NtcArtMuseum", "新北市美術館",
         new ButtonStyle("#fff", "#000001", "#000001")
     ),
-    new Exhibition("klook_exhibition", "KLOOK 客路",
+    new Exhibition("KLook", "KLook 客路",
         new ButtonStyle("#fff", "#fd5a01", "#e75234")
     ),
-    new Exhibition("books_exhibition", "博客來售票網",
+    new Exhibition("BooksTickets", "博客來售票網",
         new ButtonStyle("#fff", "#61C0B4", "#61C0B4")
     ),
-    new Exhibition("udnfunlife_exhibition", "udn售票網",
+    new Exhibition("UdnFunLife", "udn售票網",
         new ButtonStyle("#fff", "#F39800", "#F39800")
     ),
-    new Exhibition("opentix_exhibition", "OPENTIX兩廳院生活文化",
+    new Exhibition("OpenTix", "OPENTIX兩廳院生活文化",
         new ButtonStyle("#fff", "#e75234", "#e75234")
     ),
-    new Exhibition("kktix_exhibition", "KKTIX",
+    new Exhibition("KKTix", "KKTIX",
         new ButtonStyle("#fff", "#64be26", "#64be26")
     ),
-    new Exhibition("ibon_exhibition", "ibon",
+    new Exhibition("IBon", "IBon",
         new ButtonStyle("#8fc120", "#3f3a3a", "#3f3a3a")
     ),
-    new Exhibition("kkday_exhibition", "KKDay",
+    new Exhibition("KKDay", "KKDay",
         new ButtonStyle("#fff", "#26bcc8", "#26bcc8")
     ),
-    new Exhibition("fubonartmuseum_exhibition", "FuBonArtMuseum",
+    new Exhibition("FuBonArtMuseum", "富邦美術館",
         new ButtonStyle("#fff", "#643164", "#643164")
     ),
-    new Exhibition("clab_exhibition", "台灣當代文化實驗場C-Lab",
+    new Exhibition("CLab", "台灣當代文化實驗場C-Lab",
         new ButtonStyle("#fff", "#f87065", "#f2f2f0")
     ),
-    new Exhibition("kingcarart_exhibition", "金車文藝中心",
+    new Exhibition("KingCarArt", "金車文藝中心",
         new ButtonStyle("#fff", "#000001", "#000001")
     ),
 ]
@@ -107,6 +107,7 @@ exhibitionTopicClass.map((exhibition) => {
     $.fn.dataTable.ext.buttons[exhibition.topic] = {
         text: exhibition.name,
         action: function (e, dt, node, config) {
+            console.log(`${URL_SOURCE}${exhibition.topic}.json`)
             dt.ajax.url(`${URL_SOURCE}${exhibition.topic}.json`).load()
         }
     }

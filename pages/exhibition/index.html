@@ -215,6 +215,7 @@
 
 <script>
 
+
     const notStartedBadges = (tag = "h2") => `<${tag}><span class="badge bg-warning" style="color: #3c3d30;">尚未開始</span></${tag}>`
     const inProgressBadges = (tag = "h2") => `<${tag}><span class="badge bg-success">進行中</span></${tag}>`
     const finishedBadges = (tag = "h2") => `<${tag}><span class="badge bg-danger" style="color: #3c3d30;">已經結束</span></${tag}>`
@@ -238,6 +239,10 @@
     }
 
     const exhibitionStats = (dateString, tag = "h2") => {
+        if (dateString == null) {
+            return unableBadges(tag)
+        }
+
         let nowDate = moment(new Date().toLocaleDateString('tw-zh'))
         let splitDateString = dateString.split("~")
 
@@ -303,6 +308,7 @@
     $(document).ready(function () {
         const isDark = window.matchMedia("(prefers-color-scheme:dark)").matches
         const runThemeSet = isDark ? setDark : setLight
+        let initUrl = `${URL_SOURCE}${exhibitionTopicClass[0].topic}.json`
         runThemeSet()
         $('#exhibition').DataTable({
             dom: 'Brtip',
@@ -310,11 +316,14 @@
             responsive: true,
             deferRender: true,
             ajax: {
-                "url": `${URL_SOURCE}${exhibitionTopicClass[0].topic}.json`,
+                url: initUrl,
                 localCache: true,
+                type: "GET",
                 cacheTTL: 0.5,
+                dataSrc: function (d) {
+                    return d.items
+                }
             },
-            dataSrc: 'data',
             order: [[2, 'asc']],
             columns: [
                 {
@@ -343,6 +352,9 @@
                     render: function (data, type, row) {
                         if (row.systematics === "BUG") {
                             return "😔"
+                        }
+                        if (data == null) {
+                            return `<div style="width:18rem;white-space:normal;word-break:break-all;">-</div>`
                         }
                         return `<div style="width:18rem;white-space:normal;word-break:break-all;">${data}</div>`
                     }
