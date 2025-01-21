@@ -248,9 +248,7 @@ const SIDE_PROJECT = [
                     <li>服務部署於Railway, Render 與 Deta 中</li>
                 </ul>`,
         [
-            {key: "deployed on ⛑ Railway", value: "https://let-me-have-a-look-this-company.up.railway.app/"},
             {key: "deployed on Render", value: "https://let-me-have-a-look-this-company.onrender.com/"},
-            {key: "deployed on ⛑ Deta", value: "https://let-me-have-a-look-this-company.deta.dev/"}
         ],
         true
     )
