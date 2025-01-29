@@ -249,6 +249,8 @@ const SIDE_PROJECT = [
                 </ul>`,
         [
             {key: "deployed on Render", value: "https://let-me-have-a-look-this-company.onrender.com/"},
+            {key: "deployed on Koyeb", value: "https://obliged-chantal-justice-qaq-da54a405.koyeb.app/index"},
+
         ],
         true
     )
