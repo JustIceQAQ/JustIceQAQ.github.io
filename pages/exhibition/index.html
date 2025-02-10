@@ -125,6 +125,7 @@
                         <h5 class="card-header caption-card-header"></h5>
                         <div class="card-body caption-card-body"></div>
                         <div class="card-footer caption-card-footer"></div>
+
                     </div>
                 </caption>
                 <thead>
@@ -381,6 +382,7 @@
                     let last_update = settings.json["last_update"];
                     let informationFullName = settings.json["information"]["fullname"]
                     let externalLink = settings.json["information"]["external_link"]
+                    let mapUrl = settings.json["information"]["map_url"]
                     let externaLinkEle = ""
                     if (externalLink !== undefined) {
                         externaLinkEle = `<a class="btn btn-secondary" href="${externalLink}" target="_blank"><strong><i class="bi bi-box-arrow-up-right"></i></strong></a>`;
@@ -393,6 +395,8 @@
                     $(".caption-card-header").html(`《${informationFullName}》${externaLinkEle}`)
                     if (opening !== undefined && opening !== "") {
                         $(".caption-card-body").html(`${opening.replaceAll('\n', '<br>')}`)
+                    } else if (mapUrl !== undefined) {
+                        $(".caption-card-body").html(getMapIframe(mapUrl))
                     } else {
                         $(".caption-card-body").empty()
                     }

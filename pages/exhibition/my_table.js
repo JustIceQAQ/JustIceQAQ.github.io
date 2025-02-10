@@ -47,6 +47,9 @@ const exhibitionTopicClass = [
     new Exhibition("Nmh", "國立歷史博物館",
         new ButtonStyle("#fff", "#8b3a47", "#8b3a47")
     ),
+    new Exhibition("NTCRI", "國立台灣工藝研究發展中心",
+        new ButtonStyle("#fff", "#00d186", "#00d186")
+    ),
     new Exhibition("TwTc", "台北世貿中心",
         new ButtonStyle("#fff", "#ef5923", "#ef5923")
     ),
@@ -102,6 +105,13 @@ const customizeButtons = exhibitionTopicClass.map((exhibition) => {
     return {extend: exhibition.topic, className: `btn btn-${exhibition.topic}`}
 })
 
+const getMapIframe = (url) => {
+    return `<iframe
+        src="${url}"
+        width="400" height="300" style="border:0;" allowFullScreen="" loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade">
+    </iframe>`
+}
 
 exhibitionTopicClass.map((exhibition) => {
     $.fn.dataTable.ext.buttons[exhibition.topic] = {
