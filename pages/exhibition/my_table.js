@@ -98,6 +98,9 @@ const exhibitionTopicClass = [
     new Exhibition("KingCarArt", "金車文藝中心",
         new ButtonStyle("#fff", "#000001", "#000001")
     ),
+    new Exhibition("BoPiLiao", "剝皮寮歷史街區",
+        new ButtonStyle("#fff", "#000001", "#000001")
+    ),
 ]
 
 
