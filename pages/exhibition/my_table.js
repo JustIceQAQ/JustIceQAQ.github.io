@@ -99,8 +99,18 @@ const exhibitionTopicClass = [
         new ButtonStyle("#fff", "#000001", "#000001")
     ),
     new Exhibition("BoPiLiao", "剝皮寮歷史街區",
-        new ButtonStyle("#fff", "#000001", "#000001")
+        new ButtonStyle("#fff", "#656565", "#cacaca")
     ),
+    new Exhibition("NTNUArtMuseum", "師大美術館",
+        new ButtonStyle("#fff", "#4d070b", "#000001")
+    ),
+    new Exhibition("NHRM", "國家人權博物館",
+        new ButtonStyle("#fff", "#a42422", "#000001")
+    ),
+    new Exhibition("TaipeiExPoPark", "花博公園",
+        new ButtonStyle("#fff", "#e52410", "#626468")
+    ),
+
 ]
 
 
