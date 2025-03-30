@@ -110,6 +110,9 @@ const exhibitionTopicClass = [
     new Exhibition("TaipeiExPoPark", "花博公園",
         new ButtonStyle("#fff", "#e52410", "#626468")
     ),
+    new Exhibition("OCAM", "陽明海洋文化藝術館",
+        new ButtonStyle("#fff", "#b81d21", "#b81d21")
+    ),
 
 ]
 
