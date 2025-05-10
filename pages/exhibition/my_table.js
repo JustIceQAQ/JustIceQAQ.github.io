@@ -113,6 +113,12 @@ const exhibitionTopicClass = [
     new Exhibition("OCAM", "陽明海洋文化藝術館",
         new ButtonStyle("#fff", "#b81d21", "#b81d21")
     ),
+    new Exhibition("TncMMM", "臺灣新文化運動紀念館",
+        new ButtonStyle("#fff", "#9f211a", "#9f211a")
+    ),
+    new Exhibition("KdMoFa", "關渡美術館",
+        new ButtonStyle("#fff", "#eb7102", "#eb7102")
+    ),
 
 ]
 
