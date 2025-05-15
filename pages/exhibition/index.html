@@ -173,18 +173,6 @@
 
 
 </body>
-<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/darkreader/4.9.58/darkreader.min.js"-->
-<!--        integrity="sha512-VU2WQDwarmassdMJUeWnlq0cSCmM0zkhLNa7UM22YOm06Y3vCEHW8jAywgleU0qnqXY1nQB0dFVH6HZkucyEKA=="-->
-<!--        crossorigin="anonymous" referrerpolicy="no-referrer"></script>-->
-
-<!--<script>-->
-<!--    DarkReader.setFetchMethod(window.fetch)-->
-<!--    DarkReader.auto({-->
-<!--        brightness: 100,-->
-<!--        contrast: 90,-->
-<!--        sepia: 10-->
-<!--    });-->
-<!--</script>-->
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
         integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
@@ -211,15 +199,11 @@
         integrity="sha512-8Qkh6To/T2f66DV4VGbRwjLNdsiYnx02iwsyobMVGC5IeyLBlny8hHEGypFdkB3n7YpAnx5rsescbHyDNIV9Sw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-<script src="my_table.js"></script>
+<script src="dataset.js"></script>
+<script src="utils.js"></script>
 
 
 <script>
-    const notStartedBadges = (tag = "h2") => `<${tag}><span class="badge bg-warning" style="color: #3c3d30;">尚未開始</span></${tag}>`
-    const inProgressBadges = (tag = "h2") => `<${tag}><span class="badge bg-success">進行中</span></${tag}>`
-    const finishedBadges = (tag = "h2") => `<${tag}><span class="badge bg-danger" style="color: #3c3d30;">已經結束</span></${tag}>`
-    const unableBadges = (tag = "h2") => `<${tag}><span class="badge bg-secondary">無法判斷</span></${tag}>`
-
     const finishedAfter5Day = (dateString) => {
         let nowDate = moment(new Date().toLocaleDateString('tw-zh'))
         let splitDateString = dateString.split("~")
@@ -388,7 +372,7 @@
                     if (externalLink !== undefined) {
                         externalLinkEle = `<a class="btn btn-secondary" href="${externalLink}" target="_blank"><strong><i class="bi bi-box-arrow-up-right"></i></strong></a>`;
                     }
-                    if (googleMapPlaceId!== undefined){
+                    if (googleMapPlaceId !== undefined) {
                         externalLinkEle = externalLinkEle + `<a style="margin-left: 10px" class="btn btn-secondary" href="https://www.google.com/maps/search/?api=1&query=${informationFullName}&query_place_id=${googleMapPlaceId}" target="_blank"><strong><i class="bi bi-pin-map"></i></strong></a>`;
                     }
                     let opening = ""

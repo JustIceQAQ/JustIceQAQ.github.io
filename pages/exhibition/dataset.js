@@ -128,13 +128,6 @@ const customizeButtons = exhibitionTopicClass.map((exhibition) => {
     return {extend: exhibition.topic, className: `btn btn-${exhibition.topic}`}
 })
 
-const getMapIframe = (url) => {
-    return `<iframe
-        src="${url}"
-        width="400" height="300" style="border:0;" allowFullScreen="" loading="lazy"
-        referrerPolicy="no-referrer-when-downgrade">
-    </iframe>`
-}
 
 exhibitionTopicClass.map((exhibition) => {
     $.fn.dataTable.ext.buttons[exhibition.topic] = {
