@@ -1,4 +1,5 @@
-const URL_SOURCE = "https://raw.githubusercontent.com/JustIceQAQ/been_playing/deploy/data/v2/"
+// const URL_SOURCE = "https://raw.githubusercontent.com/JustIceQAQ/been_playing/deploy/data/v2/"
+const URL_SOURCE = "https://raw.githubusercontent.com/JustIceQAQ/been_playing/refs/heads/develop/data/v2/"
 
 class Exhibition {
     constructor(topic, name, buttonStyle) {
