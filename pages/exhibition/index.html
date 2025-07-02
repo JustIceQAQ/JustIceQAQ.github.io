@@ -307,7 +307,7 @@
                     return d.items
                 }
             },
-            order: [[2, 'asc']],
+            order: [],
             columns: [
                 {
                     data: 'title',
@@ -351,7 +351,7 @@
                 },
             ],
             columnDefs: [
-                {targets: 0, responsivePriority: 1, className: 'table-bordered'},
+                {targets: 0, responsivePriority: 1,},
                 {targets: 1, responsivePriority: 10002},
                 {targets: 2, responsivePriority: 1},
                 {targets: 3, responsivePriority: 2},
@@ -379,7 +379,6 @@
                     if (exhibition.json["visit"] !== undefined) {
                         opening = exhibition.json["visit"]["opening"]
                     }
-                    console.log(googleMapPlaceId)
 
                     $(".caption-card-header").html(`《${informationFullName}》${externalLinkEle}`)
                     if (opening !== undefined && opening !== "") {
