@@ -203,10 +203,21 @@ const WORKED_PROJECT = [
     ),
     new Card(
         "A投顧公司-投資理財機器人2.0 API 服務",
-        "https://fakeimg.pl/1075x629/?retina=1&font_size=70&font=noto&text=A投顧公司-投資理財機器人2.0 API",
+        "https://fakeimg.ryd.tools/1075x629/00BBD2/f7f7f7/?retina=1&font_size=70&font=noto&text=A%E6%8A%95%E9%A1%A7%E5%85%AC%E5%8F%B8-%E6%8A%95%E8%B3%87%E7%90%86%E8%B2%A1%E6%A9%9F%E5%99%A8%E4%BA%BA2.0%20API",
         `<ul>
                 <li>基於原有投資理財機器人 1.0 API 需求，進行重構/再設計。</li>
                 <li>使用fastapi 作為API框架。</li>
+                <li>礙於商業機密，不提供網站連結，亦不提供部分截圖。</li>
+                </ul>`,
+        null,
+        true
+    ),
+    new Card(
+        "A投顧公司-理財挑戰賽 API 服務",
+        "https://fakeimg.ryd.tools/1075x629/005CDD/f7f7f7/?retina=1&font_size=70&font=noto&text=A%E6%8A%95%E9%A1%A7%E5%85%AC%E5%8F%B8-%E7%90%86%E8%B2%A1%E6%8C%91%E6%88%B0%E8%B3%BD%20API%20%E6%9C%8D%E5%8B%99",
+        `<ul>
+                <li>使用 Fastapi 作為 API 框架，實施完全async運作</li>
+                <li>基於 Polars LazyFrame 進行記憶體惰性計算。</li>
                 <li>礙於商業機密，不提供網站連結，亦不提供部分截圖。</li>
                 </ul>`,
         null,
