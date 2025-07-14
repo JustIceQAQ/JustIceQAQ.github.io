@@ -19,13 +19,9 @@ jobs:
         run: |
           mkdir -p dummy_folder
           echo "this is a test file" > dummy_folder/test.txt
+          
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > private_key.pem
+          chmod 600 private_key.pem
+          
+          scp -i private_key.pem -P 22 ./dummy_folder/* ${{ secrets.WIN_USER }}@${{ secrets.WIN_HOST }}:/c/Users/User/Desktop/demo/                                                                                  
 
-      - name: Connect to Windows Host and SSH to VM
-        uses: appleboy/scp-action@v1
-        with:
-          host: ${{ secrets.WIN_HOST }}
-          username: ${{ secrets.WIN_USER }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          port: 22
-          source: "dummy_folder/test.txt"
-          target: "."
