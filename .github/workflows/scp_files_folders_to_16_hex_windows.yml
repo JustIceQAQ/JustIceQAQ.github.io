@@ -27,5 +27,5 @@ jobs:
           username: ${{ secrets.WIN_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 22
-          source: "dummy_folder/test.txt,tests/a.txt,tests/b.txt"
+          source: "dummy_folder/test.txt"
           target: "/Users/User/Desktop/demo"
