@@ -1,0 +1,31 @@
+name: SCP Files/Folders to 16 Hex Windows
+
+on:
+  push:
+    branches:
+      - 'master'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout to Develop
+        uses: actions/checkout@v3
+        with:
+          ref: 'master'
+
+      - name: Create Dummy Folder and File
+        run: |
+          mkdir -p dummy_folder
+          echo "this is a test file" > dummy_folder/test.txt
+
+      - name: Connect to Windows Host and SSH to VM
+        uses: appleboy/scp-action@v1
+        with:
+          host: ${{ secrets.WIN_HOST }}
+          username: ${{ secrets.WIN_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: 22
+          source: "dummy_folder/test.txt,tests/a.txt,tests/b.txt"
+          target: "/cygdrive/c/Users/User/Desktop/demo"
