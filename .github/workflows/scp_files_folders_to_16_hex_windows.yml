@@ -28,4 +28,4 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 22
           source: "dummy_folder/test.txt,tests/a.txt,tests/b.txt"
-          target: "/cygdrive/c/Users/User/Desktop/demo"
+          target: "/Users/User/Desktop/demo"
