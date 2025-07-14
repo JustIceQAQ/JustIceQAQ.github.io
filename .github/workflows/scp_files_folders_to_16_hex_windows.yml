@@ -28,4 +28,3 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 22
           source: "dummy_folder/test.txt"
-          target: "/Users/User/Desktop/demo"
