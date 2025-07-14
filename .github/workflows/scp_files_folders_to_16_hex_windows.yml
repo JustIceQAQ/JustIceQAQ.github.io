@@ -23,5 +23,5 @@ jobs:
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > private_key.pem
           chmod 600 private_key.pem
           
-          scp -i private_key.pem -P 22 -o StrictHostKeyChecking=no ./dummy_folder/* ${{ secrets.WIN_USER }}@${{ secrets.WIN_HOST }}:/c/Users/User/Desktop/demo/                                                                                  
+          scp -i private_key.pem -P 22 -o StrictHostKeyChecking=no ./dummy_folder/* ${{ secrets.WIN_USER }}@${{ secrets.WIN_HOST }}:~                                                                                 
 
