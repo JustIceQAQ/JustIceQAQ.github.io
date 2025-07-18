@@ -1,0 +1,128 @@
+openapi: 3.0.0
+info:
+  title: JustIceQAQ API Docs
+  description: 提供 JustIceQAQ 自己整理的 API (可能會過時)
+  version: 1.0.0
+servers:
+  - url: https://justiceqaq.github.io/api/data
+paths:
+  /taiwan-zip-code.json:
+    get:
+      summary: 查詢台灣郵遞區號
+      responses:
+        '200':
+          description: 成功回應
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  cities:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        name:
+                          type: string
+                          example: 臺北市
+                        code:
+                          type: integer
+                          example: 100
+                        regions:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              name:
+                                type: string
+                                example: 中山區
+                              code:
+                                type: integer
+                                example: 104
+              example:
+                cities:
+                  - name: "臺北市"
+                    code: 100
+                    regions:
+                      - name: "中山區"
+                        code: 104
+                      - name: "大安區"
+                        code: 106
+  /taiwan-identity-card-fmt.json:
+    get:
+      summary: 查詢台灣身分證代號
+      responses:
+        '200':
+          description: 成功回應
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  enabled:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        Code:
+                          type: string
+                          example: A
+                        Value:
+                          type: string
+                          example: 10
+                        City:
+                          type: string
+                          example: 臺北市
+              example:
+                enabled:
+                  - Code: "A"
+                    Value: "10"
+                    City: "臺北市"
+  /taiwan-city-fmt.json:
+    get:
+      summary: 查詢台灣縣市資料
+      responses:
+        '200':
+          description: 成功回應
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    Code:
+                      type: string
+                      example: TW-CHA
+                    Name:
+                      type: string
+                      example: 彰化縣
+                    Level:
+                      type: string
+                      example: 縣
+                    EnglishName:
+                      type: string
+                      example: Changhua County
+                    Rource:
+                      type: string
+                      example: ISO 3166/MA
+                    ImgName:
+                      type: string
+                      example: 25px-Flag_of_Changhua_County.svg.png
+                    ImgExtension:
+                      type: string
+                      example: .png
+                    ImgBase64:
+                      type: string
+                      example: data:image/png;base64,iVBORw0KGgoAAAANSUh...
+              example:
+                - Code: "TW-CHA"
+                  Name: "彰化縣"
+                  Level: "縣"
+                  EnglishName: "Changhua County"
+                  Rource: "ISO 3166/MA"
+                  ImgName: "25px-Flag_of_Changhua_County.svg.png"
+                  ImgExtension: ".png"
+                  ImgBase64: "data:image/png;base64,iVBORw0KGgoAAAANSUh..."
+
+
