@@ -22,23 +22,11 @@ const imagesFromGoogleDrive = (id, imageRootUrl = "https://drive.google.com/uc?e
 
 const SKILL = {
     "Programming_Languages": [
-        new Block("Python", "https://www.python.org/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original-wordmark.svg"),
-        new Block("JavaScript", "https://www.javascript.com/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"),
-    ],
+        new Block("Python", "https://www.python.org/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original-wordmark.svg")],
     "Framework": [
         new Block("Django", "https://www.djangoproject.com/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain-wordmark.svg"),
         new Block("Django Rest Framework", "https://www.django-rest-framework.org", "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/djangorest/djangorest-original.svg"),
         new Block("FastAPI", "https://fastapi.tiangolo.com/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-plain-wordmark.svg"),
-        new Block("Tornado", "https://www.tornadoweb.org", "https://img93.pixhost.to/images/853/445466390_0cga4cn.png"),
-        new Block("Sanic", "https://sanic.dev/en/", "https://i.imgur.com/mp5jLhD.webp"),
-    ],
-    "Frontend_Development": [
-        new Block("Streamlit", "https://streamlit.io/", "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/streamlit/streamlit-original-wordmark.svg"),
-
-        new Block("Bootstrap", "https://getbootstrap.com/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original-wordmark.svg"),
-        new Block("html5", "https://whatwg.org/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original-wordmark.svg"),
-        new Block("css3", "https://www.w3.org/Style/CSS/Overview.en.html", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original-wordmark.svg"),
-
     ],
     "Backend_Development": [
         new Block("GraphQL", "https://graphql.org/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain-wordmark.svg"),
@@ -46,6 +34,7 @@ const SKILL = {
     ],
     "AI_ML": [
         new Block("NumPy", "https://numpy.org/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg"),
+        new Block("Polars", "https://pola.rs/", "https://avatars.githubusercontent.com/u/83768144"),
         new Block("Pandas", "https://pandas.pydata.org", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original-wordmark.svg"),
         new Block("scikit-learn", "https://scikit-learn.org/", "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/scikitlearn/scikitlearn-original.svg"),
     ],
@@ -58,11 +47,6 @@ const SKILL = {
         new Block("Memcached", "https://memcached.org/", "https://img93.pixhost.to/images/854/445474762_memcached-tutorial.png"),
         new Block("MinIO", "https://min.io/", "https://www.vectorlogo.zone/logos/minioio/minioio-ar21.svg")
     ],
-    "DataVisualization": [
-        new Block("matplotlib", "https://matplotlib.org/", "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/matplotlib/matplotlib-original-wordmark.svg"),
-        new Block("Seaborn", "https://seaborn.pydata.org/", "https://seaborn.pydata.org/_images/logo-mark-lightbg.svg"),
-        new Block("Plotly", "https://plotly.com/python/", "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/plotly/plotly-original-wordmark.svg"),
-    ],
     "Devops": [
         new Block("Docker", "https://www.docker.com/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original-wordmark.svg"),
         new Block("Podman", "https://podman.io/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/podman/podman-original.svg"),
@@ -70,7 +54,6 @@ const SKILL = {
         new Block("Rancher", "https://rancher.com/", "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rancher/rancher-original-wordmark.svg"),
         new Block("GCP", "", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg"),
         new Block("bash", "", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg"),
-        new Block("Jenkins", "https://www.jenkins.io/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg")
     ],
 
     "Testing": [
@@ -90,17 +73,12 @@ const SKILL = {
     ],
 
     "Web_Crawler": [
-        new Block("requests", "https://requests.readthedocs.io", "https://i.imgur.com/KASUQRV.webp"),
         new Block("httpx", "https://www.python-httpx.org/", "https://raw.githubusercontent.com/encode/httpx/master/docs/img/logo.jpg"),
-        new Block("aiohttp", "https://docs.aiohttp.org/en/stable/index.html", "https://docs.aiohttp.org/en/stable/_static/aiohttp-plain.svg"),
         new Block("BeautifulSoup", "https://www.crummy.com/software/BeautifulSoup/", "https://img93.pixhost.to/images/853/445466402_bs.png"),
-        new Block("Scrapy", "https://scrapy.org", "https://img93.pixhost.to/images/853/445466397_31r4now.png"),
-        new Block("playwright-python", "https://playwright.dev/", "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/playwright/playwright-original.svg"),
-    ],
+        ],
     "IDE": [
         new Block("Pycharm", "https://www.jetbrains.com/pycharm/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pycharm/pycharm-original.svg"),
         new Block("Jupyter", "https://jupyter.org", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original-wordmark.svg"),
-        new Block("Webstorm", "https://www.jetbrains.com/webstorm/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/webstorm/webstorm-original.svg"),
         new Block("vscode", "https://code.visualstudio.com/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original-wordmark.svg"),
     ],
     "Other": [
