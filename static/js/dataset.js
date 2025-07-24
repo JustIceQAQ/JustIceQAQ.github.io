@@ -1,4 +1,15 @@
+/**
+ * @class Block
+ * @property {string} name - 區塊名稱
+ * @property {string} href - 鏈結網址
+ * @property {string} img - 圖片路徑
+ */
 class Block {
+    /**
+     * @param {string} name
+     * @param {string} href
+     * @param {string} img
+     */
     constructor(name, href, img) {
         this.name = name;
         this.href = href;
@@ -6,7 +17,22 @@ class Block {
     }
 }
 
+/**
+ * @class Card
+ * @property {string} name - 區塊名稱
+ * @property {string} img - 圖片路徑
+ * @property {string} context - 文字說明
+ * @property {string} href - 鏈結網址
+ * @property {string} is_display - 是否顯示
+ */
 class Card {
+    /**
+     * @param {string} name
+     * @param {string} img
+     * @param {string} context
+     * @param {string} href
+     * @param {boolean} is_display
+     */
     constructor(name, img, context, href, is_display) {
         this.name = name;
         this.img = img;
@@ -75,7 +101,7 @@ const SKILL = {
     "Web_Crawler": [
         new Block("httpx", "https://www.python-httpx.org/", "https://raw.githubusercontent.com/encode/httpx/master/docs/img/logo.jpg"),
         new Block("BeautifulSoup", "https://www.crummy.com/software/BeautifulSoup/", "https://img93.pixhost.to/images/853/445466402_bs.png"),
-        ],
+    ],
     "IDE": [
         new Block("Pycharm", "https://www.jetbrains.com/pycharm/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pycharm/pycharm-original.svg"),
         new Block("Jupyter", "https://jupyter.org", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original-wordmark.svg"),
@@ -96,7 +122,7 @@ const WORKED_PROJECT = [
     new Card(
         "TW Ranking",
         "https://img93.pixhost.to/images/853/445466418_omyriog.png",
-        "TW Ranking由國立臺灣大學圖書資訊學系 黃慕萱教授主持。始於2018年，與臺灣大學計量理論與應用中心合作發表，期望透過客觀量化分析的方式，針對臺灣之大專院校，設計一套多數學校現階段經努力即可達成的適切指標。",
+        "TW Ranking由國立臺灣大學圖書資訊學系 黃ＯＯ教授主持。始於2018年，與臺灣大學計量理論與應用中心合作發表，期望透過客觀量化分析的方式，針對臺灣之大專院校，設計一套多數學校現階段經努力即可達成的適切指標。",
         "http://twranking.lis.ntu.edu.tw/about/",
         false
     ),
@@ -105,14 +131,14 @@ const WORKED_PROJECT = [
         "https://img93.pixhost.to/images/853/445466438_ruksw3t.png",
         "The \"Performance Ranking of Scientific Papers for World Universities\" is released by National Taiwan University, and is also known as NTU Ranking. NTU Ranking provides overall ranking, rankings by six fields, and rankings by 24 selected subjects.",
         "http://nturanking.csti.tw/",
-        true
+        false
     ),
     new Card(
         "NTU Innovation Ranking",
         "https://img93.pixhost.to/images/853/445466450_yhyww6k.png",
-        "由國立臺灣大學科研計量研究中心(Center for Science and Technology Informetrics, CSTI)陳達仁教授主持，透過易讀的指標、資料視覺化，讓閱覽者能快速、全面地了解各國與企業的專利創新表現。本研究蒐集美國專利資料局(USPTO)所提供的公開資料，進行量化的研究分析，透過此研究呈現各國與企業在專利領域的創新表現，以及主導專利表現的國家及企業，提供各界較為客觀的參考依據。",
+        "由國立臺灣大學科研計量研究中心(Center for Science and Technology Informetrics, CSTI) 陳ＯＯ教授主持，透過易讀的指標、資料視覺化，讓閱覽者能快速、全面地了解各國與企業的專利創新表現。本研究蒐集美國專利資料局(USPTO)所提供的公開資料，進行量化的研究分析，透過此研究呈現各國與企業在專利領域的創新表現，以及主導專利表現的國家及企業，提供各界較為客觀的參考依據。",
         "http://140.112.180.163:8002/",
-        true
+        false
     ),
     new Card(
         "科研計量研究中心",
@@ -122,7 +148,7 @@ const WORKED_PROJECT = [
                     <li>使用Python與Django MVC 搭配前端語言進行設計與建置。</li>
                 </ul>`,
         "http://www.csti.tw/",
-        true
+        false
     ),
     new Card(
         "T醫院-精神居家醫療照護系統",
@@ -133,7 +159,7 @@ const WORKED_PROJECT = [
                     <li>礙於商業機密，不提供網站連結，僅提供部分截圖。</li>
                 </ul>`,
         null,
-        true
+        false
     ),
     new Card(
         "K工廠 CPS System",
@@ -144,7 +170,7 @@ const WORKED_PROJECT = [
                     <li>礙於商業機密，不提供網站連結，僅提供部分截圖。</li>
                 </ul>`,
         null,
-        true
+        false
     ),
     new Card(
         "S傳統產業ERP整合系統",
@@ -194,8 +220,8 @@ const WORKED_PROJECT = [
         "A投顧公司-投資理財機器人2.0 API 服務",
         "https://fakeimg.ryd.tools/1075x629/00BBD2/f7f7f7/?retina=1&font_size=70&font=noto&text=A%E6%8A%95%E9%A1%A7%E5%85%AC%E5%8F%B8%0A%E6%8A%95%E8%B3%87%E7%90%86%E8%B2%A1%E6%A9%9F%E5%99%A8%E4%BA%BA2.0%20API",
         `<ul>
-                <li>基於原有投資理財機器人 1.0 API 需求，進行重構/再設計。</li>
-                <li>使用fastapi 作為API框架。</li>
+                <li>基於原有投資理財機器人 1.0 API 需求，進行重構/再設計後，變為 2.0 API，為日後容器化做好準備。</li>
+                <li>使用 Fastapi 作為 API 框架。</li>
                 <li>礙於商業機密，不提供網站連結，亦不提供部分截圖。</li>
                 </ul>`,
         null,
@@ -205,7 +231,7 @@ const WORKED_PROJECT = [
         "A投顧公司-理財挑戰賽 API 服務",
         "https://fakeimg.ryd.tools/1075x629/005CDD/f7f7f7/?retina=1&font_size=70&font=noto&text=A%E6%8A%95%E9%A1%A7%E5%85%AC%E5%8F%B8%0A%E7%90%86%E8%B2%A1%E6%8C%91%E6%88%B0%E8%B3%BD%20API%20%E6%9C%8D%E5%8B%99",
         `<ul>
-                <li>使用 Fastapi 作為 API 框架，實施完全async運作</li>
+                <li>使用 Fastapi 作為 API 框架，實施完全 async 運作</li>
                 <li>基於 Polars LazyFrame 進行記憶體惰性計算。</li>
                 <li>礙於商業機密，不提供網站連結，亦不提供部分截圖。</li>
                 </ul>`,
@@ -343,24 +369,12 @@ const appendProjects = () => {
     let app = document.querySelector(`.projects-context`);
     WORKED_PROJECT.reverse();
     let rows = WORKED_PROJECT.map(card => card.is_display ? cardFormat(card) : "")
-    // let rows = []
-    // for (let card of WORKED_PROJECT) {
-    //     if (card.is_display) {
-    //         rows.push(cardFormat(card));
-    //     }
-    // }
     app.innerHTML = rows.join("");
 }
 
 const appendSideProjects = () => {
     let app = document.querySelector(`.site-project-context`);
     let rows = SIDE_PROJECT.map(card => card.is_display ? cardFormat(card) : "")
-    // let rows = []
-    // for (let card of SIDE_PROJECT) {
-    //     if (card.is_display) {
-    //         rows.push(cardFormat(card));
-    //     }
-    // }
     app.innerHTML = rows.join("");
 }
 
