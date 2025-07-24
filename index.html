@@ -30,7 +30,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="static/img/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="static/img/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="static/img/favicon-16x16.png">
-<!--    <link rel="manifest" href="static/img/site.webmanifest">-->
+    <!--    <link rel="manifest" href="static/img/site.webmanifest">-->
     <link rel="mask-icon" href="static/img/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
@@ -54,9 +54,9 @@
 
     <!--  CSS  -->
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0-alpha2/css/bootstrap.min.css" 
-    integrity="sha512-AJqlPMFVh36uw2D9RLPBfAVy0S7OFl7zCOnnZTs0WAtaRzv1lK7tMoGz7k586FulS00KTNsWNr/5IVhIzBlEow==" 
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0-alpha2/css/bootstrap.min.css"
+          integrity="sha512-AJqlPMFVh36uw2D9RLPBfAVy0S7OFl7zCOnnZTs0WAtaRzv1lK7tMoGz7k586FulS00KTNsWNr/5IVhIzBlEow=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/justifiedGallery/3.8.1/css/justifiedGallery.min.css"
           integrity="sha512-CRFv/YVJyElHXTiMgnhWKd2f04Hd/BUJkwcyqYmlpL1ugSYW23nNRazLk960mlz7dugTrETCGGjcsnspPOS6qA=="
@@ -96,12 +96,9 @@
             integrity="sha512-+Jg3Ynmj9hse704K48H6rBBI3jdNBjReRGBCxUWFfOz3yVurnJFWtAWssDAsGtzWYw89xFWPxShuj2T6E9EOpg=="
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    <!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/darkreader/4.9.57/darkreader.min.js"-->
-    <!--            integrity="sha512-wG1mUxrCKVZf+hXqjMLYbX7rioeQuEwfCZ1zjBnmgvDJO0UJXgOvipndoCajcyA02TTrdstSARY6+MmY4fgK8A=="-->
-    <!--            crossorigin="anonymous" referrerpolicy="no-referrer"></script>-->
 
-    <script src="static/js/context.js"></script>
-    <script src="static/js/context2.js"></script>
+    <script src="static/js/dataset.js"></script>
+    <script src="static/js/X_X.js"></script>
     <!--  Javascript  -->
 
 
@@ -122,7 +119,7 @@
                 <span class="iconify" id="themeIcon" data-icon="ph:sun-bold" data-inline="false"></span>
             </button>
         </div>
-      </nav>
+    </nav>
     <header>
         <!-- Jumbotron -->
         <div class="p-5 text-center text-white" style="background-color: var(--JustIceQAQ_Green)">
@@ -210,14 +207,12 @@
 </div>
 </body>
 <script>
-    // DarkReader.auto(true);
 
     appendSkill()
     appendProjects()
     appendSideProjects()
 
 
-    // function initWaterFall() {
     $(".mygallery").justifiedGallery({
         rowHeight: 130,
         lastRow: 'nojustify',
@@ -226,25 +221,6 @@
     });
     mediumZoom('.card-img-top');
 
-    // }
-
-    console.log("          JJJJJJJJJJJ                                          tttt            iiii                                               QQQQQQQQQ                    AAA                 QQQQQQQQQ\n" +
-        "          J:::::::::J                                       ttt:::t           i::::i                                            QQ:::::::::QQ                 A:::A              QQ:::::::::QQ\n" +
-        "          J:::::::::J                                       t:::::t            iiii                                           QQ:::::::::::::QQ              A:::::A           QQ:::::::::::::QQ\n" +
-        "          JJ:::::::JJ                                       t:::::t                                                          Q:::::::QQQ:::::::Q            A:::::::A         Q:::::::QQQ:::::::Q\n" +
-        "            J:::::Juuuuuu    uuuuuu      ssssssssss   ttttttt:::::ttttttt    iiiiiii     cccccccccccccccc    eeeeeeeeeeee    Q::::::O   Q::::::Q           A:::::::::A        Q::::::O   Q::::::Q\n" +
-        "            J:::::Ju::::u    u::::u    ss::::::::::s  t:::::::::::::::::t    i:::::i   cc:::::::::::::::c  ee::::::::::::ee  Q:::::O     Q:::::Q          A:::::A:::::A       Q:::::O     Q:::::Q\n" +
-        "            J:::::Ju::::u    u::::u  ss:::::::::::::s t:::::::::::::::::t     i::::i  c:::::::::::::::::c e::::::eeeee:::::eeQ:::::O     Q:::::Q         A:::::A A:::::A      Q:::::O     Q:::::Q\n" +
-        "            J:::::ju::::u    u::::u  s::::::ssss:::::stttttt:::::::tttttt     i::::i c:::::::cccccc:::::ce::::::e     e:::::eQ:::::O     Q:::::Q        A:::::A   A:::::A     Q:::::O     Q:::::Q\n" +
-        "            J:::::Ju::::u    u::::u   s:::::s  ssssss       t:::::t           i::::i c::::::c     ccccccce:::::::eeeee::::::eQ:::::O     Q:::::Q       A:::::A     A:::::A    Q:::::O     Q:::::Q\n" +
-        "JJJJJJJ     J:::::Ju::::u    u::::u     s::::::s            t:::::t           i::::i c:::::c             e:::::::::::::::::e Q:::::O     Q:::::Q      A:::::AAAAAAAAA:::::A   Q:::::O     Q:::::Q\n" +
-        "J:::::J     J:::::Ju::::u    u::::u        s::::::s         t:::::t           i::::i c:::::c             e::::::eeeeeeeeeee  Q:::::O  QQQQ:::::Q     A:::::::::::::::::::::A  Q:::::O  QQQQ:::::Q\n" +
-        "J::::::J   J::::::Ju:::::uuuu:::::u  ssssss   s:::::s       t:::::t    tttttt i::::i c::::::c     ccccccce:::::::e           Q::::::O Q::::::::Q    A:::::AAAAAAAAAAAAA:::::A Q::::::O Q::::::::Q\n" +
-        "J:::::::JJJ:::::::Ju:::::::::::::::uus:::::ssss::::::s      t::::::tttt:::::ti::::::ic:::::::cccccc:::::ce::::::::e          Q:::::::QQ::::::::Q   A:::::A             A:::::AQ:::::::QQ::::::::Q\n" +
-        " JJ:::::::::::::JJ  u:::::::::::::::us::::::::::::::s       tt::::::::::::::ti::::::i c:::::::::::::::::c e::::::::eeeeeeee   QQ::::::::::::::Q   A:::::A               A:::::AQQ::::::::::::::Q\n" +
-        "   JJ:::::::::JJ     uu::::::::uu:::u s:::::::::::ss          tt:::::::::::tti::::::i  cc:::::::::::::::c  ee:::::::::::::e     QQ:::::::::::Q   A:::::A                 A:::::A QQ:::::::::::Q\n" +
-        "     JJJJJJJJJ         uuuuuuuu  uuuu  sssssssssss              ttttttttttt  iiiiiiii    cccccccccccccccc    eeeeeeeeeeeeee       QQQQQQQQ::::QQAAAAAAA                   AAAAAAA  QQQQQQQQ::::QQ\n" +
-        "        ")
 
     let mybutton = document.getElementById("btn-back-to-top");
 
@@ -271,17 +247,20 @@
         document.body.scrollTop = 0;
         document.documentElement.scrollTop = 0;
     }
-    document.getElementById('btnSwitch').addEventListener('click',()=>{
-    if (document.documentElement.getAttribute('data-bs-theme') == 'dark') {
-        document.documentElement.setAttribute('data-bs-theme','light')
-        document.getElementById('themeIcon').setAttribute("data-icon", "ph:sun-bold"); 
-    }
-    else {
-        document.documentElement.setAttribute('data-bs-theme','dark')
-        document.getElementById('themeIcon').setAttribute("data-icon", "ph:moon-stars-bold"); 
-    }
-})
+
+    document.getElementById('btnSwitch').addEventListener('click', () => {
+        if (document.documentElement.getAttribute('data-bs-theme') == 'dark') {
+            document.documentElement.setAttribute('data-bs-theme', 'light')
+            document.getElementById('themeIcon').setAttribute("data-icon", "ph:sun-bold");
+        } else {
+            document.documentElement.setAttribute('data-bs-theme', 'dark')
+            document.getElementById('themeIcon').setAttribute("data-icon", "ph:moon-stars-bold");
+        }
+    })
 
 </script>
+<script defer src="static/js/justiceqaq.js"
+        integrity="sha256-sC+n9z9a1X3ca5a7a2kqbTqm7zdIpJrcUTJdH95pfB8="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </html>
 
