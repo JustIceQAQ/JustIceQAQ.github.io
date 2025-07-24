@@ -73,7 +73,7 @@ const SKILL = {
         new Block("Memcached", "https://memcached.org/", "https://img93.pixhost.to/images/854/445474762_memcached-tutorial.png"),
         new Block("MinIO", "https://min.io/", "https://www.vectorlogo.zone/logos/minioio/minioio-ar21.svg")
     ],
-    "Devops": [
+    "Dev_Ops": [
         new Block("Docker", "https://www.docker.com/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original-wordmark.svg"),
         new Block("Podman", "https://podman.io/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/podman/podman-original.svg"),
         new Block("Kubernetes", "https://kubernetes.io/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain-wordmark.svg"),
@@ -335,12 +335,13 @@ const appendGallery = (ele) => {
 }
 
 const appendSkillRow = (topic) => {
+    let display_topic = topic.replace("_", " ")
     return `
     <div class="row">
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    ${topic}
+                    ${display_topic}
                 </div>
                 <div class="card-body">
                     <div class="justified-gallery mygallery ${topic}">
