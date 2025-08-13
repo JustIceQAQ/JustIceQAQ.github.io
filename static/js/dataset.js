@@ -242,25 +242,40 @@ const WORKED_PROJECT = [
 
 const SIDE_PROJECT = [
     new Card(
-        "到處看展覽",
+        "🚶 Been Play (到處看展覽)",
         "https://img93.pixhost.to/images/853/445466445_snipaste_2022-10-07_19-13-44.png",
         `<ul>
-                    <li>使用Python 爬蟲針對數個 文創園區/博物館/售票網 網站來爬取相關展覽</li>
-                    <li>資料更新透過 github action 定時排程更新</li>
-                    <li>Table 使用 <a href="https://datatables.net/" target="_blank">DataTable</a>進行渲染</li>
+                    <li>使用 Python 爬蟲針對多個 文創園區/博物館/售票網 網站來抓取展覽資訊</li>
+                    <li>資料更新透過 github action 定時排程更新，並無資料庫設計，僅有純粹的.json檔案</li>
+                    <li>功能簡介</li>
+                        <ul>
+                            <li>展覽內容使用<a href="https://datatables.net/" target="_blank">DataTable</a>進行渲染</li>
+                            <li>無會員機制的成就系統，僅透過瀏覽器儲存你「已去過」的展覽，支援下載、上傳、清空成就功能</li>
+                        </ul>
                 </ul>`,
         [
-            {key: "v1 Web Link (Using Lasagna code)", value: "https://justiceqaq.github.io/been_playing/"},
-            {key: "v2 Web Link (Using Vue with ChatGPT)", value: "https://justiceqaq.github.io/been_playing/v2/"},
-            {key: "v3 Web Link (Using Svelte with Self)", value: "https://justiceqaq.github.io/been_playing/v3/"},
+            {
+                key: "v1 Web Link (Using Lasagna code 🍝)",
+                value: "https://justiceqaq.github.io/been_playing/"
+            },
+            {
+                key: "🚧 v2 Web Link (Using Vue with ChatGPT) [無維護，已荒廢]",
+                value: "https://justiceqaq.github.io/been_playing/v2/",
+                isDisabled: true,
+            },
+            {
+                key: "🚧 v3 Web Link (Using Svelte with Self) [無維護，已荒廢]",
+                value: "https://justiceqaq.github.io/been_playing/v3/",
+                isDisabled: true,
+            },
         ],
         true
     ),
     new Card(
-        "Let Me Have a Look This Company (讓我看看！ 這家公司！)",
+        "🕵️ Let Me Have a Look This Company (讓我看看！ 這家公司！)",
         "https://img93.pixhost.to/images/853/445466443_snipaste_2022-10-07_19-12-55.png",
         `<ul>
-                    <li>使用Python FastAPI，針對輸入的公司名稱進行爬蟲</li>
+                    <li>使用Python FastAPI，針對輸入的公司名稱/統一編號進行爬蟲</li>
                     <li>爬蟲標的包含
                         <ul>
                             <li><a href="https://announcement.mol.gov.tw/" target="_blank">違反勞動法令事業單位（雇主）查詢</a></li>
@@ -271,7 +286,7 @@ const SIDE_PROJECT = [
                             <li><a href="https://twjobs.net" target="_blank">台灣薪資情報網</a></li>
                         </ul>
                     <li>另針對如 PTT、博弈關鍵字等 進行 Google Hacking Database GHDB 搜尋</li>
-                    <li>服務部署於Railway, Render 與 Deta 中</li>
+                    <li>服務部署於免費、提供試用的雲端空間</li>
                 </ul>`,
         [
             {key: "deployed on Render", value: "https://let-me-have-a-look-this-company.onrender.com/"},
@@ -281,7 +296,6 @@ const SIDE_PROJECT = [
         true
     )
 ]
-// "https://via.placeholder.com/411x334"
 
 const cardFormat = (Card) => {
     let a_tags = '';
@@ -291,7 +305,11 @@ const cardFormat = (Card) => {
                 if (typeof href === "string") {
                     return `<a target="_blank" href="${href}" class="btn btn-myO">Web Link ${index}</a>`
                 } else if (typeof href === "object") {
-                    return `<a target="_blank" href="${href.value}" class="btn btn-myO">${href.key}</a>`
+                    let thisClass = "btn btn-myO"
+                    if (Object.hasOwn(href, "isDisabled") && href.isDisabled === true) {
+                        thisClass = thisClass + " disabled"
+                    }
+                    return `<a target="_blank" href="${href.value}" class="${thisClass}">${href.key}</a>`
                 }
             }).join('')
         } else if (typeof Card.href === "string") {
