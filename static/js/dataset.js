@@ -162,7 +162,7 @@ const WORKED_PROJECT = [
         false
     ),
     new Card(
-        "K工廠 CPS System",
+        "K工廠-CPS System",
         "https://img93.pixhost.to/images/854/445468999_snipaste_2024-02-12_18-07-08.jpg",
         `<ul>
                     <li>協助該工廠廠區與該企業資訊部整合機台與工單資料，並梳理資料流(包含資料取得、資料儲存與資料統計顯示)，並提供單一整合型資訊看板，供企業決策層與企業使用者進行查看。</li>
@@ -184,7 +184,7 @@ const WORKED_PROJECT = [
         true
     ),
     new Card(
-        "H機構 住宅資訊系統",
+        "H機構-住宅資訊系統",
         "https://img93.pixhost.to/images/853/445466408_fjtshd4.png",
         `<ul>
                     <li>依照H機構建置需求，以前後分離方式且以微服務提供API，支援前後台端功能實作，包含住宅基本資料、基地現況、未來建物模擬圖、基地現場CCTV、會議文件等管理功能。</li>
@@ -195,7 +195,7 @@ const WORKED_PROJECT = [
         true
     ),
     new Card(
-        "H機構 都更資訊系統",
+        "H機構-都更資訊系統",
         "https://img93.pixhost.to/images/853/445466411_hd4e50v.png",
         `<ul>
                     <li>依照H機構建置需求，以前後分離方式且以微服務提供API，支援前後台端功能實作，包含最新進度、進度流程、基礎資料、內容規劃、施工監控、圖片文件等管理功能。</li>
@@ -207,7 +207,7 @@ const WORKED_PROJECT = [
     ),
     new Card(
         "H機構-住宅&都更戰情資訊系統維護案",
-        "https://fakeimg.ryd.tools/1075x629/E75420/eae0d0/?retina=1&font_size=70&font=noto&text=H%E6%A9%9F%E6%A7%8B%0A%E4%BD%8F%E5%AE%85%26%E9%83%BD%E6%9B%B4%E6%88%B0%E6%83%85%E8%B3%87%E8%A8%8A%E7%B3%BB%E7%B5%B1%E7%B6%AD%E8%AD%B7%E6%A1%88",
+        "https://img1.pixhost.to/images/11446/681195211_02.png",
         `<ul>
                     <li>依照H機構新增/維護需求，進行API功能調整/優化。</li>
                     <li>維護既有K8S部署架構與資源消耗檢查</li>
@@ -218,7 +218,7 @@ const WORKED_PROJECT = [
     ),
     new Card(
         "A投顧公司-投資理財機器人2.0 API 服務",
-        "https://fakeimg.ryd.tools/1075x629/00BBD2/f7f7f7/?retina=1&font_size=70&font=noto&text=A%E6%8A%95%E9%A1%A7%E5%85%AC%E5%8F%B8%0A%E6%8A%95%E8%B3%87%E7%90%86%E8%B2%A1%E6%A9%9F%E5%99%A8%E4%BA%BA2.0%20API",
+        "https://img1.pixhost.to/images/11446/681195209_01.png",
         `<ul>
                 <li>基於原有投資理財機器人 1.0 API 需求，進行重構/再設計後，變為 2.0 API，為日後容器化做好準備。</li>
                 <li>使用 Fastapi 作為 API 框架。</li>
@@ -229,7 +229,7 @@ const WORKED_PROJECT = [
     ),
     new Card(
         "A投顧公司-理財挑戰賽 API 服務",
-        "https://fakeimg.ryd.tools/1075x629/005CDD/f7f7f7/?retina=1&font_size=70&font=noto&text=A%E6%8A%95%E9%A1%A7%E5%85%AC%E5%8F%B8%0A%E7%90%86%E8%B2%A1%E6%8C%91%E6%88%B0%E8%B3%BD%20API%20%E6%9C%8D%E5%8B%99",
+        "https://img1.pixhost.to/images/11446/681195207_00.png",
         `<ul>
                 <li>使用 Fastapi 作為 API 框架，實施完全 async 運作</li>
                 <li>基於 Polars LazyFrame 進行記憶體惰性計算。</li>
@@ -239,6 +239,8 @@ const WORKED_PROJECT = [
         true
     )
 ]
+
+// "https://fakeimg.ryd.tools/1075x629/005CDD/f7f7f7/?retina=1&font_size=70&font=noto&text=A%E6%8A%95%E9%A1%A7%E5%85%AC%E5%8F%B8%0A%E7%90%86%E8%B2%A1%E6%8C%91%E6%88%B0%E8%B3%BD%20API%20%E6%9C%8D%E5%8B%99"
 
 const SIDE_PROJECT = [
     new Card(
