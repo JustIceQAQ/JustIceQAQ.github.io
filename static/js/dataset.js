@@ -58,7 +58,7 @@ const SKILL = {
         new Block("GraphQL", "https://graphql.org/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain-wordmark.svg"),
         new Block("Nginx", "https://nginx.org/en", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg")
     ],
-    "AI_ML": [
+    "Data_Transformation": [
         new Block("NumPy", "https://numpy.org/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg"),
         new Block("Polars", "https://pola.rs/", "https://avatars.githubusercontent.com/u/83768144"),
         new Block("Pandas", "https://pandas.pydata.org", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original-wordmark.svg"),
@@ -70,7 +70,7 @@ const SKILL = {
         new Block("MSSQL", "https://www.microsoft.com/zh-tw/sql-server", "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/microsoftsqlserver/microsoftsqlserver-original-wordmark.svg"),
         new Block("SQLite", "https://www.sqlite.org/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original-wordmark.svg"),
         new Block("Redis", "https://redis.io/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original-wordmark.svg"),
-        new Block("Memcached", "https://memcached.org/", "https://img93.pixhost.to/images/854/445474762_memcached-tutorial.png"),
+        new Block("Memcached", "https://memcached.org/", "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/memcached/memcached-original.svg"),
         new Block("MinIO", "https://min.io/", "https://www.vectorlogo.zone/logos/minioio/minioio-ar21.svg")
     ],
     "Dev_Ops": [
@@ -247,11 +247,13 @@ const SIDE_PROJECT = [
         "🚶 Been Play (到處看展覽)",
         "https://img93.pixhost.to/images/853/445466445_snipaste_2022-10-07_19-13-44.png",
         `<ul>
-                    <li>使用 Python 爬蟲針對多個 文創園區/博物館/售票網 網站來抓取展覽資訊</li>
-                    <li>資料更新透過 github action 定時排程更新，並無資料庫設計，僅有純粹的.json檔案</li>
+                    <li>使用 Python 爬蟲針對多個 博物館/文創園區/藝廊/展覽資訊平台 網站來進行資料取得</li>
+                    <li>資料取得透過 Github Action 排程定時更新。無資料庫設計，僅有純粹的 .json 檔案</li>
                     <li>功能簡介</li>
                         <ul>
                             <li>展覽內容使用<a href="https://datatables.net/" target="_blank">DataTable</a>進行渲染</li>
+                            <li>支援 RSS(Really Simple Syndication) 通知訂閱</li>
+                            <li>支援 iCalendar 日曆訂閱的標準，可使用如：Apple 日曆 或 Google 日曆等日曆軟體訂閱</li>
                             <li>無會員機制的成就系統，僅透過瀏覽器儲存你「已去過」的展覽，支援下載、上傳、清空成就功能</li>
                         </ul>
                 </ul>`,
