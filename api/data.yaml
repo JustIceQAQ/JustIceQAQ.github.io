@@ -64,20 +64,58 @@ paths:
                     items:
                       type: object
                       properties:
-                        Code:
+                        code:
                           type: string
                           example: A
-                        Value:
+                        value:
                           type: string
-                          example: 10
-                        City:
+                          example: "10"
+                        city:
                           type: string
                           example: 臺北市
+                  disable:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: string
+                          example: L
+                        value:
+                          type: string
+                          example: "20"
+                        original_city:
+                          type: string
+                          example: 臺中縣
+                        disable_datetime:
+                          type: string
+                          example: "2010-12-25"
+                        city:
+                          type: string
+                          example: 臺中市
+                  gender:
+                    type: object
+                    properties:
+                      "1":
+                        type: string
+                        example: 男
+                      "2":
+                        type: string
+                        example: 女
               example:
                 enabled:
-                  - Code: "A"
-                    Value: "10"
-                    City: "臺北市"
+                  - code: "A"
+                    value: "10"
+                    city: "臺北市"
+                disable:
+                  - code: "L"
+                    value: "20"
+                    original_city: "臺中縣"
+                    disable_datetime: "2010-12-25"
+                    city: "臺中市"
+                gender:
+                  "1": "男"
+                  "2": "女"
   /taiwan-city-fmt.json:
     get:
       summary: 查詢台灣縣市資料
@@ -91,38 +129,46 @@ paths:
                 items:
                   type: object
                   properties:
-                    Code:
-                      type: string
-                      example: TW-CHA
-                    Name:
+                    name:
                       type: string
                       example: 彰化縣
-                    Level:
+                    level:
                       type: string
                       example: 縣
-                    EnglishName:
+                    english_name:
                       type: string
                       example: Changhua County
-                    Rource:
-                      type: string
-                      example: ISO 3166/MA
-                    ImgName:
-                      type: string
-                      example: 25px-Flag_of_Changhua_County.svg.png
-                    ImgExtension:
-                      type: string
-                      example: .png
-                    ImgBase64:
-                      type: string
-                      example: data:image/png;base64,iVBORw0KGgoAAAANSUh...
+                    code:
+                      type: object
+                      properties:
+                        official:
+                          type: string
+                          example: "10007"
+                        iso_3166:
+                          type: string
+                          example: TW-CHA
+                    image:
+                      type: object
+                      properties:
+                        name:
+                          type: string
+                          example: 25px-Flag_of_Changhua_County.svg.png
+                        extension:
+                          type: string
+                          example: .png
+                        base64:
+                          type: string
+                          example: data:image/png;base64,iVBORw0KGgoAAAANSUh...
               example:
-                - Code: "TW-CHA"
-                  Name: "彰化縣"
-                  Level: "縣"
-                  EnglishName: "Changhua County"
-                  Rource: "ISO 3166/MA"
-                  ImgName: "25px-Flag_of_Changhua_County.svg.png"
-                  ImgExtension: ".png"
-                  ImgBase64: "data:image/png;base64,iVBORw0KGgoAAAANSUh..."
+                - name: "彰化縣"
+                  level: "縣"
+                  english_name: "Changhua County"
+                  code:
+                    official: "10007"
+                    iso_3166: "TW-CHA"
+                  image:
+                    name: "25px-Flag_of_Changhua_County.svg.png"
+                    extension: ".png"
+                    base64: "data:image/png;base64,iVBORw0KGgoAAAANSUh..."
 
 
