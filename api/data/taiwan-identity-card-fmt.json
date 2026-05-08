@@ -1,147 +1,147 @@
 {
     "enabled": [
         {
-            "Code": "A",
-            "Value": "10",
-            "City": "臺北市"
+            "code": "A",
+            "value": "10",
+            "city": "臺北市"
         },
         {
-            "Code": "B",
-            "Value": "11",
-            "City": "臺中市"
+            "code": "B",
+            "value": "11",
+            "city": "臺中市"
         },
         {
-            "Code": "C",
-            "Value": "12",
-            "City": "基隆市"
+            "code": "C",
+            "value": "12",
+            "city": "基隆市"
         },
         {
-            "Code": "D",
-            "Value": "13",
-            "City": "臺南市"
+            "code": "D",
+            "value": "13",
+            "city": "臺南市"
         },
         {
-            "Code": "E",
-            "Value": "14",
-            "City": "高雄市"
+            "code": "E",
+            "value": "14",
+            "city": "高雄市"
         },
         {
-            "Code": "F",
-            "Value": "15",
-            "City": "新北市"
+            "code": "F",
+            "value": "15",
+            "city": "新北市"
         },
         {
-            "Code": "G",
-            "Value": "16",
-            "City": "宜蘭縣"
+            "code": "G",
+            "value": "16",
+            "city": "宜蘭縣"
         },
         {
-            "Code": "H",
-            "Value": "17",
-            "City": "桃園市"
+            "code": "H",
+            "value": "17",
+            "city": "桃園市"
         },
         {
-            "Code": "I",
-            "Value": "34",
-            "City": "嘉義市"
+            "code": "I",
+            "value": "34",
+            "city": "嘉義市"
         },
         {
-            "Code": "J",
-            "Value": "18",
-            "City": "新竹縣"
+            "code": "J",
+            "value": "18",
+            "city": "新竹縣"
         },
         {
-            "Code": "K",
-            "Value": "19",
-            "City": "苗栗縣"
+            "code": "K",
+            "value": "19",
+            "city": "苗栗縣"
         },
         {
-            "Code": "M",
-            "Value": "21",
-            "City": "南投縣"
+            "code": "M",
+            "value": "21",
+            "city": "南投縣"
         },
         {
-            "Code": "N",
-            "Value": "22",
-            "City": "彰化縣"
+            "code": "N",
+            "value": "22",
+            "city": "彰化縣"
         },
         {
-            "Code": "O",
-            "Value": "35",
-            "City": "新竹市"
+            "code": "O",
+            "value": "35",
+            "city": "新竹市"
         },
         {
-            "Code": "P",
-            "Value": "23",
-            "City": "雲林縣"
+            "code": "P",
+            "value": "23",
+            "city": "雲林縣"
         },
         {
-            "Code": "Q",
-            "Value": "24",
-            "City": "嘉義縣"
+            "code": "Q",
+            "value": "24",
+            "city": "嘉義縣"
         },
         {
-            "Code": "T",
-            "Value": "27",
-            "City": "屏東縣"
+            "code": "T",
+            "value": "27",
+            "city": "屏東縣"
         },
         {
-            "Code": "U",
-            "Value": "28",
-            "City": "花蓮縣"
+            "code": "U",
+            "value": "28",
+            "city": "花蓮縣"
         },
         {
-            "Code": "V",
-            "Value": "29",
-            "City": "臺東縣"
+            "code": "V",
+            "value": "29",
+            "city": "臺東縣"
         },
         {
-            "Code": "W",
-            "Value": "32",
-            "City": "金門縣"
+            "code": "W",
+            "value": "32",
+            "city": "金門縣"
         },
         {
-            "Code": "X",
-            "Value": "30",
-            "City": "澎湖縣"
+            "code": "X",
+            "value": "30",
+            "city": "澎湖縣"
         },
         {
-            "Code": "Z",
-            "Value": "33",
-            "City": "連江縣"
+            "code": "Z",
+            "value": "33",
+            "city": "連江縣"
         }
     ],
-    "Disable": [
+    "disable": [
         {
-            "Code": "L",
-            "Value": "20",
-            "OriginalCity": "臺中縣",
-            "DisableDatetime": "2010年12月25日",
-            "City": "臺中市"
+            "code": "L",
+            "value": "20",
+            "original_city": "臺中縣",
+            "disable_datetime": "2010-12-25",
+            "city": "臺中市"
         },
         {
-            "Code": "R",
-            "Value": "25",
-            "OriginalCity": "臺南縣",
-            "DisableDatetime": "2010年12月25日",
-            "City": "臺南市"
+            "code": "R",
+            "value": "25",
+            "original_city": "臺南縣",
+            "disable_datetime": "2010-12-25",
+            "city": "臺南市"
         },
         {
-            "Code": "S",
-            "Value": "26",
-            "OriginalCity": "高雄縣",
-            "DisableDatetime": "2010年12月25日",
-            "City": "高雄市"
+            "code": "S",
+            "value": "26",
+            "original_city": "高雄縣",
+            "disable_datetime": "2010-12-25",
+            "city": "高雄市"
         },
         {
-            "Code": "Y",
-            "Value": "31",
-            "OriginalCity": "陽明山管理局",
-            "DisableDatetime": "1974年1月1日",
-            "City": "臺北市"
+            "code": "Y",
+            "value": "31",
+            "original_city": "陽明山管理局",
+            "disable_datetime": "1974-01-01",
+            "city": "臺北市"
         }
     ],
-    "Gender": {
+    "gender": {
         "1": "男",
         "2": "女"
     }
