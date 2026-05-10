@@ -63,50 +63,141 @@
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/justifiedGallery/3.8.1/css/justifiedGallery.min.css"
           integrity="sha512-CRFv/YVJyElHXTiMgnhWKd2f04Hd/BUJkwcyqYmlpL1ugSYW23nNRazLk960mlz7dugTrETCGGjcsnspPOS6qA=="
-          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+          crossorigin="anonymous" referrerpolicy="no-referrer"
+          media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/justifiedGallery/3.8.1/css/justifiedGallery.min.css"
+              integrity="sha512-CRFv/YVJyElHXTiMgnhWKd2f04Hd/BUJkwcyqYmlpL1ugSYW23nNRazLk960mlz7dugTrETCGGjcsnspPOS6qA=="
+              crossorigin="anonymous" referrerpolicy="no-referrer">
+    </noscript>
 
-    <link rel="stylesheet"
-          href="static/css/index.css"
-          integrity="orz1En3bLSE/ZPU2+aaQ2+DyYOVcAsn5zdxI/N/LoXb1/AER0l0ORADCL1VcbeJPERuhTU7132jppKyzy14AiA=="
-    >
+    <style>
+        :root {
+            --JustIceQAQ_Orange: #FF6600;
+            --JustIceQAQ_Green: #39C5BB;
+            --JustIceQAQ_Drak: rgb(64, 64, 64);
+        }
+
+        .row {
+            margin-bottom: 10px;
+        }
+
+        .nav-pills {
+            --bs-nav-pills-link-active-bg: var(--JustIceQAQ_Orange);
+            --bs-nav-pills-link-active-color: #fff;
+            border-color: var(--JustIceQAQ_Green) !important;
+            border: 1px solid rgba(0, 0, 0, .125);
+            border-radius: 0.25rem;
+        }
+
+        .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+            color: #fff;
+            background-color: var(--JustIceQAQ_Orange);
+            border: 1px solid rgba(0, 0, 0, .125);
+            border-radius: 0.25rem;
+        }
+
+        a {
+            color: var(--JustIceQAQ_Green);
+        }
+
+        .btn-myO:nth-child(odd) {
+            margin-right: 5px;
+            margin-top: 5px;
+            color: #fff;
+            background-color: var(--JustIceQAQ_Green);
+            border-color: var(--JustIceQAQ_Green);
+        }
+
+        .btn-myO:nth-child(even) {
+            margin-right: 5px;
+            margin-top: 5px;
+            color: #fff;
+            background-color: var(--JustIceQAQ_Orange);
+            border-color: var(--JustIceQAQ_Orange);
+        }
+
+        #skill-pills > div:nth-child(even) > div > div {
+            border-color: var(--JustIceQAQ_Orange) !important;
+        }
+
+        #skill-pills > div:nth-child(even) > div > div > div.card-header {
+            border-color: var(--JustIceQAQ_Orange) !important;
+        }
+
+        #skill-pills > div:nth-child(odd) > div > div {
+            border-color: var(--JustIceQAQ_Green) !important;
+        }
+
+        #skill-pills > div:nth-child(odd) > div > div > div.card-header {
+            border-color: var(--JustIceQAQ_Green) !important;
+        }
+
+        .nav-justified .nav-item, .nav-justified > .nav-link {
+            flex-basis: 0;
+            flex-grow: 1;
+            text-align: center;
+            align-self: center;
+        }
+
+        .card-img-top {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+        }
+
+        .justified-gallery img {
+            width: 130px;
+            height: 130px;
+            object-fit: contain;
+        }
+
+        #btn-back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: none;
+            background-color: var(--JustIceQAQ_Green);
+            border-color: var(--JustIceQAQ_Green);
+            color: white;
+        }
+    </style>
 
     <!--  CSS  -->
 
     <!--  Javascript  -->
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"
             integrity="sha512-6UofPqm0QupIL0kzS/UIzekR73/luZdC6i/kXDbWnLOJoqwklBK6519iUnShaYceJ0y4FaiPtX/hRnV/X/xlUQ=="
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.1/js/bootstrap.min.js"
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.1/js/bootstrap.min.js"
             integrity="sha512-vyRAVI0IEm6LI/fVSv/Wq/d0KUfrg3hJq2Qz5FlfER69sf3ZHlOrsLriNm49FxnpUGmhx+TaJKwJ+ByTLKT+Yg=="
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
             integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/iconify/3.0.0/iconify.min.js"
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/iconify/3.0.0/iconify.min.js"
             integrity="sha512-EeYPY+3nx/BPm2ZgRlHllRBsaFLIgpYXJYxXjPBJGaxE8RxBhn/X9cI3eG9Z6Iin72om/zZ/TX+aUb4RImKDTQ=="
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js"
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js"
             integrity="sha512-8dQZtymfQeDiZ4bBCFhrKZhDcZir15MqnEDBRiR6ReIVHLcdnCyJrhPIS0QifLGuMkFZsw9QMNeD9JtiLwieTQ=="
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/medium-zoom/1.0.6/medium-zoom.min.js"
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/medium-zoom/1.0.6/medium-zoom.min.js"
             integrity="sha512-N9IJRoc3LaP3NDoiGkcPa4gG94kapGpaA5Zq9/Dr04uf5TbLFU5q0o8AbRhLKUUlp8QFS2u7S+Yti0U7QtuZvQ=="
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mousetrap/1.6.5/mousetrap.min.js"
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/mousetrap/1.6.5/mousetrap.min.js"
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="static/js/dataset.js"
-            crossorigin="use-credentials" referrerpolicy="no-referrer"
-
-    ></script>
-    <script src="static/js/X_X.js"
-            crossorigin="use-credentials" referrerpolicy="no-referrer"
-    ></script>
+    <script defer src="static/js/dataset.js"
+            crossorigin="use-credentials" referrerpolicy="no-referrer"></script>
+    <script defer src="static/js/X_X.js"
+            crossorigin="use-credentials" referrerpolicy="no-referrer"></script>
     <!--  Javascript  -->
 
 
@@ -123,8 +214,8 @@
     <nav class="navbar bg-body-tertiary">
         <div class="container-fluid">
             <a class="navbar-brand"></a>
-            <button class="btn shadow" id="btnSwitch">
-                <span class="iconify" id="themeIcon" data-icon="ph:sun-bold" data-inline="false"></span>
+            <button class="btn shadow" id="btnSwitch" aria-label="切換深淺色主題">
+                <span class="iconify" id="themeIcon" data-icon="ph:sun-bold" data-inline="false" aria-hidden="true"></span>
             </button>
         </div>
     </nav>
@@ -132,18 +223,20 @@
         <!-- Jumbotron -->
         <div class="p-5 text-center text-white" style="background-color: var(--JustIceQAQ_Green)">
             <h1 class="mb-3">Welcome! Welcome! Welcome!</h1>
-            <h3 class="mb-3">Hi, I&#096;m JustIceQAQ. There is my blog~</h3>
-            <h4 class="mb-3"> Maybe you would like to ask &#147;What can I do?&#148;<br>
-                Below is a list of my skilled technologies and projects.</h4>
+            <h2 class="h3 mb-3">Hi, I&#096;m JustIceQAQ. There is my blog~</h2>
+            <h3 class="h4 mb-3"> Maybe you would like to ask &#147;What can I do?&#148;<br>
+                Below is a list of my skilled technologies and projects.</h3>
             <a id="github-link" target="_blank" href="https://github.com/JustIceQAQ"
+               aria-label="JustIceQAQ 的 GitHub 個人頁面"
                style="color:var(--JustIceQAQ_Drak)">
                     <span class="iconify" data-icon="mdi:github" data-inline="false" data-width="3em"
-                          data-height="3em"></span>
+                          data-height="3em" aria-hidden="true"></span>
             </a>
         </div>
         <!-- Jumbotron -->
     </header>
     <br>
+    <main>
     <!-- Pills navs -->
     <ul class="nav nav-pills nav-justified mb-3" id="ex1" role="tablist">
         <li class="nav-item" role="presentation">
@@ -203,7 +296,7 @@
               data-inline="false" data-width="1.5em"
               data-height="1.5em"></span>
     </button>
-
+    </main>
 
     <footer class="text-center text-white text-lg-left" style="background-color: var(--JustIceQAQ_Orange)">
         <!-- Copyright -->
@@ -215,11 +308,10 @@
 </div>
 </body>
 <script>
-
+document.addEventListener('DOMContentLoaded', function () {
     appendSkill()
     appendProjects()
     appendSideProjects()
-
 
     $(".mygallery").justifiedGallery({
         rowHeight: 130,
@@ -229,15 +321,9 @@
     });
     mediumZoom('.card-img-top');
 
-
     let mybutton = document.getElementById("btn-back-to-top");
 
-    // When the user scrolls down 20px from the top of the document, show the button
     window.onscroll = function () {
-        scrollFunction();
-    };
-
-    function scrollFunction() {
         if (
             document.body.scrollTop > 200 ||
             document.documentElement.scrollTop > 200
@@ -246,15 +332,12 @@
         } else {
             mybutton.style.display = "none";
         }
-    }
+    };
 
-    // When the user clicks on the button, scroll to the top of the document
-    mybutton.addEventListener("click", backToTop);
-
-    function backToTop() {
+    mybutton.addEventListener("click", function () {
         document.body.scrollTop = 0;
         document.documentElement.scrollTop = 0;
-    }
+    });
 
     document.getElementById('btnSwitch').addEventListener('click', () => {
         if (document.documentElement.getAttribute('data-bs-theme') == 'dark') {
@@ -264,8 +347,8 @@
             document.documentElement.setAttribute('data-bs-theme', 'dark')
             document.getElementById('themeIcon').setAttribute("data-icon", "ph:moon-stars-bold");
         }
-    })
-
+    });
+});
 </script>
 <script defer src="static/js/justiceqaq.js"
         integrity="sha256-smwkPzC405j1Mbv7bsfLcJOZhoJkb9nwWrjunpsd5N8="
