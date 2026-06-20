@@ -247,31 +247,21 @@ const SIDE_PROJECT = [
         "🚶 Been Play (到處看展覽)",
         "https://img93.pixhost.to/images/853/445466445_snipaste_2022-10-07_19-13-44.png",
         `<ul>
-                    <li>使用 Python 爬蟲針對多個 博物館/文創園區/藝廊/展覽資訊平台 網站來進行資料取得</li>
-                    <li>資料取得透過 Github Action 排程定時更新。無資料庫設計，僅有純粹的 .json 檔案</li>
-                    <li>功能簡介</li>
-                        <ul>
-                            <li>展覽內容使用<a href="https://datatables.net/" target="_blank">DataTable</a>進行渲染</li>
-                            <li>支援 RSS(Really Simple Syndication) 通知訂閱</li>
-                            <li>支援 iCalendar 日曆訂閱的標準，可使用如：Apple 日曆 或 Google 日曆等日曆軟體訂閱</li>
-                            <li>無會員機制的成就系統，僅透過瀏覽器儲存你「已去過」的展覽，支援下載、上傳、清空成就功能</li>
-                        </ul>
-                </ul>`,
+    <li><strong>自動化資料採集</strong>：使用 Python 網路爬蟲針對多個博物館、文創園區、藝廊及展覽平台進行資料抓取、清洗與結構化儲存。</li>
+    <li><strong>輕量化自動更新</strong>：透過 GitHub Actions 排程定時觸發爬蟲執行。專案不使用後端資料庫，全量展覽資訊皆儲存為純 <code>.json</code> 檔案。</li>
+    <li><strong>功能簡介</strong></li>
+    <ul>
+        <li>支援 <strong>RSS 通知訂閱</strong>（若該展覽源有提供）</li>
+        <li>支援 <strong>iCalendar 標準日曆訂閱</strong>，可直接匯入 Apple 日曆或 Google 日曆等軟體（若該展覽源有提供）</li>
+        <li><strong>無會員制的成就系統</strong>：不需註冊帳號，完全透過瀏覽器本地儲存你「已去過」的展覽，並支援成就資料的下載備份、上傳復原與一鍵清空功能</li>
+        <li><strong>自定義關注清單</strong>：提供個人化展覽關注功能，同樣僅透過瀏覽器本地儲存，保障隱私不外洩</li>
+    </ul>
+</ul>`,
         [
             {
                 key: "v1 Web Link (Using Lasagna code 🍝)",
                 value: "https://justiceqaq.github.io/been_playing/"
-            },
-            {
-                key: "🚧 v2 Web Link (Using Vue with ChatGPT) [無維護，已荒廢]",
-                value: "https://justiceqaq.github.io/been_playing/v2/",
-                isDisabled: true,
-            },
-            {
-                key: "🚧 v3 Web Link (Using Svelte with Self) [無維護，已荒廢]",
-                value: "https://justiceqaq.github.io/been_playing/v3/",
-                isDisabled: true,
-            },
+            }
         ],
         true
     ),
@@ -322,14 +312,14 @@ const cardFormat = (Card) => {
     }
     let img = imgTag(Card.img, Card.name, "card-img-top")
     return `<div class="col">
-                <div class="card">
+                <div class="card h-100">
                     ${img}
-                    <div class="card-body">
+                    <div class="card-body d-flex flex-column justify-content-between">
                         <h5 class="card-title">${Card.name}</h5>
                         <p class="card-text">
                             ${Card.context}
                         </p>
-                        <div>
+                        <div class="mt-3">
                         ${a_tags}
                         </div>
                     </div>
@@ -339,7 +329,7 @@ const cardFormat = (Card) => {
 
 const imgTag = (src, alt, _class = null, loading = "lazy") => {
     if (_class !== null) {
-        return `<img class=${_class} src=${src} alt="${alt}" width="1075" height="629" loading=${loading} onerror="this.onerror=null;this.src='https://fakeimg.pl/1075x629/?retina=1&font_size=70&font=noto&text=we%20lost%20${alt}%20:%20('" />`
+        return `<img class=${_class} src=${src} alt="${alt}" loading=${loading} onerror="this.onerror=null;this.src='https://fakeimg.pl/1075x629/?retina=1&font_size=70&font=noto&text=we%20lost%20${alt}%20:%20('" />`
     }
     return `<img src=${src} alt="${alt}" width="130" height="130" loading=${loading} onerror="this.onerror=null;this.src='https://fakeimg.pl/350x200/?font=noto&text=we%20lost%20${alt}%20:%20('" />`
 
