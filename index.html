@@ -3,7 +3,6 @@
 
 <head>
     <!-- Google Tag Manager -->
-
     <script>(function (w, d, s, l, i) {
         w[l] = w[l] || [];
         w[l].push({
@@ -17,7 +16,6 @@
             'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
         f.parentNode.insertBefore(j, f);
     })(window, document, 'script', 'dataLayer', 'GTM-W2B9C87');</script>
-
     <!-- End Google Tag Manager -->
     <meta charset="UTF-8">
 
@@ -66,16 +64,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0-alpha2/css/bootstrap.min.css"
           integrity="sha512-AJqlPMFVh36uw2D9RLPBfAVy0S7OFl7zCOnnZTs0WAtaRzv1lK7tMoGz7k586FulS00KTNsWNr/5IVhIzBlEow=="
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/justifiedGallery/3.8.1/css/justifiedGallery.min.css"
-          integrity="sha512-CRFv/YVJyElHXTiMgnhWKd2f04Hd/BUJkwcyqYmlpL1ugSYW23nNRazLk960mlz7dugTrETCGGjcsnspPOS6qA=="
-          crossorigin="anonymous" referrerpolicy="no-referrer" media="print" onload="this.media='all'">
-    <noscript>
-        <link rel="stylesheet"
-              href="https://cdnjs.cloudflare.com/ajax/libs/justifiedGallery/3.8.1/css/justifiedGallery.min.css"
-              integrity="sha512-CRFv/YVJyElHXTiMgnhWKd2f04Hd/BUJkwcyqYmlpL1ugSYW23nNRazLk960mlz7dugTrETCGGjcsnspPOS6qA=="
-              crossorigin="anonymous" referrerpolicy="no-referrer">
-    </noscript>
 
     <style>
         [data-bs-theme="light"] {
@@ -199,20 +187,20 @@
             background 0.5s ease !important;
         }
 
-        .justified-gallery .img-dark-source {
+        .skill-gallery .img-dark-source {
             display: none !important;
         }
 
-        .justified-gallery .img-light-source {
+        .skill-gallery .img-light-source {
             display: inline-block;
         }
 
         /* 深色模式：隱藏亮色專用圖，顯示深色專用圖 */
-        [data-bs-theme="dark"] .justified-gallery .img-light-source {
+        [data-bs-theme="dark"] .skill-gallery .img-light-source {
             display: none !important;
         }
 
-        [data-bs-theme="dark"] .justified-gallery .img-dark-source {
+        [data-bs-theme="dark"] .skill-gallery .img-dark-source {
             display: inline-block;
         }
 
@@ -220,33 +208,58 @@
         /* ------------------------------------------
    【Case 3】使用 img-universal 的全域濾鏡圖
    ------------------------------------------ */
-        .justified-gallery .img-universal {
+        .skill-gallery .img-universal {
             filter: none;
             transition: filter 0.3s ease;
             /* 讓濾鏡變化也有舒適的緩衝漸變 */
         }
 
         /* 當處於深色模式時，針對 img-universal 集體加上濾鏡微調 */
-        [data-bs-theme="dark"] .justified-gallery .img-universal {
+        [data-bs-theme="dark"] .skill-gallery .img-universal {
             /* 這裡使用 invert(1) brightness(2) 可以完美把黑色 SVG 轉成純白 */
             filter: invert(1) brightness(2);
         }
 
-        .justified-gallery .img-dark-source {
+        .skill-gallery .img-dark-source {
             display: none !important;
         }
 
-        .justified-gallery .img-light-source {
+        .skill-gallery .img-light-source {
             display: inline-block !important;
         }
 
         /* 當切換至深色模式時：隱藏亮色專用圖，顯示深色專用圖 */
-        [data-bs-theme="dark"] .justified-gallery .img-light-source {
+        [data-bs-theme="dark"] .skill-gallery .img-light-source {
             display: none !important;
         }
 
-        [data-bs-theme="dark"] .justified-gallery .img-dark-source {
+        [data-bs-theme="dark"] .skill-gallery .img-dark-source {
             display: inline-block !important;
+        }
+
+        .skill-gallery {
+            display: flex !important;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 15px;
+            padding: 10px 0;
+        }
+
+        /* 讓包裹圖片的 <a> 標籤有正確的 display 屬性 */
+        .skill-gallery > a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+
+        /* 強制控制 <img> 的尺寸與顯示 */
+        .skill-gallery img {
+            display: block !important; /* 防止舊的 display: none 影響 */
+            height: 160px; /* 統一縮放到合適的高度 */
+            width: auto; /* 寬度隨比例自適應 */
+            max-width: 130px;
+            object-fit: contain;
         }
     </style>
 
@@ -262,17 +275,11 @@
             integrity="sha512-vyRAVI0IEm6LI/fVSv/Wq/d0KUfrg3hJq2Qz5FlfER69sf3ZHlOrsLriNm49FxnpUGmhx+TaJKwJ+ByTLKT+Yg=="
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
-            integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
-            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/iconify/3.0.0/iconify.min.js"
             integrity="sha512-EeYPY+3nx/BPm2ZgRlHllRBsaFLIgpYXJYxXjPBJGaxE8RxBhn/X9cI3eG9Z6Iin72om/zZ/TX+aUb4RImKDTQ=="
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js"
-            integrity="sha512-8dQZtymfQeDiZ4bBCFhrKZhDcZir15MqnEDBRiR6ReIVHLcdnCyJrhPIS0QifLGuMkFZsw9QMNeD9JtiLwieTQ=="
-            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/medium-zoom/1.0.6/medium-zoom.min.js"
             integrity="sha512-N9IJRoc3LaP3NDoiGkcPa4gG94kapGpaA5Zq9/Dr04uf5TbLFU5q0o8AbRhLKUUlp8QFS2u7S+Yti0U7QtuZvQ=="
@@ -290,12 +297,11 @@
 <body>
 <!-- Google Tag Manager (noscript) -->
 <noscript>
-    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W2B9C87" height="0" width="0"
-            style="display:none;visibility:hidden"></iframe>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W2B9C87"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>
 </noscript>
 <!-- End Google Tag Manager (noscript) -->
 <div class="container">
-
     <nav class="navbar bg-body-tertiary">
         <div class="container-fluid">
             <a class="navbar-brand"></a>
@@ -448,12 +454,6 @@
         appendProjects()
         appendSideProjects()
 
-        $(".mygallery").justifiedGallery({
-            rowHeight: 130,
-            lastRow: 'nojustify',
-            margins: 15,
-            waitThumbnailsLoad: false
-        });
         mediumZoom('.card-img-top');
 
         let mybutton = document.getElementById("btn-back-to-top");
@@ -477,7 +477,7 @@
 
     });
 </script>
-<script defer src="static/js/justiceqaq.js" integrity="sha256-smwkPzC405j1Mbv7bsfLcJOZhoJkb9nwWrjunpsd5N8="
+<script defer src="static/js/justiceqaq.js"
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 </html>

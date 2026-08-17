@@ -386,7 +386,7 @@ const appendSkillRow = (topic) => {
                     ${display_topic}
                 </div>
                 <div class="card-body">
-                    <div class="justified-gallery mygallery ${topic}">
+                    <div class="skill-gallery ${topic}">
                     </div>
                 </div>
             </div>
