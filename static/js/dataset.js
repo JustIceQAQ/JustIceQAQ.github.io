@@ -12,7 +12,7 @@ class Block {
      * @param {string} img
      * @param {string} darkImg
      */
-    constructor(name, href, img, darkImg = null ) {
+    constructor(name, href, img, darkImg = null) {
         this.name = name;
         this.href = href;
         this.img = img;
@@ -45,25 +45,22 @@ class Card {
     }
 }
 
-const imagesFromGoogleDrive = (id, imageRootUrl = "https://drive.google.com/uc?export=view") => {
-    return `${imageRootUrl}&id=${id}`
-}
 
 const SKILL = {
     "Programming_Languages": [
-        new Block("Python", 
-            "https://www.python.org/", 
+        new Block("Python",
+            "https://www.python.org/",
             "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original-wordmark.svg")
     ],
     "Framework": [
-        new Block("Django", 
-            "https://www.djangoproject.com/", 
+        new Block("Django",
+            "https://www.djangoproject.com/",
             "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain-wordmark.svg",
             "universal"
         ),
-        new Block("Django Rest Framework", 
-            "https://www.django-rest-framework.org", 
-            "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/djangorest/djangorest-original.svg","universal"
+        new Block("Django Rest Framework",
+            "https://www.django-rest-framework.org",
+            "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/djangorest/djangorest-original.svg", "universal"
         ),
         new Block("FastAPI", "https://fastapi.tiangolo.com/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-plain-wordmark.svg"),
     ],
@@ -74,20 +71,20 @@ const SKILL = {
     "Data_Transformation": [
         new Block("NumPy", "https://numpy.org/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg"),
         new Block("Polars", "https://pola.rs/", "https://avatars.githubusercontent.com/u/83768144"),
-        new Block("Pandas", "https://pandas.pydata.org", 
-            "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original-wordmark.svg","universal"),
-        new Block("scikit-learn", 
-            "https://scikit-learn.org/", 
+        new Block("Pandas", "https://pandas.pydata.org",
+            "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original-wordmark.svg", "universal"),
+        new Block("scikit-learn",
+            "https://scikit-learn.org/",
             "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/scikitlearn/scikitlearn-original.svg", "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/scikitlearn/scikitlearn-plain.svg"),
     ],
     "Database_Cache": [
-        new Block("Sqlalchemy", "https://www.sqlalchemy.org/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlalchemy/sqlalchemy-original-wordmark.svg","universal"),
+        new Block("Sqlalchemy", "https://www.sqlalchemy.org/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlalchemy/sqlalchemy-original-wordmark.svg", "universal"),
         new Block("postgresql", "https://www.postgresql.org/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original-wordmark.svg"),
-        new Block("MSSQL", "https://www.microsoft.com/zh-tw/sql-server", "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/microsoftsqlserver/microsoftsqlserver-original-wordmark.svg","universal"),
-        new Block("SQLite", "https://www.sqlite.org/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original-wordmark.svg","universal"),
+        new Block("MSSQL", "https://www.microsoft.com/zh-tw/sql-server", "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/microsoftsqlserver/microsoftsqlserver-original-wordmark.svg", "universal"),
+        new Block("SQLite", "https://www.sqlite.org/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original-wordmark.svg", "universal"),
         new Block("Redis", "https://redis.io/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original-wordmark.svg"),
         new Block("Memcached", "https://memcached.org/", "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/memcached/memcached-plain.svg"),
-        new Block("MinIO", "https://min.io/", "https://www.vectorlogo.zone/logos/minioio/minioio-ar21.svg","universal")
+        new Block("MinIO", "https://min.io/", "https://www.vectorlogo.zone/logos/minioio/minioio-ar21.svg", "universal")
     ],
     "Dev_Ops": [
         new Block("Docker", "https://www.docker.com/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original-wordmark.svg"),
@@ -95,7 +92,7 @@ const SKILL = {
         new Block("Kubernetes", "https://kubernetes.io/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain-wordmark.svg"),
         new Block("Rancher", "https://rancher.com/", "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rancher/rancher-plain-wordmark.svg"),
         new Block("GCP", "", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg"),
-        new Block("bash", "", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-plain.svg","universal"),
+        new Block("bash", "", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-plain.svg", "universal"),
     ],
 
     "Testing": [
@@ -103,15 +100,15 @@ const SKILL = {
         new Block("Selenium", "https://www.selenium.dev/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/selenium/selenium-original.svg")
     ],
     "Software": [
-        new Block("Slack", "https://slack.com/", "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/slack/slack-original-wordmark.svg","universal"),
+        new Block("Slack", "https://slack.com/", "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/slack/slack-original-wordmark.svg", "universal"),
         new Block("Postman", "https://www.postman.com/", "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original-wordmark.svg"),
         new Block("Trello", "https://trello.com/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/trello/trello-plain-wordmark.svg"),
-        new Block("Sentry", "https://sentry.io/welcome/", "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sentry/sentry-original-wordmark.svg","universal")
+        new Block("Sentry", "https://sentry.io/welcome/", "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sentry/sentry-original-wordmark.svg", "universal")
     ],
     "OS": [
         new Block("Windows", "https://zh.wikipedia.org/zh-tw/Microsoft_Windows", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/windows8/windows8-original.svg"),
-        new Block("Ubuntu", "https://zh.wikipedia.org/zh-tw/Ubuntu", "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/ubuntu/ubuntu-original-wordmark.svg","universal"),
-        new Block("macOS", "https://zh.wikipedia.org/zh-tw/MacOS", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apple/apple-original.svg","universal"),
+        new Block("Ubuntu", "https://zh.wikipedia.org/zh-tw/Ubuntu", "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/ubuntu/ubuntu-original-wordmark.svg", "universal"),
+        new Block("macOS", "https://zh.wikipedia.org/zh-tw/MacOS", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apple/apple-original.svg", "universal"),
     ],
 
     "Web_Crawler": [
@@ -122,16 +119,16 @@ const SKILL = {
     ],
     "IDE": [
         new Block("Pycharm", "https://www.jetbrains.com/pycharm/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pycharm/pycharm-original.svg"),
-        new Block("Jupyter", "https://jupyter.org", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original-wordmark.svg","universal"),
+        new Block("Jupyter", "https://jupyter.org", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original-wordmark.svg", "universal"),
         new Block("vscode", "https://code.visualstudio.com/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original-wordmark.svg"),
     ],
     "Other": [
         new Block("Anaconda", "https://www.anaconda.com/products/individual", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/anaconda/anaconda-original-wordmark.svg"),
-        new Block("Markdown", "https://zh.wikipedia.org/zh-tw/Markdown", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/markdown/markdown-original.svg","universal"),
-        new Block("git", "https://git-scm.com/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original-wordmark.svg","universal"),
-        new Block("github", "https://github.com/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original-wordmark.svg","universal"),
-        new Block("SSH", "https://zh.wikipedia.org/zh-tw/Secure_Shell", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ssh/ssh-original-wordmark.svg","universal"),
-        new Block("Swagger", "https://swagger.io/", "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/swagger/swagger-original-wordmark.svg","universal"),
+        new Block("Markdown", "https://zh.wikipedia.org/zh-tw/Markdown", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/markdown/markdown-original.svg", "universal"),
+        new Block("git", "https://git-scm.com/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original-wordmark.svg", "universal"),
+        new Block("github", "https://github.com/", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original-wordmark.svg", "universal"),
+        new Block("SSH", "https://zh.wikipedia.org/zh-tw/Secure_Shell", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ssh/ssh-original-wordmark.svg", "universal"),
+        new Block("Swagger", "https://swagger.io/", "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/swagger/swagger-original-wordmark.svg", "universal"),
         new Block("DBeaver", "https://dbeaver.io/", "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dbeaver/dbeaver-original.svg")
     ]
 
@@ -350,7 +347,7 @@ const imgTag = (src, alt, _class = null, loading = "lazy", darkSrc = null) => {
     if (_class !== null) {
         return `<img class="${_class}" src="${src}" alt="${alt}" loading="${loading}" onerror="this.onerror=null;this.src='https://fakeimg.pl/1075x629/?retina=1&font_size=70&font=noto&text=we%20lost%20${alt}%20:%20(\''" />`;
     }
-    
+
     if (darkSrc && darkSrc !== "universal" && darkSrc !== src) {
         return `
             <img src="${src}" class="img-light-source" alt="${alt}" width="130" height="130" loading="${loading}" onerror="this.onerror=null;this.src='https://fakeimg.pl/350x200/?font=noto&text=we%20lost%20${alt}%20:%20(\''" />

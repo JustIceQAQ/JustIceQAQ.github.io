@@ -1,86 +1,195 @@
-:root {
-    --JustIceQAQ_Orange: #FF6600;
-    --JustIceQAQ_Green: #39C5BB;
-    --JustIceQAQ_Drak: rgb(64, 64, 64);
-}
+[data-bs-theme="light"] {
+            --bs-body-bg: #f7f6f2;
+            --bs-body-color: #2c302e;
+            --bs-tertiary-bg: #efede7;
+            --bs-border-color: #e1ded5;
+        }
 
-.row {
-    margin-bottom: 10px;
-}
+        [data-bs-theme="dark"] {
+            --bs-body-bg: #1a2332;
+            --bs-body-color: #e2e8f0;
+            --bs-tertiary-bg: #111823;
+            --bs-border-color: #2e3b4e;
+            --bs-surface-bg: #222e41;
+        }
 
-.nav-pills {
-    border-color: var(--JustIceQAQ_Green) !important;
-    border: 1px solid rgba(0, 0, 0, .125);
-    border-radius: 0.25rem;
-}
+        :root {
+            --JustIceQAQ_Orange: #FF6600;
+            --JustIceQAQ_Green: #39C5BB;
+            --JustIceQAQ_Drak: rgb(64, 64, 64);
+        }
+
+        .row {
+            margin-bottom: 10px;
+        }
+
+        .nav-pills {
+            --bs-nav-pills-link-active-bg: var(--JustIceQAQ_Orange);
+            --bs-nav-pills-link-active-color: #fff;
+            border-color: var(--JustIceQAQ_Green) !important;
+            border: 1px solid rgba(0, 0, 0, .125);
+            border-radius: 0.25rem;
+        }
+
+        .nav-pills .nav-link.active,
+        .nav-pills .show > .nav-link {
+            color: #fff;
+            background-color: var(--JustIceQAQ_Orange);
+            border: 1px solid rgba(0, 0, 0, .125);
+            border-radius: 0.25rem;
+        }
+
+        a {
+            color: var(--JustIceQAQ_Green);
+        }
+
+        .btn-myO:nth-child(odd) {
+            margin-right: 5px;
+            margin-top: 5px;
+            color: #fff;
+            background-color: var(--JustIceQAQ_Green);
+            border-color: var(--JustIceQAQ_Green);
+        }
+
+        .btn-myO:nth-child(even) {
+            margin-right: 5px;
+            margin-top: 5px;
+            color: #fff;
+            background-color: var(--JustIceQAQ_Orange);
+            border-color: var(--JustIceQAQ_Orange);
+        }
+
+        #skill-pills > div:nth-child(even) > div > div {
+            border-color: var(--JustIceQAQ_Orange) !important;
+        }
+
+        #skill-pills > div:nth-child(even) > div > div > div.card-header {
+            border-color: var(--JustIceQAQ_Orange) !important;
+        }
+
+        #skill-pills > div:nth-child(odd) > div > div {
+            border-color: var(--JustIceQAQ_Green) !important;
+        }
+
+        #skill-pills > div:nth-child(odd) > div > div > div.card-header {
+            border-color: var(--JustIceQAQ_Green) !important;
+        }
+
+        .nav-justified .nav-item,
+        .nav-justified > .nav-link {
+            flex-basis: 0;
+            flex-grow: 1;
+            text-align: center;
+            align-self: center;
+        }
+
+        .card-img-top {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+        }
+
+        .justified-gallery img {
+            width: 130px;
+            height: 130px;
+            object-fit: contain;
+        }
+
+        #btn-back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: none;
+            background-color: var(--JustIceQAQ_Green);
+            border-color: var(--JustIceQAQ_Green);
+            color: white;
+        }
+
+        html,
+        body,
+        .navbar,
+        .card,
+        main,
+        footer,
+        a,
+        button {
+            transition: background-color 0.5s ease,
+            color 0.5s ease,
+            border-color 0.5s ease,
+            background 0.5s ease !important;
+        }
+
+        .skill-gallery .img-dark-source {
+            display: none !important;
+        }
+
+        .skill-gallery .img-light-source {
+            display: inline-block;
+        }
+
+        /* 深色模式：隱藏亮色專用圖，顯示深色專用圖 */
+        [data-bs-theme="dark"] .skill-gallery .img-light-source {
+            display: none !important;
+        }
+
+        [data-bs-theme="dark"] .skill-gallery .img-dark-source {
+            display: inline-block;
+        }
 
 
-.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-    color: #fff;
-    background-color: var(--JustIceQAQ_Orange);
-    border: 1px solid rgba(0, 0, 0, .125);
-    border-radius: 0.25rem;
-}
+        /* ------------------------------------------
+   【Case 3】使用 img-universal 的全域濾鏡圖
+   ------------------------------------------ */
+        .skill-gallery .img-universal {
+            filter: none;
+            transition: filter 0.3s ease;
+            /* 讓濾鏡變化也有舒適的緩衝漸變 */
+        }
 
+        /* 當處於深色模式時，針對 img-universal 集體加上濾鏡微調 */
+        [data-bs-theme="dark"] .skill-gallery .img-universal {
+            /* 這裡使用 invert(1) brightness(2) 可以完美把黑色 SVG 轉成純白 */
+            filter: invert(1) brightness(2);
+        }
 
-a {
-    color: var(--JustIceQAQ_Green);
-}
+        .skill-gallery .img-dark-source {
+            display: none !important;
+        }
 
+        .skill-gallery .img-light-source {
+            display: inline-block !important;
+        }
 
-.btn-myO:nth-child(odd) {
-    margin-right: 5px;
-    margin-top: 5px;
-    color: #fff;
-    background-color: var(--JustIceQAQ_Green);
-    border-color: var(--JustIceQAQ_Green);
-}
+        /* 當切換至深色模式時：隱藏亮色專用圖，顯示深色專用圖 */
+        [data-bs-theme="dark"] .skill-gallery .img-light-source {
+            display: none !important;
+        }
 
-.btn-myO:nth-child(even) {
-    margin-right: 5px;
-    margin-top: 5px;
-    color: #fff;
-    background-color: var(--JustIceQAQ_Orange);
-    border-color: var(--JustIceQAQ_Orange);
-}
+        [data-bs-theme="dark"] .skill-gallery .img-dark-source {
+            display: inline-block !important;
+        }
 
-#skill-pills > div:nth-child(even) > div > div {
-    border-color: var(--JustIceQAQ_Orange) !important;
-}
+        .skill-gallery {
+            display: flex !important;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 15px;
+            padding: 10px 0;
+        }
 
-#skill-pills > div:nth-child(even) > div > div > div.card-header {
-    border-color: var(--JustIceQAQ_Orange) !important;
+        /* 讓包裹圖片的 <a> 標籤有正確的 display 屬性 */
+        .skill-gallery > a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
 
-}
-
-#skill-pills > div:nth-child(odd) > div > div {
-    border-color: var(--JustIceQAQ_Green) !important;
-}
-
-#skill-pills > div:nth-child(odd) > div > div > div.card-header {
-    border-color: var(--JustIceQAQ_Green) !important;
-
-}
-
-.nav-justified .nav-item, .nav-justified > .nav-link {
-    flex-basis: 0;
-    flex-grow: 1;
-    text-align: center;
-    align-self: center;
-}
-
-#btn-back-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    display: none;
-    background-color: var(--JustIceQAQ_Green);
-    border-color: var(--JustIceQAQ_Green);
-    color: white;
-}
-
-/*.card-img-top {*/
-/*    width: 100%;*/
-/*    height: 100%;*/
-/*    background: url("../img/loading.png");*/
-/*}*/
+        /* 強制控制 <img> 的尺寸與顯示 */
+        .skill-gallery img {
+            display: block !important; /* 防止舊的 display: none 影響 */
+            height: 160px; /* 統一縮放到合適的高度 */
+            width: auto; /* 寬度隨比例自適應 */
+            max-width: 130px;
+            object-fit: contain;
+        }
