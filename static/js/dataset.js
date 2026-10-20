@@ -197,7 +197,7 @@ const WORKED_PROJECT = [
                     <li>礙於商業機密，不提供網站連結，僅提供部分截圖。</li>
                 </ul>`,
         null,
-        true
+        false
     ),
     new Card(
         "H機構-住宅資訊系統",
@@ -223,7 +223,7 @@ const WORKED_PROJECT = [
     ),
     new Card(
         "H機構-住宅&都更戰情資訊系統維護案",
-        "https://img1.pixhost.to/images/11446/681195211_02.png",
+        "https://img3.pixhost.to/images/6561/787898256_fakeimg-cnbattle.png",
         `<ul>
                     <li>依照H機構新增/維護需求，進行API功能調整/優化。</li>
                     <li>維護既有K8S部署架構與資源消耗檢查</li>
@@ -308,69 +308,167 @@ const SIDE_PROJECT = [
 ]
 
 const cardFormat = (Card) => {
-    let a_tags = '';
+    let a_tags_html = '';
     if (Card.href !== null) {
         if (Object.prototype.toString.call(Card.href) === "[object Array]") {
-            a_tags = Card.href.map((href, index) => {
+            a_tags_html = Card.href.map((href, index) => {
                 if (typeof href === "string") {
-                    return `<a target="_blank" href="${href}" class="btn btn-myO">Web Link ${index}</a>`
+                    return `<a target="_blank" href="${href}" class="btn btn-myO">Web Link ${index}</a>`;
                 } else if (typeof href === "object") {
-                    let thisClass = "btn btn-myO"
+                    let thisClass = "btn btn-myO";
                     if (Object.hasOwn(href, "isDisabled") && href.isDisabled === true) {
-                        thisClass = thisClass + " disabled"
+                        thisClass = thisClass + " disabled";
                     }
-                    return `<a target="_blank" href="${href.value}" class="${thisClass}">${href.key}</a>`
+                    return `<a target="_blank" href="${href.value}" class="${thisClass}">${href.key}</a>`;
                 }
-            }).join('')
+            }).join('');
         } else if (typeof Card.href === "string") {
-            a_tags = `<a target="_blank" href="${Card.href}" class="btn btn-myO">Web Link</a>`
+            a_tags_html = `<a target="_blank" href="${Card.href}" class="btn btn-myO">Web Link</a>`;
         }
     }
-    let img = imgTag(Card.img, Card.name, "card-img-top")
-    return `<div class="col">
-                <div class="card h-100">
-                    ${img}
-                    <div class="card-body d-flex flex-column justify-content-between">
-                        <h5 class="card-title">${Card.name}</h5>
-                        <p class="card-text">
-                            ${Card.context}
-                        </p>
-                        <div class="mt-3">
-                        ${a_tags}
-                        </div>
-                    </div>
+
+    // 1. 建立最外層的 col 容器
+    const colDiv = document.createElement('div');
+    colDiv.className = "col";
+
+    // 2. 建立 card 內部結構的 HTML 字串（先不包含圖片）
+    colDiv.innerHTML = `
+        <div class="card h-100">
+            <div class="card-img-container"></div> <!-- 放置圖片的佔位容器 -->
+            <div class="card-body d-flex flex-column justify-content-between">
+                <h5 class="card-title">${Card.name}</h5>
+                <p class="card-text">${Card.context}</p>
+                <div class="mt-3">
+                    ${a_tags_html}
                 </div>
-            </div>`
-}
+            </div>
+        </div>
+    `;
+
+    // 3. 取得 imgTag 產生的 DOM 元素（或 DocumentFragment）
+    const imgElement = imgTag(Card.img, Card.name, "card-img-top");
+
+    // 4. 將圖片 DOM 塞進剛剛預留的容器中
+    const imgContainer = colDiv.querySelector('.card-img-container');
+    imgContainer.replaceWith(imgElement); // 或者用 imgContainer.appendChild(imgElement)
+
+    return colDiv; // 最終回傳的是 DOM 元素，而不是字串
+};
+
+
+const FAKE_IMAGE_URL_ROOT = "https://fakeimg.cnbattle.com"
+
 
 const imgTag = (src, alt, _class = null, loading = "lazy", darkSrc = null) => {
+    // 共用的錯誤處理與 class 抽換邏輯
+    const handleError = (imgElement, fallbackSrc) => {
+        imgElement.addEventListener('error', function () {
+            this.onerror = null; // 防止無限迴圈
+
+            // 移除舊的 class (如果有的話)，並加上 if_on_error class
+            if (_class) {
+                this.className = `${_class} if_on_error`;
+            } else {
+                this.className = 'if_on_error';
+            }
+
+            this.src = fallbackSrc;
+        });
+    };
+
+    // 1. 當有傳入 _class 時
     if (_class !== null) {
-        return `<img class="${_class}" src="${src}" alt="${alt}" loading="${loading}" onerror="this.onerror=null;this.src='https://fakeimg.pl/1075x629/?retina=1&font_size=70&font=noto&text=we%20lost%20${alt}%20:%20(\''" />`;
+        const img = document.createElement('img');
+        img.className = _class;
+        img.src = src;
+        img.alt = alt;
+        img.loading = loading;
+
+        handleError(img, `{FAKE_IMAGE_URL_ROOT}/1075x629/?retina=1&font_size=70&font=noto&text=we%20lost%20${alt}%20:%20(\'`);
+        return img;
     }
 
+    // 2. 當有 darkSrc 且不為 universal 或 src 時（回傳一個包裝容器或多個元素，這裡以 DOM Fragment 處理）
     if (darkSrc && darkSrc !== "universal" && darkSrc !== src) {
-        return `
-            <img src="${src}" class="img-light-source" alt="${alt}" width="130" height="130" loading="${loading}" onerror="this.onerror=null;this.src='https://fakeimg.pl/350x200/?font=noto&text=we%20lost%20${alt}%20:%20(\''" />
-            <img src="${darkSrc}" class="img-dark-source" alt="${alt}" width="130" height="130" loading="${loading}" onerror="this.onerror=null;this.src='https://fakeimg.pl/350x200/?font=noto&text=we%20lost%20${alt}%20:%20(\''" />
-        `;
+        const fragment = document.createDocumentFragment();
+        const fallbackUrl = `{FAKE_IMAGE_URL_ROOT}/350x200/?font=noto&text=we%20lost%20${alt}%20:%20(\'`;
+
+        // Light source 圖片
+        const imgLight = document.createElement('img');
+        imgLight.src = src;
+        imgLight.className = "img-light-source";
+        imgLight.alt = alt;
+        imgLight.width = 130;
+        imgLight.height = 130;
+        imgLight.loading = loading;
+        handleError(imgLight, fallbackUrl);
+
+        // Dark source 圖片
+        const imgDark = document.createElement('img');
+        imgDark.src = darkSrc;
+        imgDark.className = "img-dark-source";
+        imgDark.alt = alt;
+        imgDark.width = 130;
+        imgDark.height = 130;
+        imgDark.loading = loading;
+        handleError(imgDark, fallbackUrl);
+
+        fragment.appendChild(imgLight);
+        fragment.appendChild(imgDark);
+        return fragment;
     }
 
+    // 3. 當 darkSrc === "universal"
     if (darkSrc === "universal") {
-        return `<img src="${src}" class="img-universal" alt="${alt}" width="130" height="130" loading="${loading}" onerror="this.onerror=null;this.src='https://fakeimg.pl/350x200/?font=noto&text=we%20lost%20${alt}%20:%20(\''" />`;
+        const img = document.createElement('img');
+        img.src = src;
+        img.className = "img-universal";
+        img.alt = alt;
+        img.width = 130;
+        img.height = 130;
+        img.loading = loading;
+        handleError(img, `{FAKE_IMAGE_URL_ROOT}/350x200/?font=noto&text=we%20lost%20${alt}%20:%20(\'`);
+        return img;
     }
 
-    return `<img src="${src}" class="img-default-raw" alt="${alt}" width="130" height="130" loading="${loading}" onerror="this.onerror=null;this.src='https://fakeimg.pl/350x200/?font=noto&text=we%20lost%20${alt}%20:%20(\''" />`;
+    // 4. 預設情況
+    const imgDefault = document.createElement('img');
+    imgDefault.src = src;
+    imgDefault.className = "img-default-raw";
+    imgDefault.alt = alt;
+    imgDefault.width = 130;
+    imgDefault.height = 130;
+    imgDefault.loading = loading;
+    handleError(imgDefault, `{FAKE_IMAGE_URL_ROOT}/350x200/?font=noto&text=we%20lost%20${alt}%20:%20(\'`);
+    return imgDefault;
 };
 
 const blockFormat = (Block) => {
-    let img = imgTag(Block.img, Block.name, null, "lazy", Block.darkImg)
-    return `<a target="_blank" href="${Block.href}">${img}</a>`
+    // 1. 建立外層的 <a> 標籤
+    const aTag = document.createElement('a');
+    aTag.target = "_blank";
+    aTag.href = Block.href;
+
+    // 2. 取得 imgTag 產生的 DOM 元素（可能是單一元素或 DocumentFragment）
+    const imgElement = imgTag(Block.img, Block.name, null, "lazy", Block.darkImg);
+
+    // 3. 將圖片放入 <a> 標籤內
+    aTag.appendChild(imgElement);
+
+    return aTag; // 回傳完整的 DOM 元素
 }
 
 const appendGallery = (ele) => {
     let app = document.querySelector(`.${ele}`);
-    let blocks = SKILL[ele].map(Block => blockFormat(Block))
-    app.innerHTML = blocks.join("");
+    if (!app) return;
+
+    app.innerHTML = ""; // 清空原有內容
+
+    // 走訪 SKILL[ele]，把每一個 blockFormat 產生的 DOM 元素加入容器
+    SKILL[ele].forEach(Block => {
+        let blockElement = blockFormat(Block);
+        app.appendChild(blockElement);
+    });
 }
 
 const appendSkillRow = (topic) => {
@@ -407,14 +505,28 @@ const appendSkill = () => {
 
 const appendProjects = () => {
     let app = document.querySelector(`.projects-context`);
-    WORKED_PROJECT.reverse();
-    let rows = WORKED_PROJECT.map(card => card.is_display ? cardFormat(card) : "")
-    app.innerHTML = rows.join("");
+    app.innerHTML = ""; // 清空原有內容
+
+    // 因為 reverse會修改到原本的陣列，建議可以用複製一份的方式避免影響原陣列：[...WORKED_PROJECT].reverse()
+    const reversedProjects = [...WORKED_PROJECT].reverse();
+
+    reversedProjects.forEach(card => {
+        if (card.is_display) {
+            let cardElement = cardFormat(card); // 取得 DOM 元素
+            app.appendChild(cardElement);       // 正確加入 DOM
+        }
+    });
 }
 
 const appendSideProjects = () => {
     let app = document.querySelector(`.site-project-context`);
-    let rows = SIDE_PROJECT.map(card => card.is_display ? cardFormat(card) : "")
-    app.innerHTML = rows.join("");
+    app.innerHTML = ""; // 清空原有內容
+
+    SIDE_PROJECT.forEach(card => {
+        if (card.is_display) {
+            let cardElement = cardFormat(card); // 取得 DOM 元素
+            app.appendChild(cardElement);       // 正確加入 DOM
+        }
+    });
 }
 
