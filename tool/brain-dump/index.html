@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brain Dump 大腦傾倒</title>
+<script src="https://cdn.jsdelivr.net/npm/sortablejs@1/Sortable.min.js"></script>
+<style>
+  :root {
+    --bg: #f4f5f7;
+    --panel: #ffffff;
+    --border: #dfe2e8;
+    --text: #1f2430;
+    --muted: #7b8294;
+    --block: #f1f3f7;
+    --block-hover: #e8ebf1;
+    --shadow: 0 1px 3px rgba(0,0,0,.08);
+    --c-todo: #3b82f6;
+    --c-decision: #f59e0b;
+    --c-idea: #10b981;
+    --c-letgo: #ef4444;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #14161b;
+      --panel: #1d2027;
+      --border: #2e333d;
+      --text: #e6e8ee;
+      --muted: #8a92a3;
+      --block: #272b34;
+      --block-hover: #2f343f;
+      --shadow: 0 1px 3px rgba(0,0,0,.5);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #14161b;
+    --panel: #1d2027;
+    --border: #2e333d;
+    --text: #e6e8ee;
+    --muted: #8a92a3;
+    --block: #272b34;
+    --block-hover: #2f343f;
+    --shadow: 0 1px 3px rgba(0,0,0,.5);
+  }
+
+  * { box-sizing: border-box; }
+  html, body { height: 100%; margin: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+    display: flex;
+    flex-direction: column;
+    transition: background .2s, color .2s;
+  }
+
+  header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 16px;
+    flex-wrap: wrap;
+  }
+  header h1 { font-size: 18px; margin: 0; margin-right: auto; }
+  header h1 small { font-weight: 400; color: var(--muted); font-size: 13px; margin-left: 8px; }
+  header button {
+    background: var(--panel);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 7px 12px;
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+  }
+  header button:hover { border-color: var(--muted); }
+  header button.primary { background: var(--c-todo); border-color: var(--c-todo); color: #fff; }
+
+  .board {
+    flex: 1;
+    min-height: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 12px;
+    padding: 0 16px 16px;
+  }
+
+  .cell {
+    position: relative;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--accent);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    overflow: hidden;
+  }
+  .cell[data-key="todo"]     { --accent: var(--c-todo); }
+  .cell[data-key="decision"] { --accent: var(--c-decision); }
+  .cell[data-key="idea"]     { --accent: var(--c-idea); }
+  .cell[data-key="letgo"]    { --accent: var(--c-letgo); }
+
+  .cell-head {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    padding: 12px 14px 6px;
+  }
+  .cell-head h2 { font-size: 15px; margin: 0; color: var(--accent); }
+  .cell-head .count { color: var(--muted); font-size: 12px; }
+
+  .add {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: none;
+    background: var(--accent);
+    color: #fff;
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,.25);
+    transition: opacity .15s, transform .15s;
+    z-index: 2;
+  }
+  .add:hover { transform: scale(1.1); }
+  @media (hover: hover) {
+    .add { opacity: 0; }
+    .cell:hover .add, .add:focus-visible { opacity: 1; }
+  }
+
+  .list {
+    flex: 1;
+    min-height: 60px;
+    overflow-y: auto;
+    padding: 4px 12px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .block {
+    display: flex;
+    align-items: flex-start;
+    gap: 4px;
+    background: var(--block);
+    border-radius: 8px;
+    padding: 6px 6px 6px 2px;
+    transition: background .15s;
+  }
+  .block:hover { background: var(--block-hover); }
+  .block.sortable-ghost { opacity: .35; }
+
+  .chk {
+    flex: none;
+    width: 17px;
+    height: 17px;
+    margin: 7px 4px 0 2px;
+    accent-color: var(--accent);
+    cursor: pointer;
+  }
+
+  /* 已完成：刪除線 + 反灰（亮 / 暗模式各自調整對比） */
+  :root { --done-text: #9aa1b0; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --done-text: #6f7686; }
+  }
+  :root[data-theme="dark"] { --done-text: #6f7686; }
+
+  .block.done textarea {
+    text-decoration: line-through;
+    text-decoration-thickness: 1.5px;
+    color: var(--done-text);
+  }
+  .block.done .chk { opacity: .6; }
+  .block.done .handle { opacity: .6; }
+  .block.sortable-chosen { box-shadow: 0 4px 12px rgba(0,0,0,.3); }
+
+  .handle {
+    cursor: grab;
+    color: var(--muted);
+    user-select: none;
+    padding: 4px 6px;
+    font-size: 14px;
+    line-height: 1.5;
+    touch-action: none;
+  }
+  .handle:active { cursor: grabbing; }
+
+  .block textarea {
+    flex: 1;
+    border: none;
+    outline: none;
+    resize: none;
+    background: transparent;
+    color: var(--text);
+    font: inherit;
+    font-size: 14px;
+    line-height: 1.5;
+    padding: 4px 2px;
+    overflow: hidden;
+    min-height: 28px;
+  }
+
+  .del {
+    border: none;
+    background: transparent;
+    color: var(--muted);
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 1;
+    padding: 6px 8px;
+    border-radius: 6px;
+  }
+  .del:hover { color: #fff; background: var(--c-letgo); }
+  @media (hover: hover) {
+    .del { opacity: 0; }
+    .block:hover .del, .del:focus-visible { opacity: 1; }
+  }
+
+  .hint {
+    color: var(--muted);
+    font-size: 13px;
+    padding: 2px 14px 10px;
+    pointer-events: none;
+  }
+  .list:not(:empty) + .hint { display: none; }
+
+  #toast {
+    position: fixed;
+    left: 50%;
+    bottom: 24px;
+    transform: translate(-50%, 20px);
+    background: #222;
+    color: #fff;
+    padding: 9px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all .25s;
+  }
+  #toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+  @media (max-width: 700px) {
+    html, body { height: auto; }
+    .board { grid-template-columns: 1fr; grid-template-rows: none; }
+    .cell { min-height: 220px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Brain Dump<small>15 分鐘清空大腦</small></h1>
+  <button id="btn-theme" title="切換亮 / 暗模式">🌓</button>
+  <button id="btn-clear">清空</button>
+  <button id="btn-copy" class="primary">複製網址</button>
+</header>
+
+<main class="board" id="board">
+  <section class="cell" data-key="todo">
+    <div class="cell-head"><h2>待辦事項 (TO-DOS)</h2><span class="count"></span></div>
+    <button class="add" title="新增">+</button>
+    <div class="list"></div>
+    <div class="hint">小任務與緊急事項。挑 1–3 項今天處理。</div>
+  </section>
+
+  <section class="cell" data-key="decision">
+    <div class="cell-head"><h2>決定 (DECISIONS)</h2><span class="count"></span></div>
+    <button class="add" title="新增">+</button>
+    <div class="list"></div>
+    <div class="hint">尚未決定的選擇。挑一個作為本週重點，寫下下一步。</div>
+  </section>
+
+  <section class="cell" data-key="idea">
+    <div class="cell-head"><h2>靈感 (IDEAS)</h2><span class="count"></span></div>
+    <button class="add" title="新增">+</button>
+    <div class="list"></div>
+    <div class="hint">值得探索的創意與專案，全部倒出來。</div>
+  </section>
+
+  <section class="cell" data-key="letgo">
+    <div class="cell-head"><h2>放下 (LET GO)</h2><span class="count"></span></div>
+    <button class="add" title="新增">+</button>
+    <div class="list"></div>
+    <div class="hint">擔心但超出你控制的事。寫下來，然後刪掉它。</div>
+  </section>
+</main>
+
+<div id="toast"></div>
+
+<script>
+(function () {
+  'use strict';
+
+  var KEYS = ['todo', 'decision', 'idea', 'letgo'];
+  var board = document.getElementById('board');
+  var lists = {};
+  var counts = {};
+  KEYS.forEach(function (k) {
+    var cell = board.querySelector('.cell[data-key="' + k + '"]');
+    lists[k] = cell.querySelector('.list');
+    counts[k] = cell.querySelector('.count');
+  });
+
+  /* ---------- base64 url-safe (UTF-8) ---------- */
+  function encode(data) {
+    var bytes = new TextEncoder().encode(JSON.stringify(data));
+    var bin = '';
+    for (var i = 0; i < bytes.length; i++) bin += String.fromCharCode(bytes[i]);
+    return btoa(bin).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+  }
+  function decode(s) {
+    s = s.replace(/-/g, '+').replace(/_/g, '/');
+    while (s.length % 4) s += '=';
+    var bin = atob(s);
+    var bytes = new Uint8Array(bin.length);
+    for (var i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+    return JSON.parse(new TextDecoder().decode(bytes));
+  }
+  // 項目格式：未完成 = "文字"；已完成 = ["文字", 1]（舊版網址只有字串，仍可讀取）
+  function validItem(x) {
+    return typeof x === 'string' ||
+      (Array.isArray(x) && x.length === 2 && typeof x[0] === 'string' && typeof x[1] === 'number');
+  }
+  function valid(d) {
+    return Array.isArray(d) && d.length === 4 && d.every(function (a) {
+      return Array.isArray(a) && a.every(validItem);
+    });
+  }
+
+  /* ---------- state <-> DOM ---------- */
+  function collect() {
+    return KEYS.map(function (k) {
+      return Array.prototype.map.call(lists[k].querySelectorAll('.block'), function (b) {
+        return { t: b.querySelector('textarea').value, d: b.classList.contains('done') };
+      })
+        .filter(function (o) { return o.t.trim() !== ''; })
+        .map(function (o) { return o.d ? [o.t, 1] : o.t; });
+    });
+  }
+  // 收集時保留正在編輯中的空白 block，所以計數與存檔分開處理
+  function updateCounts() {
+    KEYS.forEach(function (k) {
+      var n = lists[k].children.length;
+      counts[k].textContent = n ? n + ' 項' : '';
+    });
+  }
+
+  function autosize(t) {
+    t.style.height = 'auto';
+    t.style.height = t.scrollHeight + 'px';
+  }
+
+  function makeBlock(text, done) {
+    var d = document.createElement('div');
+    d.className = 'block' + (done ? ' done' : '');
+    var h = document.createElement('span');
+    h.className = 'handle';
+    h.textContent = '⋮⋮';
+    h.title = '拖曳';
+    var c = document.createElement('input');
+    c.type = 'checkbox';
+    c.className = 'chk';
+    c.checked = !!done;
+    c.title = '完成';
+    var t = document.createElement('textarea');
+    t.rows = 1;
+    t.value = text || '';
+    t.placeholder = '輸入內容…';
+    var x = document.createElement('button');
+    x.className = 'del';
+    x.title = '刪除';
+    x.textContent = '×';
+    d.appendChild(h); d.appendChild(c); d.appendChild(t); d.appendChild(x);
+    return d;
+  }
+
+  function render(data) {
+    KEYS.forEach(function (k, i) {
+      lists[k].innerHTML = '';
+      data[i].forEach(function (it) {
+        var isStr = typeof it === 'string';
+        lists[k].appendChild(makeBlock(isStr ? it : it[0], !isStr && it[1] === 1));
+      });
+    });
+    requestAnimationFrame(function () {
+      board.querySelectorAll('textarea').forEach(autosize);
+    });
+    updateCounts();
+  }
+
+  /* ---------- URL hash 同步 ---------- */
+  var saveTimer = null;
+  function save() {
+    clearTimeout(saveTimer);
+    saveTimer = setTimeout(saveNow, 150);
+  }
+  function saveNow() {
+    var data = collect();
+    var empty = data.every(function (a) { return a.length === 0; });
+    var url = location.pathname + location.search + (empty ? '' : '#/' + encode(data));
+    try { history.replaceState(null, '', url); } catch (e) { /* 某些沙盒環境不允許 */ }
+    updateCounts();
+  }
+
+  function loadFromHash() {
+    var m = /^#\/(.+)$/.exec(location.hash);
+    if (!m) return false;
+    try {
+      var d = decode(m[1]);
+      if (!valid(d)) throw new Error('bad format');
+      render(d);
+      return true;
+    } catch (e) {
+      toast('網址內容無法解析，已忽略');
+      return false;
+    }
+  }
+
+  /* ---------- 互動 ---------- */
+  board.addEventListener('click', function (e) {
+    var add = e.target.closest('.add');
+    if (add) {
+      var k = add.closest('.cell').dataset.key;
+      var b = makeBlock('');
+      lists[k].appendChild(b);
+      var t = b.querySelector('textarea');
+      t.focus();
+      lists[k].scrollTop = lists[k].scrollHeight;
+      updateCounts();
+      return;
+    }
+    var del = e.target.closest('.del');
+    if (del) {
+      del.closest('.block').remove();
+      saveNow();
+    }
+  });
+
+  board.addEventListener('change', function (e) {
+    if (e.target.classList.contains('chk')) {
+      e.target.closest('.block').classList.toggle('done', e.target.checked);
+      saveNow();
+    }
+  });
+
+  board.addEventListener('input', function (e) {
+    if (e.target.tagName === 'TEXTAREA') {
+      autosize(e.target);
+      save();
+    }
+  });
+
+  // 離開輸入框時，空白的 block 自動移除
+  board.addEventListener('focusout', function (e) {
+    if (e.target.tagName === 'TEXTAREA' && e.target.value.trim() === '') {
+      var blk = e.target.closest('.block');
+      setTimeout(function () {
+        if (blk && blk.parentNode && blk.querySelector('textarea').value.trim() === '') {
+          blk.remove();
+          saveNow();
+        }
+      }, 120);
+    }
+  });
+
+  // Enter 換行以外：Ctrl/Cmd+Enter 結束編輯
+  board.addEventListener('keydown', function (e) {
+    if (e.target.tagName === 'TEXTAREA' && e.key === 'Enter' && (e.ctrlKey || e.metaKey)) {
+      e.target.blur();
+    }
+  });
+
+  /* ---------- 拖曳 (SortableJS) ---------- */
+  if (window.Sortable) {
+    KEYS.forEach(function (k) {
+      Sortable.create(lists[k], {
+        group: 'braindump',
+        handle: '.handle',
+        animation: 150,
+        ghostClass: 'sortable-ghost',
+        chosenClass: 'sortable-chosen',
+        emptyInsertThreshold: 40,
+        onEnd: saveNow
+      });
+    });
+  } else {
+    toast('拖曳元件庫載入失敗，請確認網路連線');
+  }
+
+  /* ---------- 工具列 ---------- */
+  function toast(msg) {
+    var el = document.getElementById('toast');
+    el.textContent = msg;
+    el.classList.add('show');
+    clearTimeout(toast._t);
+    toast._t = setTimeout(function () { el.classList.remove('show'); }, 1800);
+  }
+
+  document.getElementById('btn-copy').addEventListener('click', function () {
+    saveNow();
+    var url = location.href;
+    function fallback() {
+      var ta = document.createElement('textarea');
+      ta.value = url;
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand('copy'); toast('已複製網址'); }
+      catch (e) { toast('複製失敗，請手動複製網址列'); }
+      ta.remove();
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(url).then(function () { toast('已複製網址'); }, fallback);
+    } else {
+      fallback();
+    }
+  });
+
+  document.getElementById('btn-clear').addEventListener('click', function () {
+    if (!confirm('確定要清空全部內容嗎？')) return;
+    render([[], [], [], []]);
+    saveNow();
+  });
+
+  // 主題：預設跟隨系統，可手動切換並記住
+  var root = document.documentElement;
+  try {
+    var saved = localStorage.getItem('braindump-theme');
+    if (saved) root.setAttribute('data-theme', saved);
+  } catch (e) {}
+  document.getElementById('btn-theme').addEventListener('click', function () {
+    var cur = root.getAttribute('data-theme') ||
+      (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    var next = cur === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('braindump-theme', next); } catch (e) {}
+  });
+
+  // 在其他分頁 / 手動修改網址時重新載入
+  window.addEventListener('hashchange', function () {
+    if (!loadFromHash() && !location.hash) render([[], [], [], []]);
+  });
+
+  /* ---------- 初始化 ---------- */
+  if (!loadFromHash()) render([[], [], [], []]);
+})();
+</script>
+</body>
+</html>
