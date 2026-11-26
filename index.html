@@ -115,8 +115,7 @@
         <div class="p-5 text-center text-white" style="background-color: var(--JustIceQAQ_Green)">
             <h1 class="mb-3">Welcome! Welcome! Welcome!</h1>
             <h2 class="h3 mb-3">Hi, I&#096;m JustIceQAQ. There is Home Page~</h2>
-            <h3 class="h4 mb-3"> Maybe you would like to ask &#147;What can I do?&#148;<br>
-                Below is a list of my skilled technologies and projects.</h3>
+            <h3 class="h4 mb-3">Wondering what I can do? Here’s a look at my tech stack and past projects.</h3>
             <a id="github-link" target="_blank" href="https://github.com/JustIceQAQ"
                aria-label="JustIceQAQ 的 GitHub 個人頁面">
                     <span class="iconify" style="color:var(--JustIceQAQ_Drak)" data-icon="mdi:github"
@@ -148,12 +147,10 @@
                 <button class="nav-link" id="worked-project-tab" data-bs-toggle="pill"
                         data-bs-target="#worked-project-pills" type="button" role="tab"
                         aria-controls="worked-project-pills" aria-selected="true">
-                    🎖️ Worked Project
+                    🎖️ Past Projects
                 </button>
 
             </li>
-
-
             <li class="nav-item" role="presentation">
                 <button class="nav-link" id="site-project-tab" data-bs-toggle="pill"
                         data-bs-target="#site-project-pills" type="button" role="tab" aria-controls="site-project-pills"
@@ -161,26 +158,42 @@
                     🎉 Side Project
                 </button>
             </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="working-with-ai-tab" data-bs-toggle="pill"
+                        data-bs-target="#working-with-ai-pills" type="button" role="tab" aria-controls="working-with-ai-pills"
+                        aria-selected="true">
+                    🤖 Working with AI
+                </button>
+            </li>
         </ul>
         <!-- Pills navs -->
 
         <!-- Pills content -->
         <div class="tab-content" id="ex2-content">
-            <!--    My Skill    -->
+            <!--    My Skills    -->
             <div class="tab-pane fade show active skill-context" id="skill-pills" role="tabpanel"
                  aria-labelledby="skill-tab">
             </div>
-            <!--    My Worked Project    -->
+
+            <!--    My Past Projects    -->
             <div class="tab-pane fade" id="worked-project-pills" role="tabpanel"
                  aria-labelledby="worked-project-tab">
                 <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3 g-4 projects-context">
                 </div>
             </div>
 
+            <!--    My Side Project    -->
             <div class="tab-pane fade" id="site-project-pills" role="tabpanel" aria-labelledby="site-project-tab">
                 <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3 g-4 site-project-context">
                 </div>
             </div>
+
+            <!--    My Working with AI    -->
+            <div class="tab-pane fade" id="working-with-ai-pills" role="tabpanel" aria-labelledby="working-with-ai-tab">
+                <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3 g-4 working-with-ai-context">
+                </div>
+            </div>
+
         </div>
         <!-- Pills content -->
 
@@ -258,6 +271,7 @@
         appendSkill()
         appendProjects()
         appendSideProjects()
+        appendWorkingWithAI()
 
         mediumZoom('.card-img-top');
 

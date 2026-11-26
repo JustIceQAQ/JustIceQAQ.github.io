@@ -307,6 +307,36 @@ const SIDE_PROJECT = [
     )
 ]
 
+const WORKING_WITH_AI = [
+    new Card(
+        "Brain Dump - 大腦傾倒法",
+        "https://img3.pixhost.to/images/7471/815792620_snipaste_2026-11-26_13-13-44.png",
+        `<ul>
+                    <li>由 AI 協助撰寫 :)</li>
+                    <li>支援項目新增、拖曳排序、勾選完成與刪除</li>
+                    <li>可直接複製網址跨裝置檢視；無 Cookie、Session、Storage，也無需註冊或登入</li>
+                    <li>你的思考只屬於你自己，網站也不想收集任何資訊</li>
+                    <li>如果你還是有疑慮，自己看原始碼，不客氣
+                    <ul>
+                        <li>
+                            <a href="https://github.com/JustIceQAQ/JustIceQAQ.github.io/blob/master/tool/brain-dump/index.html">
+                            https://github.com/JustIceQAQ/JustIceQAQ.github.io/blob/master/tool/brain-dump/index.html
+                            </a>
+                        </li>
+                    </ul>
+                    </li>
+                </ul>`,
+        [
+            {
+                key: "Lasagna code 🍝",
+                value: "https://www.justiceqaq.dev/tool/brain-dump/"
+            }
+        ],
+        true
+    )
+]
+
+
 const cardFormat = (Card) => {
     let a_tags_html = '';
     if (Card.href !== null) {
@@ -530,3 +560,14 @@ const appendSideProjects = () => {
     });
 }
 
+const appendWorkingWithAI = () => {
+    let app = document.querySelector(`.working-with-ai-context`);
+    app.innerHTML = "";
+
+    WORKING_WITH_AI.forEach(card => {
+        if (card.is_display) {
+            let cardElement = cardFormat(card); // 取得 DOM 元素
+            app.appendChild(cardElement);       // 正確加入 DOM
+        }
+    });
+}
